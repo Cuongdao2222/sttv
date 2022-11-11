@@ -26,6 +26,9 @@ Route::get('/', 'Frontend\indexController@index')->middleware('throttle:60')->na
 
 Route::post('/check-unique-cate', 'productController@filterProduct')->name('check-unique-cate');
 
+
+Route::post('ajax-call-cate-home', 'Frontend\categoryController@getProductToCatte')->name('ajax-home-call-pd');
+
 Route::get('/random-deal', 'crawlController@randomOrderDeal');
 
 Route::post('get-compare-pd-viewer', 'productController@getPDviewer')->name('ajax-compare-viewerPd');

@@ -81,6 +81,8 @@
         </div>
     </div>
 
+
+
     <div class="cart-notification">
         <div class="modal fade" id="addToCartNotification" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">

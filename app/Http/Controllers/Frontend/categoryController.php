@@ -35,10 +35,22 @@ use Session;
 class categoryController extends Controller
 {
 
+    public function getProductToCatte(Request $request)
+    {
+        $id =  $request->id;
+
+        $product = groupProduct::find($id);
+
+        $product_sam = collect(json_decode($product->product_id))->take(3);
+
+        return view('frontend.ajax.ajax_category_home', compact('product_sam'));
+
+    }
+
+
 
     public function categoryView($slug)
     {
-
 
         if(!empty($_GET['filter'])){
 
