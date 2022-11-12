@@ -1504,7 +1504,7 @@
                             <div class="breadcrumb-section hidden-xs hidden-sm">
                                 <ul class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
                                     <li property="itemListElement" typeof="ListItem">
-                                        <a href="../index.htm"><u>Trang chủ</u></a>
+                                        <a href="/"><u>Trang chủ</u></a>
                                     </li>
                                     <li property="itemListElement" typeof="ListItem">
                                         <a href="neo-qled-8k.html"><u>Sản
@@ -1757,31 +1757,26 @@
                             </div>
                         </form>
                     </div>
-                     @if(count($data_pd))
+                     @if(count($product))
                     <ul class="column is-10 product-listing product-grid plp-content">
 
-                        @foreach($data_pd as $val)
-                        <?php
-
-                            $info_pd = App\Models\product::find($val);
-
-                        ?>
-                        @if(!empty($info_pd->Name))
+                        @foreach($product as $val)
+                        
                         <li class="product-item three-cols-tile">
-                            <h1 class="sr-only">{{ @$info_pd->Name }}</h1>
+                            <h1 class="sr-only">{{ @$val->Name }}</h1>
                             <div class="merchandising-flag text-center wishlist" style="height: 30px;min-height: 30px;">
                                 <div class="badge">
                                     <span>MIỄN PHÍ CÔNG LẮP ĐẶT TRONG 7 NGÀY</span>
                                 </div>
                             </div>
-                            <div class="product-item_image">
+                            <div class="">
                                     <div class="item-img has-text-centered">
-                                        <a href="tvs/the-premiere/may-chieu-100-inch-bo-tui-the-freestyle.html">
-                                            <div class="progressive-media progressive-media-image progressive-media-unloaded" data-img-src="{{ asset($info_pd->Image) }}">
+                                        <a href="{{ route('details', $val->Link) }}">
+                                            <div class="progressive-media progressive-media-image progressive-media-unloaded" data-img-src="{{ asset($val->Image) }}">
                                                 <div class="progressive-media-aspect" style="padding-bottom: 80%;">
                                                     <div class="progressive-media-aspect-inner">
-                                                        <img class="progressive-media-image-placeholder progressive-media-content " src="{{ asset($info_pd->Image) }}" crossorigin="anonymous"><img class="progressive-media-image-placeholder progressive-media-image-placeholder-edge progressive-media-content" src="{{ asset($info_pd->Image) }}" crossorigin="anonymous">
-                                                        <noscript><img class="progressive-media-image-original progressive-media-content" src="{{ asset($info_pd->Image) }}"></noscript>
+                                                        <img class="progressive-media-image-placeholder progressive-media-content progressive-media-blur" src="{{ asset($val->Image) }}" crossorigin="anonymous"><img class="progressive-media-image-placeholder progressive-media-image-placeholder-edge progressive-media-content" src="{{ asset($val->Image) }}" crossorigin="anonymous">
+                                                        <noscript><img class="progressive-media-image-original progressive-media-content" src="{{ asset($val->Image) }}"></noscript>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1792,23 +1787,17 @@
                                 <div class="item-flex-top">
                                     <div class="variable-height-wrapper-s1">
                                         <div class="name">
-                                            <a title="Chi tiết Smart TV 8K Neo QLED 65 inch QN700B 2022" class="product-title" href="neo-qled-8k/smart-tv-8k-neo-qled-65-inch-qn700b-2022.html">
-                                            Smart TV 8K Neo QLED 65 inch QN700B 2022                                            </a>
-                                            <span class="product-sku">QA65QN700BKXXV</span>
+                                            <a title="{{ $val->Name }}" class="product-title" href="{{ route('details', $val->Link) }}">
+                                                {{ @$val->Name }}                                          
+                                            </a>
+                                            <span class="product-sku">{{ @$val->productSku  }}</span>
                                         </div>
                                     </div>
                                     <div class="variable-height-wrapper-s2">
                                         <div class="merchandising-wrapper">
                                             <div class="merchandising-box">
                                                 <div class="merchandising-text text-center">
-                                                    <br> - Trả góp 0% khi mua sản phẩm Tivi Samsung (HD Saison & HomeCredit) (1/9 ~ 30/11/2022)
-                                                    <br> - 3 năm bảo hành (1/6 ~ 30/11/2022)
-                                                    <br> - 10 năm bảo hành không lưu ảnh
-                                                    <br> - Tặng loa tháp MX<br> -T40 trị giá 3.990.000 (1/7~ 30/09/2022)
-                                                    <br> - VieOn 8K: Unlimited Access 12 tháng  Xem Không Giới Hạn toàn bộ nội dung trên VieON (Bom tấn HBOGo, 5 kênh K+ Thể Thao độc quyền, kênh truyền hình gói Max+, Disney, nội dung 4K, 8K...…) (01/09/22 ~ 31/10/22)
-                                                    <br> - Galaxy Play: Platinum Max 12 tháng xem phim SVOD Premium + 12 tháng Phim chiếu rạp  TVOD Không giới hạn + Phim chất lượng Dolby Atmos (01/09/22 ~ 31/10/22)
-                                                    <br> - Clip TV: 18 tháng xem Gói Gia Đình tiêu chuẩn. Xem truyền hình trong ngoài nước và VOD (01/09/22 ~ 31/10/22)
-                                                    <br> - Apple TV: 03 tháng xem phim (25/08/22 <br> - 28/11/22)
+                                                    {!! @$val->Salient_Features !!}
                                                 </div>
                                             </div>
                                         </div>
@@ -1829,7 +1818,7 @@
                                         <!--                                            <span>Giảm 26%</span>-->
                                         <!--                                        </span>-->
                                         <!--                                        </div>-->
-                                        <span>74,900,000 ₫</span>
+                                        <span>{{ @ number_format($val->Price) }} ₫</span>
                                     </div>
                                     <!--                                    <div class="promo-leasing" style="height: 40px;">-->
                                     <!--                                        <div class="product-promo promo">-->
@@ -1848,7 +1837,7 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-body text-center">
-                                                <img src="../images/checked.svg">
+                                                <img src="{{ asset('images/checked.svg') }}">
                                                 <p>Sản phẩm đã được thêm vào giỏ hàng.</p>
                                                 <a href="../cart/index.html" class="btn btn-default btn-block mini-cart-checkout-button">
                                                 THANH TOÁN
@@ -1861,16 +1850,38 @@
                                 </div>
                             </div>
                         </li>
-                        @endif
+                      
                         @endforeach
                         
-                        
+                        {{  $product->links()  }}
                     </ul>
+
+
                     @endif
                 </div>
             </div>
         </div>
     </div>
+
+    @push('js')
+
+    <script src="{{ asset('assets/75a5fa0c/js/progressive-media.min.js')}}"></script>
+    <script src="{{ asset('assets/4f253995/jquery.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+
+    <script src="{{ asset('assets/f8532ac8/yii.js')}}"></script>
+    <script src="{{ asset('assets/35deb2b4/js/bootstrap.bundle.js')}}"></script>
+    <script src="{{ asset('swiper@8.4.2/swiper-bundle.min.js')}}"></script>
+
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+
+    @endpush
 
 @endsection 
     

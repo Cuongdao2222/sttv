@@ -62,10 +62,21 @@
     <div class="container">
         <div class="tabs is-centered">
             <ul>
-                @foreach($group as $key => $val)
+
+                <?php 
+
+                    $groups = App\Models\groupProduct::where('parent_id', 17)->get()->take(10);
+                ?>
+                @foreach($groups as $key => $val)
                 <li class="tab {{ $key==0?'is-active':'' }} tab-click" data-id="{{ $val->id }}">
                     <a>{{ $val->name }}</a>
                 </li>
+
+                <?php 
+                    if($key>7){
+                        break;
+                    }
+                ?>
                 @endforeach
             </ul>
         </div>
@@ -101,11 +112,11 @@
                             </div> -->
                             <div class="product-item_image">
                                 <div class="item-img has-text-centered">
-                                    <a href="tvs/the-premiere/may-chieu-100-inch-bo-tui-the-freestyle.html">
+                                    <a href="{{ route('details', $info_pd->Link) }}">
                                         <div class="progressive-media progressive-media-image progressive-media-unloaded" data-img-src="{{ asset($info_pd->Image) }}">
                                             <div class="progressive-media-aspect" style="padding-bottom: 80%;">
                                                 <div class="progressive-media-aspect-inner">
-                                                    <img class="progressive-media-image-placeholder progressive-media-content" src="{{ asset($info_pd->Image) }}" crossorigin="anonymous"><img class="progressive-media-image-placeholder progressive-media-image-placeholder-edge progressive-media-content" src="{{ asset($info_pd->Image) }}" crossorigin="anonymous">
+                                                    <img class="progressive-media-image-placeholder progressive-media-content progressive-media-blur" src="{{ asset($info_pd->Image) }}" crossorigin="anonymous"><img class="progressive-media-image-placeholder progressive-media-image-placeholder-edge progressive-media-content" src="{{ asset($info_pd->Image) }}" crossorigin="anonymous">
                                                     <noscript><img class="progressive-media-image-original progressive-media-content" src="{{ asset($info_pd->Image) }}"></noscript>
                                                 </div>
                                             </div>
@@ -124,12 +135,7 @@
                                     <div class="merchandising-wrapper">
                                         <div class="merchandising-box text-center">
                                             <div class="merchandising-text">
-                                                <br> - Trả góp 0% khi mua sản phẩm Tivi Samsung (HD Saison & HomeCredit) (1/9 ~ 30/11/2022)
-                                                <br> - Quà tặng The Freestyle: (1) Pin chính hãng, (2) Case bảo vệ (01/08 ~ 30/09/2022)
-                                                <br> - Vie ON 8K: VIP Cine 06 tháng Xem toàn bộ nội dung trên VieON VIP và Kho phim bom tấn HBOGo & 3 Kênh K+ (K+ Cine, K+ Life, K+ Kids)… (01/09/22 ~ 31/10/22)
-                                                <br> - Galaxy Play: Crystal+ 06 tháng xem phim SVOD Premium + 06 phim chiếu rạp TVOD trong 03 tháng +  Phim chất lượng Dolby Atmos (01/09/22 ~ 31/10/22)
-                                                <br> - Clip TV: 18 tháng xem Gói Gia Đình tiêu chuẩn. Xem truyền hình trong ngoài nước và VOD (01/09/22 ~ 31/10/22)
-                                                <br> - Apple TV: 03 tháng xem phim (25/08/22 <br> - 28/11/22)
+                                                {!! @$val->Salient_Features !!}
                                             </div>
                                         </div>
                                     </div>
@@ -144,7 +150,7 @@
                                             <div class="price-discount" style="display: none">
                                                 <span>Giảm 44%</span>
                                             </div>
-                                            <span>24.900.000 ₫</span>
+                                            <span>{{ @number_format($info_pd->Price) }} ₫</span>
                                         </div>
                                         <div class="promo-leasing" style="display: none">
                                             <div class="product-promo promo">
@@ -159,7 +165,10 @@
                                             <div class="has-text-centered">
                                                 <button class="btn btn-default btn-cart" data-url-cart="/cart/add" data-product-id="109">Thêm vào giỏ hàng
                                                 </button>
+
+
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -197,6 +206,63 @@
         
     </div>
 </div>
+
+@push('js')
+
+<script src="{{ asset('assets/75a5fa0c/js/progressive-media.min.js')}}"></script>
+<script src="{{ asset('assets/4f253995/jquery.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+crossorigin="anonymous"></script>
+
+<script src="{{ asset('assets/f8532ac8/yii.js')}}"></script>
+<script src="{{ asset('assets/35deb2b4/js/bootstrap.bundle.js')}}"></script>
+<script src="{{ asset('swiper@8.4.2/swiper-bundle.min.js')}}"></script>
+
+<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('js/slick.min.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
+
+<script type="text/javascript">
+
+    $('.tab-click').click(function(){
+        $('.is-centered li').removeClass('is-active');
+
+        $(this).addClass('is-active');
+
+        id = $(this).attr('data-id');
+
+       
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            type: 'POST',
+            url: "{{ route('ajax-home-call-pd') }}",
+            data: {
+                id: id,
+            },
+           
+            success: function(result){
+
+                 // $('.is-centered').html('');
+
+                $('#content-tabs section').html(result);
+
+                // console.log(result);
+              
+              
+            }
+        }); 
+    })
+  
+</script>
+@endpush
 
 
 @endsection  

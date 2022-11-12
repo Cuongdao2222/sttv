@@ -519,8 +519,10 @@ class categoryController extends Controller
         }
 
         $data_pd = json_decode($data->product_id);
+
+        $product = product::whereIn('id', $data_pd)->paginate(9);
         
-        return view('frontend.cate', compact('data_pd'));
+        return view('frontend.cate', compact('product'));
     }
 
 

@@ -30,7 +30,7 @@
                             <span aria-hidden="true"></span>
                             </a>
                             <a class="navbar-item" href="/">
-                            <img src="images/global-samsung-logo.svg" width="112" height="28">
+                            <img src="{{ asset('images/global-samsung-logo.svg')  }}" width="112" height="28">
                             </a>
                             <div class="is-hidden-tablet search-mobile">
                                 <form action="/site/search" method="get">
@@ -42,7 +42,7 @@
                                     </button>
                                 </form>
                             </div>
-                            <a class="is-hidden-tablet navbar-item" style="margin-left: auto" href="index-1.htm"><img style="height: 40px;" src="images/LOGO-ADG.png">
+                            <a class="is-hidden-tablet navbar-item" style="margin-left: auto" href="index-1.htm"><img style="height: 40px;" src="{{ asset('images/LOGO-ADG.png')}}">
                             </a>
                         </div>
 
@@ -69,9 +69,9 @@
                                             </svg>
                                         </button>
                                     </form>
-                                    <a href="index-1.htm"><img src="images/LOGO-ADG.png"></a>
-                                    <a class="position-relative" href="cart/index.html">
-                                    <img src="images/cart-outline.png">
+                                    <a href="index-1.htm"><img src="{{ asset('images/LOGO-ADG.png') }}"></a>
+                                    <a class="position-relative" href="#">
+                                    <img src="{{ asset('images/cart-outline.png') }}">
                                     <span class="badge badge-danger badge-cart">0</span>
                                     </a>
                                 </div>
@@ -206,7 +206,7 @@
                                 <div class="footer-local-logo__item">
                                     <a class="footer-mark__link" href="https://www.online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=14561" target="_blank">
                                         <div class="image image--main-loaded">
-                                            <img class="image__main responsive-img image--loaded" alt="Đã đăng ký với Bộ Công Thương" src="images/gov-logos-2.png" style="">
+                                            <img class="image__main responsive-img image--loaded" alt="Đã đăng ký với Bộ Công Thương" src="{{asset('images/gov-logos-2.png') }}" >
                                         </div>
                                     </a>
                                 </div>
@@ -217,60 +217,11 @@
             </div>
         </footer>
         <a class="fab show" title="Go to Top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-        <img class="fab__icon" alt="" src="images/arrow-up-circle-outline.svg">
+        <img class="fab__icon" alt="" src="{{ asset('images/arrow-up-circle-outline.svg') }}">
         </a>
-        <!-- <script src="{{ asset('assets/75a5fa0c/js/progressive-media.min.js')}}"></script> -->
-        <script src="{{ asset('assets/4f253995/jquery.js')}}"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-        crossorigin="anonymous"></script>
+        @stack('js')
 
-        <script src="{{ asset('assets/f8532ac8/yii.js')}}"></script>
-        <script src="{{ asset('assets/35deb2b4/js/bootstrap.bundle.js')}}"></script>
-        <script src="{{ asset('swiper@8.4.2/swiper-bundle.min.js')}}"></script>
-
-        <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-        <script src="{{ asset('js/slick.min.js') }}"></script>
-       <!--  <script src="{{ asset('js/main.js') }}"></script> -->
-
-        <script type="text/javascript">
-
-            $('.tab-click').click(function(){
-                $('.is-centered li').removeClass('is-active');
-
-                $(this).addClass('is-active');
-
-                id = $(this).attr('data-id');
-
-               
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-
-                $.ajax({
-                    type: 'POST',
-                    url: "{{ route('ajax-home-call-pd') }}",
-                    data: {
-                        id: id,
-                    },
-                   
-                    success: function(result){
-
-                         // $('.is-centered').html('');
-
-                        $('#content-tabs section').html(result);
-
-                        // console.log(result);
-                      
-                      
-                    }
-                }); 
-            })
-          
-        </script>
+        
     </body>
 </html>
