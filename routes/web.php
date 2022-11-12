@@ -159,6 +159,8 @@ Route::get('/category/{slug}', 'Frontend\categoryController@index')->name('categ
 
 Route::get('/{slug}', 'Frontend\categoryController@details')->middleware('throttle:80')->name('details');
 
+Route::get('cart/index', 'Frontend\indexController@Cart')->name('cart-sttv');
+
 Route::post('ajax-clent-register', 'AjaxController@registerClient')->name('register-client-fe');
 
 Route::post('muchsearch', 'AjaxController@muchSearch')->name('muchSearch');

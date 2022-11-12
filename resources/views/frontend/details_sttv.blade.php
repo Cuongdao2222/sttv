@@ -143,7 +143,7 @@
                                 </p>
                                 <div class="cost-box__cta-wrap ">
                                     <span class="cost-box__cta">
-                                    <button class="btn cta cta--contained cta--emphasis add-special-tagging js-buy-now tg-pre-order btn-cart" href="javascript:;" data-url-cart="/cart/add" data-product-id="51">MUA NGAY</button>
+                                    <button class="btn cta cta--contained cta--emphasis add-special-tagging js-buy-now tg-pre-order btn-cart" href="javascript:;" data-url-cart="{{ route('cart-sttv') }}" data-product-id="51">MUA NGAY</button>
                                     </span>
                                 </div>
                             </div>
@@ -172,7 +172,7 @@
                 <div class="modal-body text-center">
                     <img src="../../images/checked.svg">
                     <p>Sản phẩm đã được thêm vào giỏ hàng.</p>
-                    <a href="../../cart/index.html" class="btn btn-default btn-block mini-cart-checkout-button">
+                    <a href="{{ route('cart-sttv') }}" class="btn btn-default btn-block mini-cart-checkout-button">
                     THANH TOÁN
                     </a>
                     <a href="#" data-dismiss="modal" class="btn btn-link addtocart-continue-shopping">
