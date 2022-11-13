@@ -33,8 +33,8 @@
                             <img src="{{ asset('images/global-samsung-logo.svg')  }}" width="112" height="28">
                             </a>
                             <div class="is-hidden-tablet search-mobile">
-                                <form action="/site/search" method="get">
-                                    <input type="text" placeholder="Tìm kiếm" name="s" id="s" maxlength="40">
+                                <form action="{{ route('search-product-frontend') }}" method="get">
+                                    <input type="text" placeholder="Tìm kiếm" name="key" id="s" maxlength="40">
                                     <button type="button" class="btn" value="Tìm kiếm" >
                                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 96 96" focusable="false">
                                             <path d="M40.581 4.09c20.126 0 36.5 16.374 36.5 36.5a36.325 36.325 0 01-7.963 22.733l22.8 22.948-5.674 5.639-22.767-22.913a36.327 36.327 0 01-22.896 8.093c-20.126 0-36.5-16.374-36.5-36.5s16.374-36.5 36.5-36.5zm0 8c-15.715 0-28.5 12.785-28.5 28.5s12.785 28.5 28.5 28.5 28.5-12.785 28.5-28.5-12.785-28.5-28.5-28.5z"></path>
@@ -51,6 +51,10 @@
 
                             $group = App\Models\groupProduct::where('parent_id', 17)->get()->take(10);
 
+                             $cart = Gloudemans\Shoppingcart\Facades\Cart::content();
+
+                            $number_cart = count($cart);
+
 
                         ?>
                         <div id="navbarBasicExample" class="navbar-menu">
@@ -61,18 +65,18 @@
                             </div>
                             <div class="navbar-end is-hidden-mobile">
                                 <div class="navbar-item">
-                                    <form action="/site/search" method="get">
-                                        <input type="text" placeholder="Tìm kiếm" name="s" id="s" maxlength="40">
-                                        <button type="button" class="btn" value="Tìm kiếm" >
+                                    <form action="{{ route('search-product-frontend') }}" method="get">
+                                        <input type="text" placeholder="Tìm kiếm" name="key" id="s" maxlength="40">
+                                        <button type="button" class="btn" value="Tìm kiếm" onclick="this.form.submit(); return false;">
                                             <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 96 96" focusable="false">
                                                 <path d="M40.581 4.09c20.126 0 36.5 16.374 36.5 36.5a36.325 36.325 0 01-7.963 22.733l22.8 22.948-5.674 5.639-22.767-22.913a36.327 36.327 0 01-22.896 8.093c-20.126 0-36.5-16.374-36.5-36.5s16.374-36.5 36.5-36.5zm0 8c-15.715 0-28.5 12.785-28.5 28.5s12.785 28.5 28.5 28.5 28.5-12.785 28.5-28.5-12.785-28.5-28.5-28.5z"></path>
                                             </svg>
                                         </button>
                                     </form>
                                     <a href="index-1.htm"><img src="{{ asset('images/LOGO-ADG.png') }}"></a>
-                                    <a class="position-relative" href="#">
+                                    <a class="position-relative" href="{{ route('cart-sttv') }}">
                                     <img src="{{ asset('images/cart-outline.png') }}">
-                                    <span class="badge badge-danger badge-cart">0</span>
+                                    <span class="badge badge-danger badge-cart">{{ $number_cart }}</span>
                                     </a>
                                 </div>
                             </div>

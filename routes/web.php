@@ -143,7 +143,7 @@ Route::post('add-cart-fast', 'AjaxController@addCartFast')->name('addcartfast');
 
 Route::post('order-product', 'Frontend\orderController@orderProduct')->name('order');
 
-Route::post('remove-cart', 'AjaxController@removeProductCart')->name('removeCart');
+Route::get('remove-cart', 'AjaxController@removeProductCart')->name('removeCart');
 
 Route::post('show-cart', 'AjaxController@showProductCart')->name('showCart');
 

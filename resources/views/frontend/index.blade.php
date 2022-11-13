@@ -136,7 +136,7 @@
                                     <div class="merchandising-wrapper">
                                         <div class="merchandising-box text-center">
                                             <div class="merchandising-text">
-                                                {!! @$val->Salient_Features !!}
+                                                {!! @$info_pd->Salient_Features !!}
                                             </div>
                                         </div>
                                     </div>

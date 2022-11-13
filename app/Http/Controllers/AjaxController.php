@@ -722,13 +722,11 @@ class AjaxController extends Controller
     public function removeProductCart(Request $request)
     {
 
-        $id = $request->product_id;
+        $id = $request->id;
        
         Cart::remove($id);
 
-        
-
-        return response(count($data_cart));
+        return redirect(route('cart-sttv'));
     }
 
     public function showProductCart(Request $request)

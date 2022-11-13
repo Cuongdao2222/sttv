@@ -77,6 +77,8 @@
    
                                         $cart = Gloudemans\Shoppingcart\Facades\Cart::content();
 
+                                        
+
                                         $number_cart = count($cart);
 
 
@@ -140,8 +142,10 @@
                                                                 <div class="item-price text-right column">
                                                                      {{ @number_format($infoProducts->Price) }}đ
                                                                 </div>
+
+
                                                                 <div class="column is-2">
-                                                                    <span class="text-right remove-item remove-entry-button pull-right" onclick="RemoveCart({{ $infoProducts->id }})">XÓA</span>
+                                                                    <a href="{{ route('removeCart') }}?id={{ $data->rowId }}"><span class="text-right remove-item remove-entry-button pull-right">XÓA</span></a>
                                                                 </div>
                                                             </div>
                                                         </div>
