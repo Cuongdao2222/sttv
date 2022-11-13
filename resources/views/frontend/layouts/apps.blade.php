@@ -67,7 +67,7 @@
                                 <div class="navbar-item">
                                     <form action="{{ route('search-product-frontend') }}" method="get">
                                         <input type="text" placeholder="Tìm kiếm" name="key" id="s" maxlength="40">
-                                        <button type="button" class="btn" value="Tìm kiếm" onclick="this.form.submit(); return false;">
+                                        <button type="button" class="btn" value="Tìm kiếm" >
                                             <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 96 96" focusable="false">
                                                 <path d="M40.581 4.09c20.126 0 36.5 16.374 36.5 36.5a36.325 36.325 0 01-7.963 22.733l22.8 22.948-5.674 5.639-22.767-22.913a36.327 36.327 0 01-22.896 8.093c-20.126 0-36.5-16.374-36.5-36.5s16.374-36.5 36.5-36.5zm0 8c-15.715 0-28.5 12.785-28.5 28.5s12.785 28.5 28.5 28.5 28.5-12.785 28.5-28.5-12.785-28.5-28.5-28.5z"></path>
                                             </svg>
@@ -101,42 +101,16 @@
                                 <h3 class="footer-category__title">Sản Phẩm</h3>
                                 <div class="footer-category__list-wrap">
                                     <ul class="footer-category__list">
+                                         <?php 
+
+                                            $groups = App\Models\groupProduct::where('parent_id', 17)->get()->take(10);
+                                        ?>
+                                        @foreach($groups as $key => $val)
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="tvs/the-premiere.html" title="">
-                                            The Premiere</a>
+                                            <a class="footer-category__link" href="{{ route('category-product', $val->link) }}" title="">{{ $val->name }}</a>
                                         </li>
-                                        <li class="footer-category__item">
-                                            <a class="footer-category__link" href="tvs/neo-qled-8k.html" title="">
-                                            Neo QLED 8K</a>
-                                        </li>
-                                        <li class="footer-category__item">
-                                            <a class="footer-category__link" href="tvs/neo-qled-4k.html" title="">
-                                            Neo QLED 4K</a>
-                                        </li>
-                                        <li class="footer-category__item">
-                                            <a class="footer-category__link" href="tvs/qled.html" title="">
-                                            QLED</a>
-                                        </li>
-                                        <li class="footer-category__item">
-                                            <a class="footer-category__link" href="tvs/uhd.html" title="">
-                                            UHD</a>
-                                        </li>
-                                        <li class="footer-category__item">
-                                            <a class="footer-category__link" href="tvs/lifestyle-tv.html" title="">
-                                            Lifestyle TV</a>
-                                        </li>
-                                        <li class="footer-category__item">
-                                            <a class="footer-category__link" href="tvs/soundbar.html" title="">
-                                            Soundbar</a>
-                                        </li>
-                                        <li class="footer-category__item">
-                                            <a class="footer-category__link" href="tvs/sound-tower.html" title="">
-                                            Sound Tower</a>
-                                        </li>
-                                        <li class="footer-category__item">
-                                            <a class="footer-category__link" href="tvs/accessory.html" title="">
-                                            Accessory</a>
-                                        </li>
+                                        @endforeach
+                                       
                                     </ul>
                                 </div>
                             </div>
@@ -147,22 +121,22 @@
                                 <div class="footer-category__list-wrap">
                                     <ul class="footer-category__list">
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="page/5-gioi-thieu-lich-su-cong-ty.html" title="">Giới thiệu
+                                            <a class="footer-category__link" href="#" title="">Giới thiệu
                                             AnhDuy Group
                                             </a>
                                         </li>
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="page/3-chinh-sach-bao-hanh.html" title="">
+                                            <a class="footer-category__link" href="#" title="">
                                             Chính sách bảo hành
                                             </a>
                                         </li>
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="page/2-chinh-sach-van-chuyen-giao-nhan.html" title="">
+                                            <a class="footer-category__link" href="#" title="">
                                             Chính sách vận chuyển & giao nhận
                                             </a>
                                         </li>
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="page/1-quy-dinh-hinh-thuc-thanh-toan.html" title="">
+                                            <a class="footer-category__link" href="#" title="">
                                             Quy định hình thức thanh toán
                                             </a>
                                         </li>

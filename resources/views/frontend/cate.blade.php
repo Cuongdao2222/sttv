@@ -1549,78 +1549,22 @@
                                                 </h3>
                                                 <div class="pf-finder-v2__filters-list-item-wrap" style="">
                                                     <ul class="pf-finder-v2__filters-list-list-item">
+
+                                                        <?php 
+
+                                                            $groups = App\Models\groupProduct::where('parent_id', 17)->get()->take(10);
+                                                        ?>
+                                                        @foreach($groups as $key => $val)
                                                         <li class="pf-finder-v2__filters-list-list-items">
                                                             <div class="checkbox-radio">
-                                                                <input type="checkbox" name="category" class="hidden" checked="" value="1" id="checkbox-1">
-                                                                <label class="checkbox-radio__label" for="checkbox-1">
-                                                                <span class="checkbox-radio__label-text">Neo QLED 8K</span>
+                                                                <input type="checkbox" name="category" class="hidden"  value="{{ $key }}" id="checkbox-{{ $key }}">
+                                                                <label class="checkbox-radio__label" for="checkbox-{{ $key }}">
+                                                                <span class="checkbox-radio__label-text">{{ $val->name }}</span>
                                                                 </label>
                                                             </div>
                                                         </li>
-                                                        <li class="pf-finder-v2__filters-list-list-items">
-                                                            <div class="checkbox-radio">
-                                                                <input type="checkbox" name="category" class="hidden" value="2" id="checkbox-2">
-                                                                <label class="checkbox-radio__label" for="checkbox-2">
-                                                                <span class="checkbox-radio__label-text">Neo QLED 4K</span>
-                                                                </label>
-                                                            </div>
-                                                        </li>
-                                                        <li class="pf-finder-v2__filters-list-list-items">
-                                                            <div class="checkbox-radio">
-                                                                <input type="checkbox" name="category" class="hidden" value="5" id="checkbox-5">
-                                                                <label class="checkbox-radio__label" for="checkbox-5">
-                                                                <span class="checkbox-radio__label-text">QLED</span>
-                                                                </label>
-                                                            </div>
-                                                        </li>
-                                                        <li class="pf-finder-v2__filters-list-list-items">
-                                                            <div class="checkbox-radio">
-                                                                <input type="checkbox" name="category" class="hidden" value="6" id="checkbox-6">
-                                                                <label class="checkbox-radio__label" for="checkbox-6">
-                                                                <span class="checkbox-radio__label-text">UHD</span>
-                                                                </label>
-                                                            </div>
-                                                        </li>
-                                                        <li class="pf-finder-v2__filters-list-list-items">
-                                                            <div class="checkbox-radio">
-                                                                <input type="checkbox" name="category" class="hidden" value="10" id="checkbox-10">
-                                                                <label class="checkbox-radio__label" for="checkbox-10">
-                                                                <span class="checkbox-radio__label-text">Lifestyle TV</span>
-                                                                </label>
-                                                            </div>
-                                                        </li>
-                                                        <li class="pf-finder-v2__filters-list-list-items">
-                                                            <div class="checkbox-radio">
-                                                                <input type="checkbox" name="category" class="hidden" value="11" id="checkbox-11">
-                                                                <label class="checkbox-radio__label" for="checkbox-11">
-                                                                <span class="checkbox-radio__label-text">The Premiere</span>
-                                                                </label>
-                                                            </div>
-                                                        </li>
-                                                        <li class="pf-finder-v2__filters-list-list-items">
-                                                            <div class="checkbox-radio">
-                                                                <input type="checkbox" name="category" class="hidden" value="12" id="checkbox-12">
-                                                                <label class="checkbox-radio__label" for="checkbox-12">
-                                                                <span class="checkbox-radio__label-text">Accessory</span>
-                                                                </label>
-                                                            </div>
-                                                        </li>
-                                                        <li class="pf-finder-v2__filters-list-list-items">
-                                                            <div class="checkbox-radio">
-                                                                <input type="checkbox" name="category" class="hidden" value="14" id="checkbox-14">
-                                                                <label class="checkbox-radio__label" for="checkbox-14">
-                                                                <span class="checkbox-radio__label-text">Soundbar</span>
-                                                                </label>
-                                                            </div>
-                                                        </li>
-                                                        <li class="pf-finder-v2__filters-list-list-items">
-                                                            <div class="checkbox-radio">
-                                                                <input type="checkbox" name="category" class="hidden" value="15" id="checkbox-15">
-                                                                <label class="checkbox-radio__label" for="checkbox-15">
-                                                                <span class="checkbox-radio__label-text">Sound Tower</span>
-                                                                </label>
-                                                            </div>
-                                                        </li>
+                                                        @endforeach
+                                                       
                                                     </ul>
                                                 </div>
                                             </div>
