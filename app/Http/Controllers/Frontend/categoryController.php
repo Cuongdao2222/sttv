@@ -522,7 +522,7 @@ class categoryController extends Controller
 
         $product = product::whereIn('id', $data_pd)->paginate(9);
         
-        return view('frontend.cate', compact('product'));
+        return view('frontend.cate', compact('product', 'data'));
     }
 
 

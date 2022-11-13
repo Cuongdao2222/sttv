@@ -136,6 +136,13 @@
                                     <div class="merchandising-wrapper">
                                         <div class="merchandising-box text-center">
                                             <div class="merchandising-text">
+
+                                                <?php 
+
+                                                    $pattern = '/[1-9][0-9]{0,2}\sinch/';
+                                                    $string = $info_pd->Name;
+                                                   
+                                                ?>
                                                 {!! @$info_pd->Salient_Features !!}
                                             </div>
                                         </div>

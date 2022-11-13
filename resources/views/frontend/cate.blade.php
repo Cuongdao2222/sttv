@@ -1507,11 +1507,10 @@
                                         <a href="/"><u>Trang chủ</u></a>
                                     </li>
                                     <li property="itemListElement" typeof="ListItem">
-                                        <a href="neo-qled-8k.html"><u>Sản
-                                        phẩm</u></a>
+                                        <a href="{{ route('category-product', $data->link) }}"><u>Sảnphẩm</u></a>
                                     </li>
                                     <li class="active" property="itemListElement" typeof="ListItem">
-                                        Neo QLED 8K <span class="breadcrumb-value-count">(11)</span>
+                                        {{ @$data->name }}
                                     </li>
                                 </ul>
                             </div>
@@ -1534,35 +1533,7 @@
                                     </div>
                                     <div class="pf-finder-v2__filters-list-list">
                                         <div class="pf-finder-v2__filters-list-list-wrap js-pf-filter_list-wrap">
-                                            <div class="pf-finder-v2__filters-list-list-area pf-finder-v2__filters-list-list--active" style="display:block">
-                                                <h3 class="pf-finder-v2__filters-list-list-headline">
-                                                    <a href="javascript:void(0)" class="pf-finder-v2__filters-list-list-headline-text">
-                                                        Năm sản xuất
-                                                        <svg class="icon icon--open" focusable="false">
-                                                            <use xlink:href="#open-down-regular" href="#open-down-regular"></use>
-                                                        </svg>
-                                                        <svg class="icon icon--closed" focusable="false">
-                                                            <use xlink:href="#close-up-regular" href="#close-up-regular"></use>
-                                                        </svg>
-                                                    </a>
-                                                </h3>
-                                                <div class="pf-finder-v2__filters-list-item-wrap" style="">
-                                                    <ul class="pf-finder-v2__filters-list-list-item">
-                                                        <li class="pf-finder-v2__filters-list-list-items" style="display:block">
-                                                            <input type="checkbox" value="2021" name="year" class="hidden" id="year-2021">
-                                                            <label class="checkbox-radio__label" for="year-2021">
-                                                            <span class="checkbox-radio__label-text">2021</span>
-                                                            </label>
-                                                        </li>
-                                                        <li class="pf-finder-v2__filters-list-list-items" style="display:block">
-                                                            <input type="checkbox" value="2022" name="year" class="hidden" id="year-2022">
-                                                            <label class="checkbox-radio__label" for="year-2022">
-                                                            <span class="checkbox-radio__label-text">2022</span>
-                                                            </label>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                           
                                             <div class="pf-finder-v2__filters-list-list-area pf-finder-v2__filters-list-list--active" style="display:block">
                                                 <h3 class="pf-finder-v2__filters-list-list-headline">
                                                     <a href="javascript:void(0)" class="pf-finder-v2__filters-list-list-headline-text">
@@ -1807,7 +1778,14 @@
                                     <div class="product-item-size">
                                         <ul class="product-item-size-list">
                                             <li class="product-item-size active">
-                                                65                                            
+
+                                                <?php 
+                                                   $pattern = '/[1-9][0-9]{0,2}\sinch/';
+                                                   $string = $val->Name;
+                                                ?>
+                                                @if (preg_match($pattern, $string, $matches)) 
+                                                       {{ intval($matches[0]) }}
+                                                @endif                                         
                                             </li>
                                         </ul>
                                     </div>
