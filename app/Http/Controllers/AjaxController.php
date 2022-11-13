@@ -660,9 +660,11 @@ class AjaxController extends Controller
              
         Cart::add(['id' => $id, 'name' => $data_Product->Name,  'qty' => 1, 'price' => $price, 'weight' => '500',  'options' => ['link' => $data_Product->Link, 'gift'=>$gift??'']]);
 
-        $data_cart = Cart::content();
+        return route('cart-sttv');
 
-        return view('frontend.ajax.cart', compact('data_cart'));
+        // $data_cart = Cart::content();
+
+        // return view('frontend.ajax.cart', compact('data_cart'));
        
     }
 
@@ -724,9 +726,9 @@ class AjaxController extends Controller
        
         Cart::remove($id);
 
-        $data_cart = Cart::content();
+        
 
-        return view('frontend.ajax.cart', compact('data_cart'));
+        return response(count($data_cart));
     }
 
     public function showProductCart(Request $request)

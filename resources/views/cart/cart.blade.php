@@ -20,6 +20,7 @@
         <link href="{{ asset('css/slick.css')}}" rel="stylesheet">
         <link href="{{ asset('css/slick-theme.css')}}" rel="stylesheet">
         <link href="{{ asset('css/site.css')}}" rel="stylesheet">
+         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <body class="page-cartPage pageType-ContentPage template-pages-CartPageTemplate pageLabel-cart">
         
@@ -28,7 +29,7 @@
                 <div class="columns is-mobile">
                     <div class="column is-half-mobile">
                         <div class="back-to-shop">
-                            <a href="../index.htm">
+                            <a href="/">
                             <i class="icofont-simple-left"></i>
                             <span>Tiếp tục mua hàng</span>
                             </a>
@@ -65,6 +66,35 @@
                             <form id="w0" action="/cart/index" method="post">
                                 <input type="hidden" name="_csrf" value="5xMnz8SXEnvrGL_Xkk68eeuL8H-DVoAdJDlAmTBetGTefkKZsPpnObpM56bEPNVLnL-KGfks7FtKUynrciniDw==">                    
                                 <ul class="cart-product-list">
+
+                                    <?php
+
+
+
+                                        $arrPrice = [];
+                                        $key = 0;
+                                        
+   
+                                        $cart = Gloudemans\Shoppingcart\Facades\Cart::content();
+
+                                        $number_cart = count($cart);
+
+
+                                       
+                                     ?>  
+
+                                    @if($number_cart>0)
+                                    @foreach($cart as  $data)
+
+                                    <?php 
+
+                                        $price = (int)$data->price*(int)$data->qty;
+                                        $key++;
+                                        array_push($arrPrice, $price);
+
+                                        $infoProducts = App\Models\product::find($data->id);
+
+                                    ?> 
                                     <li class="divide cart-row row ">
                                         <div class="col-xs-12">
                                             <div class="cart-item-thumb">
@@ -72,23 +102,26 @@
                                                     <div class="progressive-media progressive-media-image progressive-media-loaded" data-img-src="/media/product/MX-ST50B/XV/1651376947vn-mx-st50b-mx-st50b-xv-531969550.jpg">
                                                         <div class="progressive-media-aspect" style="padding-bottom: 66.666666666667%;">
                                                             <div class="progressive-media-aspect-inner">
-                                                                <img class="progressive-media-image-placeholder progressive-media-content progressive-media-blur" src="/media/product/MX-ST50B/XV/1651376947vn-mx-st50b-mx-st50b-xv-531969550.jpg" crossorigin="anonymous"><img class="progressive-media-image-placeholder progressive-media-image-placeholder-edge progressive-media-content" src="/media/product/MX-ST50B/XV/1651376947vn-mx-st50b-mx-st50b-xv-531969550.jpg" crossorigin="anonymous">
-                                                                <noscript><img class="progressive-media-image-original progressive-media-content" src="/media/product/MX-ST50B/XV/1651376947vn-mx-st50b-mx-st50b-xv-531969550.jpg"></noscript>
-                                                                <img src="/media/product/MX-ST50B/XV/1651376947vn-mx-st50b-mx-st50b-xv-531969550.jpg" class="progressive-media-image-original progressive-media-content">
+                                                                <img class="progressive-media-image-placeholder progressive-media-content progressive-media-blur" src="{{  asset($infoProducts->Image) }}" crossorigin="anonymous"><img class="progressive-media-image-placeholder progressive-media-image-placeholder-edge progressive-media-content" src="{{  asset($infoProducts->Image) }}" crossorigin="anonymous">
+                                                                <noscript><img class="progressive-media-image-original progressive-media-content" src="{{  asset($infoProducts->Image) }}"></noscript>
+                                                                <img src="{{  asset($infoProducts->Image) }}" class="progressive-media-image-original progressive-media-content">
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </a>
                                             </div>
+
+
+                                            
                                             <div class="cart-item-top">
                                                 <div class="cart-item-details">
-                                                    <a href="/tvs/sound-tower/loa-thap-mx-st50b-2022">
+                                                    <a href="{{ route('details',  $infoProducts->Link)  }}">
                                                         <h3 class="name name-no-rtl">
-                                                            Loa tháp MX-ST50B 2022                                                
+                                                            {{ $infoProducts->Name }}                                               
                                                         </h3>
                                                     </a>
-                                                    <!--                                            <span class="size-color">Gray, 55</span>-->
-                                                    <div class="sku">MX-ST50B/XV</div>
+                                                   
+                                                    <div class="sku">{{ $infoProducts->productSku }} </div>
                                                     <span class="cart-item-promo-container"> </span>
                                                     <div class="cart-item-preorder"></div>
                                                 </div>
@@ -105,10 +138,10 @@
                                                         <div class="product-price-details column is-8">
                                                             <div class="columns">
                                                                 <div class="item-price text-right column">
-                                                                    10,990,000                                                            ₫
+                                                                     {{ @number_format($infoProducts->Price) }}đ
                                                                 </div>
                                                                 <div class="column is-2">
-                                                                    <span class="text-right remove-item remove-entry-button pull-right">XÓA</span>
+                                                                    <span class="text-right remove-item remove-entry-button pull-right" onclick="RemoveCart({{ $infoProducts->id }})">XÓA</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -123,9 +156,14 @@
                                                     </span>
                                                 </div>
                                             </div>
+
+                                           
                                         </div>
                                     </li>
                                     <li class="divide hidden-xs"></li>
+
+                                     @endforeach
+                                    @endif
                                 </ul>
                                 <div class="cart-vouchers-wrapper toggle-wrap">
                                     <div class="remove-promo-voucher">
@@ -298,6 +336,11 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                     <?php 
+
+                                        $totalPrice = array_sum($arrPrice);
+                                    ?>
                                     <div class="cart-totals">
                                         <hr class="discount-separator">
                                         <div class="row detail total-savings">
@@ -305,7 +348,7 @@
                                                 Giảm giá:
                                             </div>
                                             <div class="col-xs-6 total-right-value">
-                                                0 ₫
+                                                
                                             </div>
                                         </div>
                                         <hr class="discount-separator">
@@ -314,7 +357,7 @@
                                                 Tạm tính:
                                             </div>
                                             <div class="col-xs-6 total-right-value">
-                                                0 ₫
+                                               {{ number_format($totalPrice , 0, ',', '.')}}
                                             </div>
                                         </div>
                                         <div class="row totals">
@@ -322,7 +365,7 @@
                                                 <div id="basket-page-total">Thành tiền:</div>
                                             </div>
                                             <div class="col-xs-6 grand-total total-right-value">
-                                                0 ₫
+                                                {{ number_format($totalPrice , 0, ',', '.')}}
                                             </div>
                                         </div>
                                     </div>
@@ -462,7 +505,11 @@
         <img class="fab__icon" alt="" src="../images/arrow-up-circle-outline.svg">
         </a>
         <script src="{{  asset('assets/75a5fa0c/js/progressive-media.min.js')}}"></script>
-        <script src="{{  asset('assets/4f253995/jquery.js')}}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+crossorigin="anonymous"></script>
         <script src="{{  asset('assets/f8532ac8/yii.js')}}"></script>
         <script src="{{  asset('assets/f8532ac8/yii.validation.js')}}"></script>
         <script src="{{  asset('assets/f8532ac8/yii.activeForm.js')}}"></script>
@@ -471,9 +518,47 @@
         <script src="{{  asset('js/owl.carousel.min.js')}}"></script>
         <script src="{{  asset('js/slick.min.js')}}"></script>
         <script src="{{  asset('js/main.js')}}"></script>
+
         <script>jQuery(function ($) {
             jQuery('#w0').yiiActiveForm([{"id":"order-voucher","name":"voucher","container":".field-order-voucher","input":"#order-voucher","error":".invalid-feedback","validate":function (attribute, value, messages, deferred, $form) {yii.validation.string(value, messages, {"message":"Voucher phải là chuỗi.","max":50,"tooLong":"Voucher phải chứa nhiều nhất 50 ký tự.","skipOnEmpty":1});}},{"id":"order-voucher_2","name":"voucher_2","container":".field-order-voucher_2","input":"#order-voucher_2","error":".invalid-feedback","validate":function (attribute, value, messages, deferred, $form) {yii.validation.string(value, messages, {"message":"Voucher 2 phải là chuỗi.","max":50,"tooLong":"Voucher 2 phải chứa nhiều nhất 50 ký tự.","skipOnEmpty":1});}},{"id":"order-voucher_3","name":"voucher_3","container":".field-order-voucher_3","input":"#order-voucher_3","error":".invalid-feedback","validate":function (attribute, value, messages, deferred, $form) {yii.validation.string(value, messages, {"message":"Voucher 3 phải là chuỗi.","max":255,"tooLong":"Voucher 3 phải chứa nhiều nhất 255 ký tự.","skipOnEmpty":1});}}], {"errorSummary":".alert.alert-danger","errorCssClass":"is-invalid","successCssClass":"is-valid","validationStateOn":"input"});
             });
+        </script>
+
+
+
+        <script type="text/javascript">
+            
+            function RemoveCart(id) {
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+            
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ route('removeCart') }}",
+                    data: {
+                        product_id: id,
+                       
+                           
+                    },
+                    beforeSend: function() {
+                       
+                        $('.loader').show();
+
+                    },
+                    success: function(result){
+            
+                      window.location.href = result; 
+                        
+                    }
+                });
+
+
+                
+            }
         </script>
     </body>
 </html>

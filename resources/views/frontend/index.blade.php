@@ -103,6 +103,7 @@
                         $info_pd = App\Models\product::find($value);
 
                     ?>
+                    @if(!empty($info_pd->Link))
                     <div class="column is-3">
                         <div class="product-item">
                            <!--  <div class="merchandising-flag has-text-centered">
@@ -163,7 +164,7 @@
                                     <div class="custom-button has-text-centered">
                                         <div class="actions--add-to-cart">
                                             <div class="has-text-centered">
-                                                <button class="btn btn-default btn-cart" data-url-cart="/cart/add" data-product-id="109">Thêm vào giỏ hàng
+                                                <button class="btn btn-default btn-cart" onclick="addToCart({{ $info_pd->id }})">Thêm vào giỏ hàng
                                                 </button>
 
 
@@ -175,6 +176,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
 
 
 
@@ -260,6 +262,38 @@ crossorigin="anonymous"></script>
             }
         }); 
     })
+
+
+     function addToCart(id) {
+    
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    
+        $.ajax({
+            type: 'POST',
+            url: "{{ route('cart') }}",
+            data: {
+                product_id: id,
+                gift_check:$('#gift_checked').val()
+                   
+            },
+            beforeSend: function() {
+               
+                $('.loader').show();
+
+            },
+            success: function(result){
+    
+              window.location.href = result; 
+                
+            }
+        });
+        
+    }
+
   
 </script>
 @endpush
