@@ -27,9 +27,7 @@ use App\Http\Controllers\Frontend\filterController;
 
 use App\Models\redirectLink;
 
-
 use Session;
-
 
 
 class categoryController extends Controller
@@ -520,9 +518,18 @@ class categoryController extends Controller
 
         $data_pd = json_decode($data->product_id);
 
-        $product = product::whereIn('id', $data_pd)->paginate(9);
-        
-        return view('frontend.cate', compact('product', 'data'));
+       
+        if(!empty($data_pd)){
+
+          
+            $product = product::whereIn('id', $data_pd)->paginate(9);
+
+
+            
+            return view('frontend.cate', compact('product', 'data'));
+        }
+
+         return abort('404');
     }
 
 

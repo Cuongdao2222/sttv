@@ -1504,6 +1504,7 @@
                     <!-- other content in here -->
                 </div>
             </div>
+
             <div class="container">
                 <div class="columns is-hidden-mobile">
                     <div class="column is-5">
@@ -1524,9 +1525,10 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="columns">
                     <div class="column is-2 is-hidden-mobile">
-                        <form id="theForm" action="/tvs" method="post">
+                       
                             <div class="" style="opacity: 1; display: block;">
                                 <div class="">
                                     <div class="pf-finder-v2__filters-list-top">
@@ -1554,6 +1556,7 @@
                                                         </svg>
                                                     </a>
                                                 </h3>
+
                                                 <div class="pf-finder-v2__filters-list-item-wrap" style="">
                                                     <ul class="pf-finder-v2__filters-list-list-item">
 
@@ -1564,7 +1567,7 @@
                                                         @foreach($groups as $key => $val)
                                                         <li class="pf-finder-v2__filters-list-list-items">
                                                             <div class="checkbox-radio">
-                                                                <input type="checkbox" name="category" class="hidden"  value="{{ $key }}" id="checkbox-{{ $key }}">
+                                                                <input type="checkbox" name="category" class="checkbox-pop" value="{{ $key }}" id="checkbox-{{ $key }}">
                                                                 <label class="checkbox-radio__label" for="checkbox-{{ $key }}">
                                                                 <span class="checkbox-radio__label-text">{{ $val->name }}</span>
                                                                 </label>
@@ -1575,7 +1578,7 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div class="pf-finder-v2__filters-list-list-area pf-finder-v2__filters-list-list--active" style="display:block">
+                                           <!--  <div class="pf-finder-v2__filters-list-list-area pf-finder-v2__filters-list-list--active" style="display:block">
                                                 <h3 class="pf-finder-v2__filters-list-list-headline">
                                                     <a href="javascript:void(0)" class="pf-finder-v2__filters-list-list-headline-text">
                                                     Theo giá<span class="hidden">Nhấp để thu gọn</span>
@@ -1672,12 +1675,12 @@
                                                         </li>
                                                     </ul>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        
                     </div>
                      @if(count($product))
                     <ul class="column is-10 product-listing product-grid plp-content">
@@ -1712,6 +1715,7 @@
                                             <a title="{{ $val->Name }}" class="product-title" href="{{ route('details', $val->Link) }}">
                                                 {{ @$val->Name }}                                          
                                             </a>
+
                                             <span class="product-sku">{{ @$val->productSku  }}</span>
                                         </div>
                                     </div>
@@ -1805,10 +1809,27 @@
     <script src="{{ asset('js/slick.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
 
-    @endpush
     <script type="text/javascript">
-            function addToCart(id) {
-    
+
+        var check_val =[]; 
+
+        $('.checkbox-pop').change(function(){
+            if($(this).prop('checked') === true){
+
+                check_val.push($(this).val());
+
+
+               
+            }
+            else{
+
+                const index = check_val.indexOf(5);
+                if (index > -1) { 
+                  check_val.splice(index, 1); 
+                }
+
+            }
+
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1819,22 +1840,54 @@
                 type: 'POST',
                 url: "{{ route('cart') }}",
                 data: {
-                    product_id: id,
-                    gift_check:$('#gift_checked').val()
-                       
-                },
-                beforeSend: function() {
+                    data: JSON.parse(check_val),
                    
-                    $('.loader').show();
-
                 },
+               
                 success: function(result){
         
                   window.location.href = result; 
                     
                 }
             });
+        });
+       
+        
+            function addToCart(id) {
+    
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+            
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ route('cart') }}",
+                    data: {
+                        product_id: id,
+                        gift_check:$('#gift_checked').val()
+                           
+                    },
+                    beforeSend: function() {
+                       
+                        $('.loader').show();
+
+                    },
+                    success: function(result){
+            
+                      window.location.href = result; 
+                        
+                    }
+                });
+
+            }
     </script>
+
+  
+
+    @endpush
+
 
 @endsection 
     

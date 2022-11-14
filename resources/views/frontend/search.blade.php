@@ -1807,7 +1807,13 @@
                                     <div class="product-item-size">
                                         <ul class="product-item-size-list">
                                             <li class="product-item-size active">
-                                                65                                            
+                                                <?php 
+                                                   $pattern = '/[1-9][0-9]{0,2}\sinch/';
+                                                   $string = $val->Name;
+                                                ?>
+                                                @if (preg_match($pattern, $string, $matches)) 
+                                                       {{ intval($matches[0]) }}
+                                                @endif                                                                             
                                             </li>
                                         </ul>
                                     </div>
