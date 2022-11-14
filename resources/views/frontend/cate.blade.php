@@ -18,6 +18,13 @@
     <link href="{{ asset('css/slick-theme.css')}}" rel="stylesheet">
     <link href="{{ asset('css/site.css')}}" rel="stylesheet">
     <link href="{{ asset('assets/75a5fa0c/css/progressive-media.min.css')}}" rel="stylesheet">
+
+    <style type="text/css">
+        .btn-cart{
+            width: 100%;
+        }
+
+    </style>
     @endpush
 
     <div class="category">
@@ -1742,15 +1749,10 @@
                                         <!--                                        </div>-->
                                         <span>{{ @ number_format($val->Price) }} ₫</span>
                                     </div>
-                                    <!--                                    <div class="promo-leasing" style="height: 40px;">-->
-                                    <!--                                        <div class="product-promo promo">-->
-                                    <!--                                            <span>chiết khấu 50.000.565&nbsp;₫ (giá gốc <del>189.899.600&nbsp;₫</del>)</span>-->
-                                    <!--                                        </div>-->
-                                    <!--                                    </div>-->
+                                 
                                     <div class="product-card-v2__cta">
-                                        <button class="cta cta--contained cta--black js-buy-now btn-cart" data-url-cart="/cart/add" data-product-id="115">
-                                        Thêm vào giỏ hàng</button>
-                                        <a class="cta cta--outlined cta--black" href="neo-qled-8k/smart-tv-8k-neo-qled-65-inch-qn700b-2022.html">TÌM HIỂU THÊM</a>
+                                        <div class="btn btn-default btn-cart" onclick="addToCart({{ $val->id }})">Thêm vào giỏ hàng</div>
+                                        <a class="cta cta--outlined cta--black" href="{{ route('details', $val->Link) }}">TÌM HIỂU THÊM</a>
                                     </div>
                                 </div>
                             </div>
@@ -1804,6 +1806,35 @@
     <script src="{{ asset('js/main.js') }}"></script>
 
     @endpush
+    <script type="text/javascript">
+            function addToCart(id) {
+    
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('cart') }}",
+                data: {
+                    product_id: id,
+                    gift_check:$('#gift_checked').val()
+                       
+                },
+                beforeSend: function() {
+                   
+                    $('.loader').show();
+
+                },
+                success: function(result){
+        
+                  window.location.href = result; 
+                    
+                }
+            });
+    </script>
 
 @endsection 
     
