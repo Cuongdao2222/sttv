@@ -5,7 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="images/Favicon.ico" rel="shortcut icon" type="image/x-icon">
-        <title>Site tivi</title>
+        @if(isset($meta))
+        <title>{{ $meta->meta_title }}</title>
+        <meta property="og:description" content="{{ $meta->meta_content }}" /> 
+        <meta name="keywords" content="{{ $meta->meta_key_words??'sieu thi dien may, siêu thị điện máy, mua điện máy giá rẻ, siêu thị điện máy uy tín, siêu thị điện máy trực tuyến' }}"/>
+        @endif
         <meta name="csrf-param" content="_csrf">
        <meta name="csrf-token" content="{{ csrf_token() }}">
 
