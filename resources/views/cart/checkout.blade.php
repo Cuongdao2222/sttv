@@ -151,7 +151,7 @@
                                         <div class="help-block clearfix hidden-xs hidden-sm"></div>
                                        
                                         <div class="help-block"></div>
-                                        <button type="submit" id="send-form" class="btn btn-default btn-next" name="cart-button" >Đặt hàng</button>                            
+                                        <button type="submit" id="send-form" class="btn btn-default btn-next" name="cart-button" >Đặt hàng ngay</button>                            
                                     </form>
                                 </div>
                             </section>
