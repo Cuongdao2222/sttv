@@ -4,11 +4,18 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="images/Favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link href="{{ asset('images/logo.jpg') }}" rel="shortcut icon" type="image/x-icon">
         @if(isset($meta))
         <title>{{ $meta->meta_title }}</title>
         <meta property="og:description" content="{{ $meta->meta_content }}" /> 
         <meta name="keywords" content="{{ $meta->meta_key_words??'sieu thi dien may, siêu thị điện máy, mua điện máy giá rẻ, siêu thị điện máy uy tín, siêu thị điện máy trực tuyến' }}"/>
+
+        @else
+        <title> Siêu Thị Tivi - Mua Sắm Tivi Chính Hãng Giá Rẻ Tại Kho</title>
+        <meta name="robots" content="noindex, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta property="og:title" content="Siêu Thị Tivi - Mua Sắm Tivi Chính Hãng Giá Rẻ Tại Kho" />
+        <meta property="og:description" content="Siêu Thị Tivi Chuyên Cung Cấp Và Phân Phối Sản Phẩm Tivi Chính Hãng Sony, LG, SamSung, TCL,... Giá Rẻ Nhất Tại Kho. Dịch Vụ Uy Tín Chuyên Nghiệp." />
+       
         @endif
         <meta name="csrf-param" content="_csrf">
        <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -34,7 +41,7 @@
                             <span aria-hidden="true"></span>
                             </a>
                             <a class="navbar-item" href="/">
-                            <img src="{{ asset('images/global-samsung-logo.svg')  }}" width="112" height="28">
+                            <img src="{{ asset('images/logo.jpg')  }}" width="112" height="28">
                             </a>
                             <div class="is-hidden-tablet search-mobile">
                                 <form action="{{ route('search-product-frontend') }}" method="get">
@@ -46,7 +53,7 @@
                                     </button>
                                 </form>
                             </div>
-                            <a class="is-hidden-tablet navbar-item" style="margin-left: auto" href="index-1.htm"><img style="height: 40px;" src="{{ asset('images/LOGO-ADG.png')}}">
+                            <a class="is-hidden-tablet navbar-item" style="margin-left: auto" href="index-1.htm"><img style="height: 40px;" src="{{ asset('images/logo.jpg')}}">
                             </a>
                         </div>
 
@@ -77,7 +84,7 @@
                                             </svg>
                                         </button>
                                     </form>
-                                    <a href="index-1.htm"><img src="{{ asset('images/LOGO-ADG.png') }}"></a>
+                                    <a href="/"><img src="{{ asset('images/logo.jpg') }}"></a>
                                     <a class="position-relative" href="{{ route('cart-sttv') }}">
                                     <img src="{{ asset('images/cart-outline.png') }}">
                                     <span class="badge badge-danger badge-cart">{{ $number_cart }}</span>
@@ -125,8 +132,9 @@
                                 <div class="footer-category__list-wrap">
                                     <ul class="footer-category__list">
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="#" title="">Giới thiệu
-                                            AnhDuy Group
+                                            <a class="footer-category__link" href="#" title="">
+                                                Giới thiệu
+                                            
                                             </a>
                                         </li>
                                         <li class="footer-category__item">
@@ -187,9 +195,7 @@
                             <div class="footer-local-logo--wrap">
                                 <div class="footer-local-logo__item">
                                     <a class="footer-mark__link" href="https://www.online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=14561" target="_blank">
-                                        <div class="image image--main-loaded">
-                                            <img class="image__main responsive-img image--loaded" alt="Đã đăng ký với Bộ Công Thương" src="{{asset('images/gov-logos-2.png') }}" >
-                                        </div>
+                                        
                                     </a>
                                 </div>
                             </div>

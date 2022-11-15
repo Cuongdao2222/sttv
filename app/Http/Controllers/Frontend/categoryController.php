@@ -524,9 +524,11 @@ class categoryController extends Controller
           
             $product = product::whereIn('id', $data_pd)->paginate(9);
 
+            $meta = metaSeo::find($data->Meta_id)??'';
+
 
             
-            return view('frontend.cate', compact('product', 'data'));
+            return view('frontend.cate', compact('product', 'data', 'meta'));
         }
 
          return abort('404');
