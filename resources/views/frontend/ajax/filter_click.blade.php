@@ -51,7 +51,7 @@
 
                             <?php 
                                $pattern = '/[1-9][0-9]{0,2}\sinch/';
-                               $string = $val->Name;
+                               $string = strtolower($val->Name);
                             ?>
                             @if (preg_match($pattern, $string, $matches)) 
                                    {{ intval($matches[0]) }}

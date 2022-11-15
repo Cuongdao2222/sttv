@@ -20,6 +20,8 @@
         <link href="{{ asset('css/slick.css')}}" rel="stylesheet">
         <link href="{{ asset('css/slick-theme.css')}}" rel="stylesheet">
         <link href="{{ asset('css/site.css')}}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
          <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <body class="page-cartPage pageType-ContentPage template-pages-CartPageTemplate pageLabel-cart">
@@ -86,7 +88,7 @@
                                      ?>  
 
                                     @if($number_cart>0)
-                                    @foreach($cart as  $data)
+                                    @foreach($cart as $key =>  $data)
 
                                     <?php 
 
@@ -100,8 +102,8 @@
                                     <li class="divide cart-row row ">
                                         <div class="col-xs-12">
                                             <div class="cart-item-thumb">
-                                                <a href="/tvs/sound-tower/loa-thap-mx-st50b-2022">
-                                                    <div class="progressive-media progressive-media-image progressive-media-loaded" data-img-src="/media/product/MX-ST50B/XV/1651376947vn-mx-st50b-mx-st50b-xv-531969550.jpg">
+                                                <a href="{{ route('details', $infoProducts->Link) }}">
+                                                    <div class="progressive-media progressive-media-image progressive-media-loaded" data-img-src="{{ asset($infoProducts->Image) }}">
                                                         <div class="progressive-media-aspect" style="padding-bottom: 66.666666666667%;">
                                                             <div class="progressive-media-aspect-inner">
                                                                 <img class="progressive-media-image-placeholder progressive-media-content progressive-media-blur" src="{{  asset($infoProducts->Image) }}" crossorigin="anonymous"><img class="progressive-media-image-placeholder progressive-media-image-placeholder-edge progressive-media-content" src="{{  asset($infoProducts->Image) }}" crossorigin="anonymous">
@@ -131,8 +133,21 @@
                                                     <div class="cart-item-col-4 columns is-mobile">
                                                         <div class="cart-item-quantity product-quantity-details column is-4-mobile">
                                                             <div class="cart-quantity-ui">
-                                                                <div class="form-group field-order-quantity_110">
-                                                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected"><span class="input-group-btn input-group-prepend"><button class="btn btn-decrease bootstrap-touchspin-down" type="button"><i class="icofont-minus"></i></button></span><input type="text" id="order-quantity_110" class="form-control" name="Order[total_quantity]" data-krajee-touchspin="TouchSpin_1b49ee50"><span class="input-group-btn input-group-append"><button class="btn btn-increase bootstrap-touchspin-up" type="button"><i class="icofont-plus"></i></button></span></div>
+                                                                <div class="form-group field-order-quantity_{{ $key }}">
+                                                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                                                        <span class="input-group-btn input-group-prepend">
+                                                                            <button class="btn btn-decrease bootstrap-touchspin-down" type="button" onclick="tru('{{ $key  }}', '{{ $data->rowId }}')">
+                                                                                <i class="fa fa-minus" aria-hidden="true"></i>
+                                                                            </button>
+                                                                        </span>
+                                                                        <input type="text" id="order-quantity_{{ $key }}" class="form-control" name="Order[total_quantity]" data-krajee-touchspin="TouchSpin_1b49ee50" value="{{ $data->qty??1 }}">
+                                                                        <span class="input-group-btn input-group-append">
+                                                                            <button class="btn btn-increase bootstrap-touchspin-up" type="button" onclick="cong('{{ $key }}', '{{ $data->rowId }}')">
+                                                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                            </button>
+                                                                        </span>
+                                                                    </div>
+
                                                                     <div class="invalid-feedback"></div>
                                                                 </div>
                                                             </div>

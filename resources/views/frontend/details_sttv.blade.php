@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="pd-buying-price__cta">
-                        <button class="btn cta cta--contained cta--emphasis add-special-tagging js-buy-now tg-pre-order btn-cart" href="javascript:;" data-url-cart="/cart/add" data-product-id="51">MUA NGAY
+                        <button class="btn cta cta--contained cta--emphasis add-special-tagging js-buy-now tg-pre-order btn-cart" href="javascript:;" onclick="addToCart({{ $data->id }})">MUA NGAY
                         </button>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
                                 </p>
                                 <div class="cost-box__cta-wrap ">
                                     <span class="cost-box__cta">
-                                    <button class="btn cta cta--contained cta--emphasis add-special-tagging js-buy-now tg-pre-order btn-cart" href="javascript:;" data-url-cart="{{ route('cart-sttv') }}" data-product-id="51">MUA NGAY</button>
+                                    <button class="btn cta cta--contained cta--emphasis add-special-tagging js-buy-now tg-pre-order btn-cart" href="javascript:;" onclick="addToCart({{ $data->id }})">MUA NGAY</button>
                                     </span>
                                 </div>
                             </div>
@@ -192,6 +192,40 @@
 <script src="{{ asset('js/slick.min.js')}}"></script>
 <script src="{{ asset('js/main.js')}}"></script>
 <script src="{{ asset('assets/75a5fa0c/js/progressive-media.min.js')}}"></script>
+
+<script type="text/javascript">
+    
+ function addToCart(id) {
+    
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $.ajax({
+        type: 'POST',
+        url: "{{ route('cart') }}",
+        data: {
+            product_id: id,
+            gift_check:$('#gift_checked').val()
+               
+        },
+        beforeSend: function() {
+           
+            $('.loader').show();
+
+        },
+        success: function(result){
+
+           window.location.href = result; 
+
+        }
+    });
+}    
+
+</script>
+
 
 @endpush
 
