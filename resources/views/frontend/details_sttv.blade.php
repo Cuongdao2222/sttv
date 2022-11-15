@@ -156,7 +156,13 @@
                     </section>
                 </div>
             </div>
+
+
         </div>
+
+        <div class="content" id="contents-scroll">
+                 {!! html_entity_decode($data->Detail)   !!}
+            </div>    
         <style>
             .feature-benefit-full-bleed__figure {
             background-color: #000;
