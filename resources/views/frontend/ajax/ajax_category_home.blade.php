@@ -18,7 +18,7 @@
                 </div> -->
                 <div class="product-item_image">
                     <div class="item-img has-text-centered">
-                        <a href="tvs/the-premiere/may-chieu-100-inch-bo-tui-the-freestyle.html">
+                        <a href="{{ route('details', $info_pd->Link) }}">
                             <div class="progressive-media progressive-media-image progressive-media-unloaded" data-img-src="{{ asset($info_pd->Image) }}">
                                 <div class="progressive-media-aspect" style="padding-bottom: 80%;">
                                     <div class="progressive-media-aspect-inner">
@@ -41,12 +41,7 @@
                         <div class="merchandising-wrapper">
                             <div class="merchandising-box text-center">
                                 <div class="merchandising-text">
-                                    <br> - Trả góp 0% khi mua sản phẩm Tivi Samsung (HD Saison & HomeCredit) (1/9 ~ 30/11/2022)
-                                    <br> - Quà tặng The Freestyle: (1) Pin chính hãng, (2) Case bảo vệ (01/08 ~ 30/09/2022)
-                                    <br> - Vie ON 8K: VIP Cine 06 tháng Xem toàn bộ nội dung trên VieON VIP và Kho phim bom tấn HBOGo & 3 Kênh K+ (K+ Cine, K+ Life, K+ Kids)… (01/09/22 ~ 31/10/22)
-                                    <br> - Galaxy Play: Crystal+ 06 tháng xem phim SVOD Premium + 06 phim chiếu rạp TVOD trong 03 tháng +  Phim chất lượng Dolby Atmos (01/09/22 ~ 31/10/22)
-                                    <br> - Clip TV: 18 tháng xem Gói Gia Đình tiêu chuẩn. Xem truyền hình trong ngoài nước và VOD (01/09/22 ~ 31/10/22)
-                                    <br> - Apple TV: 03 tháng xem phim (25/08/22 <br> - 28/11/22)
+                                  {!! @$info_pd->Salient_Features !!}
                                 </div>
                             </div>
                         </div>

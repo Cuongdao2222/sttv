@@ -7,7 +7,7 @@
         <link href="{{ asset('images/Favicon.ico')}}" rel="shortcut icon" type="image/x-icon">
         <title>Giỏ hàng</title>
         <meta name="csrf-param" content="_csrf">
-        <meta name="csrf-token" content="5xMnz8SXEnvrGL_Xkk68eeuL8H-DVoAdJDlAmTBetGTefkKZsPpnObpM56bEPNVLnL-KGfks7FtKUynrciniDw==">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link href="{{ asset('css/style.css')}}" rel="stylesheet">
         <link href="{{ asset('assets/75a5fa0c/css/progressive-media.min.css')}}" rel="stylesheet">
         <link href="{{ asset('assets/35deb2b4/css/bootstrap.css')}}" rel="stylesheet">
@@ -32,20 +32,20 @@
                     <div class="column is-half-mobile">
                         <div class="back-to-shop">
                             <a href="/">
-                            <i class="icofont-simple-left"></i>
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
                             <span>Tiếp tục mua hàng</span>
                             </a>
                         </div>
                     </div>
                     <div class="column">
                         <div class="cart-logo text-center">
-                            <a href="../index.htm">
+                            <a href="/">
                             <img alt="" src="{{ asset('../images/global-samsung-logo.svg')}}"></a>
                         </div>
                     </div>
                     <div class="column">
                         <div class="anhduy-logo text-right">
-                            <a href="../index-1.htm">
+                            <a href="/">
                             <img height="40" src="{{ asset('../images/LOGO-ADG.png') }}">
                             </a>
                         </div>
@@ -88,7 +88,7 @@
                                      ?>  
 
                                     @if($number_cart>0)
-                                    @foreach($cart as $key =>  $data)
+                                    @foreach($cart as $key => $data)
 
                                     <?php 
 
@@ -140,7 +140,7 @@
                                                                                 <i class="fa fa-minus" aria-hidden="true"></i>
                                                                             </button>
                                                                         </span>
-                                                                        <input type="text" id="order-quantity_{{ $key }}" class="form-control" name="Order[total_quantity]" data-krajee-touchspin="TouchSpin_1b49ee50" value="{{ $data->qty??1 }}">
+                                                                        <input type="text" id="order-quantity_{{ $key }}" class="form-control" name="Order[total_quantity]" data-krajee-touchspin="TouchSpin_1b49ee50" value="{{ $data->qty??1 }}" readonly>
                                                                         <span class="input-group-btn input-group-append">
                                                                             <button class="btn btn-increase bootstrap-touchspin-up" type="button" onclick="cong('{{ $key }}', '{{ $data->rowId }}')">
                                                                                 <i class="fa fa-plus" aria-hidden="true"></i>
@@ -155,7 +155,12 @@
                                                         <div class="product-price-details column is-8">
                                                             <div class="columns">
                                                                 <div class="item-price text-right column">
-                                                                     {{ @number_format($infoProducts->Price) }}đ
+
+                                                                    <?php 
+                                                                        $prices = $data->price*$data->qty;
+                                                                    ?>
+
+                                                                     {{ @number_format($prices) }}đ
                                                                 </div>
 
 
@@ -184,7 +189,7 @@
                                      @endforeach
                                     @endif
                                 </ul>
-                                <div class="cart-vouchers-wrapper toggle-wrap">
+                                <!-- <div class="cart-vouchers-wrapper toggle-wrap">
                                     <div class="remove-promo-voucher">
                                     </div>
                                     <div class="add-promo-voucher">
@@ -248,15 +253,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </form>
                             <!-- Euro bonus -->
                             <input type="hidden" value="[]" id="list_product_id">
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="continue-shopping col-md-6 col-sm-6 hidden-xs">
-                                        <a class="btn-link" tabindex="0" href="../index.htm">
-                                        Tiếp tục mua hàng</a>
+                                        <a class="btn-link" tabindex="0" href="/">
+                                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                            Tiếp tục mua hàng
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -390,7 +397,7 @@
                                     </div>
                                     <div class="cart-actions row">
                                         <div class="checkout-button col-sm-12">
-                                            <a href="checkout.html" class="btn btn-tertiary btn-block checkoutButton continueCheckout">
+                                            <a href="{{ route('checkoutCart') }}" class="btn btn-tertiary btn-block checkoutButton continueCheckout">
                                             TIẾP TỤC
                                             </a>
                                         </div>
@@ -577,6 +584,69 @@ crossorigin="anonymous"></script>
 
 
                 
+            }
+
+            function tru(key, rowId){
+                const val_number = $('#order-quantity_'+key).val();
+                val_numbers =  parseInt(val_number);
+
+    
+                if(val_numbers>0){
+                    val_numbers = val_numbers-1;
+
+                    $.ajaxSetup({
+                    headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "{{ route('addCartNumber') }}",
+                        data: {
+                            rowId: rowId,
+                            number:val_numbers
+                        },
+                        success: function(result){
+
+                           window.location.href = result; 
+                            
+                        }
+                    });
+                    
+                }
+            }
+
+
+            function cong(key, rowId){
+                const val_number = $('#order-quantity_'+key).val();
+                val_numbers =  parseInt(val_number);
+
+    
+                if(val_numbers>0){
+                    val_numbers = val_numbers+1;
+
+                    $.ajaxSetup({
+                    headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "{{ route('addCartNumber') }}",
+                        data: {
+                            rowId: rowId,
+                            number:val_numbers
+                        },
+                        success: function(result){
+
+                           window.location.href = result; 
+                            
+                        }
+                    });
+                    
+                }
             }
         </script>
     </body>

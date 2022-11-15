@@ -98,6 +98,8 @@ Route::get('update-order-flash-deal', 'flashdealController@dealOrder')->name('or
 
 Route::get('sitemap_article.xml', 'sitemapController@sitemapChildBlog');
 
+Route::get('cart/checkout', 'Frontend\categoryController@checkoutCart')->name('checkoutCart');
+
 // Route::get('inCrawl', 'crawlController@allproduct');
 
 // Route::get('/tin-chi-tiet', function () {

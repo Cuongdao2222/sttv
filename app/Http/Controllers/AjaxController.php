@@ -744,10 +744,9 @@ class AjaxController extends Controller
 
         Cart::update($rowId, $qualtity);
 
-        $data_cart = Cart::content();
+        return route('cart-sttv');
 
-        return view('frontend.ajax.cart', compact('data_cart'));
-       
+      
     }
 
     public function addConfirm(Request $request)

@@ -53,8 +53,10 @@
                         </div>
                     </div>
                     <div class="pd-buying-price__cta">
+                        @if(@number_format($data->Price)>0)
                         <button class="btn cta cta--contained cta--emphasis add-special-tagging js-buy-now tg-pre-order btn-cart" href="javascript:;" onclick="addToCart({{ $data->id }})">MUA NGAY
                         </button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -143,7 +145,10 @@
                                 </p>
                                 <div class="cost-box__cta-wrap ">
                                     <span class="cost-box__cta">
+
+                                    @if(@number_format($data->Price)>0)    
                                     <button class="btn cta cta--contained cta--emphasis add-special-tagging js-buy-now tg-pre-order btn-cart" href="javascript:;" onclick="addToCart({{ $data->id }})">MUA NGAY</button>
+                                    @endif
                                     </span>
                                 </div>
                             </div>

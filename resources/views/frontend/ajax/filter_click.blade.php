@@ -70,7 +70,10 @@
                 </div>
              
                 <div class="product-card-v2__cta">
-                    <div class="btn btn-default btn-cart" onclick="addToCart({{ $val->id }})">Thêm vào giỏ hàng</div>
+                        @if(number_format($val->Price)>0)
+                            <div class="btn btn-default btn-cart" onclick="addToCart({{ $val->id }})">Thêm vào giỏ hàng</div>
+                        @endif
+                    
                     <a class="cta cta--outlined cta--black" href="{{ route('details', $val->Link) }}">TÌM HIỂU THÊM</a>
                 </div>
             </div>

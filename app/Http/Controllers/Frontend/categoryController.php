@@ -743,6 +743,13 @@ class categoryController extends Controller
         
     }
 
+    public function checkoutCart()
+    {
+         $cart =  Cart::content();
+
+        return view('cart.checkout', compact('cart'));
+    }
+
 
 
 }
