@@ -22,13 +22,39 @@
 
 <div class="site-index">
     <div class="swiper-container home-swiper swiper">
+        
         <div class="swiper-wrapper">
+
+
+            @if(isset($banners))
+
+            @foreach($banners as $value)
+
             <div class="swiper-slide">
                 <a href="samsung/tvs/the-premiere.html">
-                <img class="is-hidden-mobile" src="/media/slider/16553787631650515520ThePremiere 16062022.jpg">
-                <img class="is-hidden-tablet" src="/media/slider/16505140421634306523ThePremiere_mobile 21.04.2022.jpg">
+                <img class="is-hidden-mobile" src="https://dienmaynguoiviet.vn/{{ $value->image }}">
+                <img class="is-hidden-tablet" src="https://dienmaynguoiviet.vn/{{ $value->image }}">
                 </a>
             </div>
+           <!--  <div class="item" data-dot="<span>{{ $value->title }}</span>">
+                <a aria-label="slide" data-cate="0" data-place="1535" href="{{ $value->link }}" ><img  data-src="{{ asset($value->image) }}" alt="{{ $value->title }}" class="lazyload"></a>
+            </div> -->
+            @endforeach
+            @endif
+
+           <!--  <div class="swiper-slide">
+                <a href="samsung/tvs/the-premiere.html">
+                <img class="is-hidden-mobile" src="media/slider/16553787631650515520ThePremiere 16062022.jpg">
+                <img class="is-hidden-tablet" src="media/slider/16505140421634306523ThePremiere_mobile 21.04.2022.jpg">
+                </a>
+            </div>
+
+            <div class="swiper-slide">
+                <a href="tvs/sound-tower.html">
+                <img class="is-hidden-mobile" src="media/slider/16553787631650515520ThePremiere 16062022.jpg">
+                <img class="is-hidden-tablet" src="media/slider/1665634668dealer banner WC Mobile.jpg">
+                </a>
+            </div> -->
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
@@ -36,6 +62,8 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
+       
+       
     <section class="section">
         <div class="columns">
             <div class="column">
@@ -143,8 +171,14 @@
                                         <div class="merchandising-box text-center">
                                             <div class="merchandising-text">
 
-                                               
-                                                {!! @$info_pd->Salient_Features !!}
+                                                <?php 
+
+                                                    $Salient_Features = str_replace('tbody', 'ul', $info_pd->Salient_Features);
+
+                                                    $Salient_Features = str_replace('tr', 'li', $Salient_Features);
+
+                                                ?>
+                                                {!! @$Salient_Features !!}
                                             </div>
                                         </div>
                                     </div>
@@ -212,21 +246,14 @@
                 </div>
             </section>
         </div>
-
-        
     </div>
 </div>
 
 @push('js')
 
+
 <script src="{{ asset('assets/75a5fa0c/js/progressive-media.min.js')}}"></script>
 <script src="{{ asset('assets/4f253995/jquery.js')}}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-crossorigin="anonymous"></script>
-
 <script src="{{ asset('assets/f8532ac8/yii.js')}}"></script>
 <script src="{{ asset('assets/35deb2b4/js/bootstrap.bundle.js')}}"></script>
 <script src="{{ asset('swiper@8.4.2/swiper-bundle.min.js')}}"></script>
@@ -323,6 +350,14 @@ crossorigin="anonymous"></script>
         });
         
     }
+
+    var mySwiper = new Swiper ('.swiper-slide', {
+    // Các Parameters
+    direction: 'vertical',
+    loop: true,
+
+   
+  })
 
   
 </script>

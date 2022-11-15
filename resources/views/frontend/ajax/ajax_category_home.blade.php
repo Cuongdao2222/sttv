@@ -41,6 +41,8 @@
                         <div class="merchandising-wrapper">
                             <div class="merchandising-box text-center">
                                 <div class="merchandising-text">
+
+                                    
                                   {!! @$info_pd->Salient_Features !!}
                                 </div>
                             </div>
