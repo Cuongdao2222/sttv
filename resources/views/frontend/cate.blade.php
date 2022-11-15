@@ -1578,7 +1578,7 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                           <!--  <div class="pf-finder-v2__filters-list-list-area pf-finder-v2__filters-list-list--active" style="display:block">
+                                            <div class="pf-finder-v2__filters-list-list-area pf-finder-v2__filters-list-list--active" style="display:block">
                                                 <h3 class="pf-finder-v2__filters-list-list-headline">
                                                     <a href="javascript:void(0)" class="pf-finder-v2__filters-list-list-headline-text">
                                                     Theo giá<span class="hidden">Nhấp để thu gọn</span>
@@ -1675,7 +1675,7 @@
                                                         </li>
                                                     </ul>
                                                 </div>
-                                            </div> -->
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
