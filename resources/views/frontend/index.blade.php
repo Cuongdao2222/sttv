@@ -83,9 +83,11 @@
 
         <?php 
 
-            $product = App\Models\groupProduct::find($group[0]->id);
+            $product        = App\Models\groupProduct::find($group[0]->id);
 
-            $product_sam = collect(json_decode($product->product_id))->take(3);
+            $product_sam    = json_decode($product->product_id);
+
+            $product_view   =  App\Models\product::whereIn('id',  $product_sam)->orderBy('id', 'desc')->take(3);
 
           
         ?>
@@ -95,8 +97,8 @@
             <section class="section">
                 <div class="columns is-multiline is-centered">
 
-                    @if($product_sam->count()>0)
-                    @foreach($product_sam as $key => $value)
+                    @if($product_view->count()>0)
+                    @foreach($product_view as $key => $value)
 
                     <?php
 
@@ -120,7 +122,7 @@
                                                     <img class="progressive-media-image-placeholder progressive-media-content progressive-media-blur" src="{{ asset($info_pd->Image) }}" crossorigin="anonymous">
 
                                                     <img class="progressive-media-image-placeholder progressive-media-image-placeholder-edge progressive-media-content" src="{{ asset($info_pd->Image) }}" crossorigin="anonymous">
-                                                    
+
                                                     <noscript>
                                                     <img class="progressive-media-image-original progressive-media-content" src="{{ asset($info_pd->Image) }}"></noscript>
                                                 </div>
@@ -232,6 +234,22 @@ crossorigin="anonymous"></script>
 <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/slick.min.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
+
+<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+@if (session('success'))
+
+
+    <script type="text/javascript">
+        swal({ title: '{{ session("success") }}', type: 'success' });
+      
+    </script>
+    <?php
+    Session::forget('success');
+    ?>
+
+    
+@endif
+
 
 <script type="text/javascript">
 

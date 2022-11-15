@@ -62,68 +62,40 @@
                                     <h2>Điền thông tin giao hàng</h2>
                                 </div>
                                 <div class="checkout-form">
-                                    <form id="contact-form" action="/cart/checkout" method="post">
-                                        <input type="hidden" name="_csrf" value="YmNIVjUuXElIe-MIrpMQzYJ2vVI-wQAthSarv006CoxbDi0AQUMpCxkvu3n44Xn_9ULHNES7bGvrTMLND01c5w==">                            
+                                    <form id="contact-form" action="{{ route('order') }}" method="post">
+                                        @csrf                          
                                         <div class="columns">
                                             <div class="column is-8">
+
+                                                <div class="option-group clearfix">
+                                                    
+                                                    <input type="hidden" name="sex" id="sex" value="Nam"> 
+                                                    <input type="hidden" name="province" id="province" value="1"> 
+                                                </div>
+
                                                 <div class="form-group field-order-order_name required">
                                                     <label for="order-order_name">Họ tên*</label>
-                                                    <input type="text" id="order-order_name" class="form-control" name="Order[order_name]" aria-required="true">
+                                                    <input type="text" id="order-order_name" class="form-control" name="name" aria-required="true">
                                                     <div class="invalid-feedback"></div>
                                                 </div>
                                                 <div class="form-group field-order-order_phone required">
                                                     <label for="order-order_phone">Số điện thoại người đặt hàng*</label>
-                                                    <input type="text" id="order-order_phone" class="form-control" name="Order[order_phone]" aria-required="true">
+                                                    <input type="text" id="order-order_phone" class="form-control" name="phone_number" aria-required="true">
                                                     <div class="invalid-feedback"></div>
                                                 </div>
                                                 <div class="form-group field-order-order_email">
                                                     <label for="order-order_email">Email người đặt hàng</label>
-                                                    <input type="text" id="order-order_email" class="form-control" name="Order[order_email]">
+                                                    <input type="text" id="order-order_email" class="form-control" name="mail">
                                                     <div class="invalid-feedback"></div>
                                                 </div>
                                                 <div class="form-group field-order-address required">
                                                     <label for="order-address">Địa chỉ*</label>
-                                                    <input type="text" id="order-address" class="form-control" name="Order[address]" aria-required="true">
+                                                    <input type="text" id="order-address" class="form-control" name="address" aria-required="true">
                                                     <div class="invalid-feedback"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="checkbox small">
-                                            <div class="checkbox-overlay">
-                                                <input id="check_tax" type="checkbox" name="Order[is_vat]">
-                                                <div class="checkbox-container">
-                                                    <div class="checkbox-checkmark"></div>
-                                                </div>
-                                                <label>Xuất hóa đơn công ty</label>
-                                            </div>
-                                        </div>
-                                        <div id="order-tax" style="display: none">
-                                            <div class="columns">
-                                                <div class="column is-8">
-                                                    <div class="form-group field-order-company_name">
-                                                        <label for="order-company_name">Tên công ty*</label>
-                                                        <input type="text" id="order-company_name" class="form-control" name="Order[company_name]">
-                                                        <div class="invalid-feedback"></div>
-                                                    </div>
-                                                    <div class="form-group field-order-tax_code">
-                                                        <label for="order-tax_code">Mã số thuế*</label>
-                                                        <input type="text" id="order-tax_code" class="form-control" name="Order[tax_code]">
-                                                        <div class="invalid-feedback"></div>
-                                                    </div>
-                                                    <div class="form-group field-order-company_address">
-                                                        <label for="order-company_address">Địa chỉ công ty*</label>
-                                                        <input type="text" id="order-company_address" class="form-control" name="Order[company_address]">
-                                                        <div class="invalid-feedback"></div>
-                                                    </div>
-                                                    <div class="form-group field-order-email_tax">
-                                                        <label for="order-email_tax">Email nhận hóa đơn*</label>
-                                                        <input type="text" id="order-email_tax" class="form-control" name="Order[email_tax]">
-                                                        <div class="invalid-feedback"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                       
+                                        
                                         <div class="step-title">
                                             <span>2</span>
                                             <h2>Chọn thanh toán</h2>

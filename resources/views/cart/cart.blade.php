@@ -172,14 +172,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="cart-item-bottom">
+                                           <!--  <div class="cart-item-bottom">
                                                 <div class="added-promos" id="added-promos-0">
                                                     <span><br> - Trả góp 0% khi mua sản phẩm Tivi Samsung (01/10 ~ 31/12/2022)
                                                     <br> - Trả trước 0 đồng (01/10 ~ 30/12/2022)
                                                     <br> - Tặng 1 chiếc Micro không dây tri giá 700.000 (01/10 ~31/12/2022)
                                                     </span>
                                                 </div>
-                                            </div>
+                                            </div> -->
 
                                            
                                         </div>
@@ -395,6 +395,8 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    @if($totalPrice>0)
                                     <div class="cart-actions row">
                                         <div class="checkout-button col-sm-12">
                                             <a href="{{ route('checkoutCart') }}" class="btn btn-tertiary btn-block checkoutButton continueCheckout">
@@ -402,6 +404,7 @@
                                             </a>
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
