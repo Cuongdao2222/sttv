@@ -1588,7 +1588,7 @@
                                                     <ul class="pf-finder-v2__filters-list-list-item">
                                                         <li class="pf-finder-v2__filters-list-list-items" style="display:block">
                                                             <div class="checkbox-radio">
-                                                                <input type="checkbox" value="1" name="price" class="hidden" id="price-1">
+                                                                <input type="checkbox" value="1" name="price" class="hidden price" id="price-1">
                                                                 <label class="checkbox-radio__label" for="price-1">
                                                                 <span class="checkbox-radio__label-text">Trên 20 triệu</span>
                                                                 </label>
@@ -1596,7 +1596,7 @@
                                                         </li>
                                                         <li class="pf-finder-v2__filters-list-list-items" style="display:block">
                                                             <div class="checkbox-radio">
-                                                                <input type="checkbox" value="2" name="price" class="hidden" id="price-2">
+                                                                <input type="checkbox" value="2" name="price" class="hidden price" id="price-2">
                                                                 <label class="checkbox-radio__label" for="price-2">
                                                                 <span class="checkbox-radio__label-text">Từ 15 - 20 triệu</span>
                                                                 </label>
@@ -1604,7 +1604,7 @@
                                                         </li>
                                                         <li class="pf-finder-v2__filters-list-list-items" style="display:block">
                                                             <div class="checkbox-radio">
-                                                                <input type="checkbox" value="3" name="price" class="hidden" id="price-3">
+                                                                <input type="checkbox" value="3" name="price" class="hidden price" id="price-3">
                                                                 <label class="checkbox-radio__label" for="price-3">
                                                                 <span class="checkbox-radio__label-text">Từ 12 - 15 triệu</span>
                                                                 </label>
@@ -1612,7 +1612,7 @@
                                                         </li>
                                                         <li class="pf-finder-v2__filters-list-list-items" style="display:block">
                                                             <div class="checkbox-radio">
-                                                                <input type="checkbox" value="4" name="price" class="hidden" id="price-4">
+                                                                <input type="checkbox" value="4" name="price" class="hidden price" id="price-4">
                                                                 <label class="checkbox-radio__label" for="price-4">
                                                                 <span class="checkbox-radio__label-text">Từ 8 - 12 triệu</span>
                                                                 </label>
@@ -1620,7 +1620,7 @@
                                                         </li>
                                                         <li class="pf-finder-v2__filters-list-list-items" style="display:block">
                                                             <div class="checkbox-radio">
-                                                                <input type="checkbox" value="5" name="price" class="hidden" id="price-5">
+                                                                <input type="checkbox" value="5" name="price" class="hidden price" id="price-5">
                                                                 <label class="checkbox-radio__label" for="price-5">
                                                                 <span class="checkbox-radio__label-text">Từ 5 - 8 triệu</span>
                                                                 </label>
@@ -1644,31 +1644,31 @@
                                                 <div class="pf-finder-v2__filters-list-item-wrap" style="">
                                                     <ul class="pf-finder-v2__filters-list-list-item">
                                                         <li class="pf-finder-v2__filters-list-list-items" style="display:block">
-                                                            <input type="checkbox" value="6" name="size" class="hidden" id="size-6">
+                                                            <input type="checkbox" value="6" name="size" class="hidden size" id="size-6">
                                                             <label class="checkbox-radio__label" for="size-6">
                                                             <span class="checkbox-radio__label-text">Trên 80 inch</span>
                                                             </label>
                                                         </li>
                                                         <li class="pf-finder-v2__filters-list-list-items" style="display:block">
-                                                            <input type="checkbox" value="7" name="size" class="hidden" id="size-7">
+                                                            <input type="checkbox" value="7" name="size" class="hidden size" id="size-7">
                                                             <label class="checkbox-radio__label" for="size-7">
                                                             <span class="checkbox-radio__label-text">75 inch</span>
                                                             </label>
                                                         </li>
                                                         <li class="pf-finder-v2__filters-list-list-items" style="display:block">
-                                                            <input type="checkbox" value="8" name="size" class="hidden" id="size-8">
+                                                            <input type="checkbox" value="8" name="size" class="hidden size" id="size-8">
                                                             <label class="checkbox-radio__label" for="size-8">
                                                             <span class="checkbox-radio__label-text">60 - 70 inch</span>
                                                             </label>
                                                         </li>
                                                         <li class="pf-finder-v2__filters-list-list-items" style="display:block">
-                                                            <input type="checkbox" value="9" name="size" class="hidden" id="size-9">
+                                                            <input type="checkbox" value="9" name="size" class="hidden size" id="size-9">
                                                             <label class="checkbox-radio__label" for="size-9">
                                                             <span class="checkbox-radio__label-text">50 - 55 inch</span>
                                                             </label>
                                                         </li>
                                                         <li class="pf-finder-v2__filters-list-list-items" style="display:block">
-                                                            <input type="checkbox" value="10" name="size" class="hidden" id="size-10">
+                                                            <input type="checkbox" value="10" name="size" class="hidden size" id="size-10">
                                                             <label class="checkbox-radio__label" for="size-10">
                                                             <span class="checkbox-radio__label-text">Dưới 50 inch</span>
                                                             </label>
@@ -1814,6 +1814,19 @@
     <script type="text/javascript">
 
         var check_val =[]; 
+
+        var check_val1 = [];
+
+        $('.size').change(function(){
+             if($(this).prop('checked') === true){
+
+                check_val1.push($(this).val());
+
+                alert(check_val1);
+
+
+            }    
+        }) ;  
 
 
         $('.checkbox-pop').change(function(){
