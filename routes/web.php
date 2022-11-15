@@ -26,6 +26,8 @@ Route::get('/', 'Frontend\indexController@index')->middleware('throttle:60')->na
 
 Route::post('/check-unique-cate', 'productController@filterProduct')->name('check-unique-cate');
 
+Route::post('filter-checkbox', 'Frontend\categoryController@filterBycheckbox')->name('filter-checkbox');
+
 
 Route::post('ajax-call-cate-home', 'Frontend\categoryController@getProductToCatte')->name('ajax-home-call-pd');
 

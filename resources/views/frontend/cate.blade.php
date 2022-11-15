@@ -1567,7 +1567,7 @@
                                                         @foreach($groups as $key => $val)
                                                         <li class="pf-finder-v2__filters-list-list-items">
                                                             <div class="checkbox-radio">
-                                                                <input type="checkbox" name="category" class="checkbox-pop" value="{{ $key }}" id="checkbox-{{ $key }}">
+                                                                <input type="checkbox" name="category" class="checkbox-pop" value="{{ $val->id }}" id="checkbox-{{ $key }}">
                                                                 <label class="checkbox-radio__label" for="checkbox-{{ $key }}">
                                                                 <span class="checkbox-radio__label-text">{{ $val->name }}</span>
                                                                 </label>
@@ -1813,22 +1813,23 @@
 
         var check_val =[]; 
 
+
         $('.checkbox-pop').change(function(){
             if($(this).prop('checked') === true){
 
                 check_val.push($(this).val());
 
-
-               
             }
             else{
 
-                const index = check_val.indexOf(5);
+                const index = check_val.indexOf($(this).val());
                 if (index > -1) { 
                   check_val.splice(index, 1); 
                 }
 
             }
+
+          
 
             $.ajaxSetup({
                 headers: {
@@ -1838,15 +1839,17 @@
         
             $.ajax({
                 type: 'POST',
-                url: "{{ route('cart') }}",
+                url: "{{ route('filter-checkbox') }}",
                 data: {
-                    data: JSON.parse(check_val),
+                    data: JSON.stringify(check_val),
                    
                 },
                
                 success: function(result){
-        
-                  window.location.href = result; 
+
+                    $('.plp-content').html('');
+
+                    $('.plp-content').html(result);
                     
                 }
             });
@@ -1876,8 +1879,8 @@
                     },
                     success: function(result){
             
-                      window.location.href = result; 
-                        
+                       window.location.href = result; 
+
                     }
                 });
 
