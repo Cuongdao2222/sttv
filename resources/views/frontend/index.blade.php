@@ -115,7 +115,9 @@
 
             $product_sam    = json_decode($product->product_id);
 
-            $product_view   =  App\Models\product::whereIn('id',  $product_sam)->orderBy('id', 'desc')->take(3);
+            $product_view   =  App\Models\product::whereIn('id',  $product_sam)->orderBy('id', 'desc')->take(3)->get();
+
+          
 
           
         ?>
@@ -128,12 +130,7 @@
                     @if($product_view->count()>0)
                     @foreach($product_view as $key => $value)
 
-                    <?php
-
-                        $info_pd = App\Models\product::find($value);
-
-                    ?>
-                    @if(!empty($info_pd->Link))
+                    @if(!empty($value->Link))
                     <div class="column is-3">
                         <div class="product-item">
                            <!--  <div class="merchandising-flag has-text-centered">
@@ -143,16 +140,16 @@
                             </div> -->
                             <div class="product-item_image">
                                 <div class="item-img has-text-centered">
-                                    <a href="{{ route('details', $info_pd->Link) }}">
-                                        <div class="progressive-media progressive-media-image progressive-media-unloaded" data-img-src="{{ asset($info_pd->Image) }}">
+                                    <a href="{{ route('details', $value->Link) }}">
+                                        <div class="progressive-media progressive-media-image progressive-media-unloaded" data-img-src="{{ asset($value->Image) }}">
                                             <div class="progressive-media-aspect" style="padding-bottom: 80%;">
                                                 <div class="progressive-media-aspect-inner">
-                                                    <img class="progressive-media-image-placeholder progressive-media-content progressive-media-blur" src="{{ asset($info_pd->Image) }}" crossorigin="anonymous">
+                                                    <img class="progressive-media-image-placeholder progressive-media-content progressive-media-blur" src="{{ asset($value->Image) }}" crossorigin="anonymous">
 
-                                                    <img class="progressive-media-image-placeholder progressive-media-image-placeholder-edge progressive-media-content" src="{{ asset($info_pd->Image) }}" crossorigin="anonymous">
+                                                    <img class="progressive-media-image-placeholder progressive-media-image-placeholder-edge progressive-media-content" src="{{ asset($value->Image) }}" crossorigin="anonymous">
 
                                                     <noscript>
-                                                    <img class="progressive-media-image-original progressive-media-content" src="{{ asset($info_pd->Image) }}"></noscript>
+                                                    <img class="progressive-media-image-original progressive-media-content" src="{{ asset($value->Image) }}"></noscript>
                                                 </div>
                                             </div>
                                         </div>
@@ -161,10 +158,10 @@
                             </div>
                             <div class="product-item_content-wrap">
                                 <div class="item-top">
-                                    <a href="{{ route('details', $info_pd->Link) }}">
-                                    <span class="product-title has-text-centered">{{ $info_pd->Name }}</span>
+                                    <a href="{{ route('details', $value->Link) }}">
+                                    <span class="product-title has-text-centered">{{ $value->Name }}</span>
                                     </a>
-                                    <span class="product-sku">{{ $info_pd->productSku }}</span>
+                                    <span class="product-sku">{{ $value->productSku }}</span>
                                 </div>
                                 <div class="item-bottom">
                                     <div class="merchandising-wrapper">
@@ -173,7 +170,7 @@
 
                                                 <?php 
 
-                                                    $Salient_Features = str_replace('tbody', 'ul', $info_pd->Salient_Features);
+                                                    $Salient_Features = str_replace('tbody', 'ul', $value->Salient_Features);
 
                                                     $Salient_Features = str_replace('tr', 'li', $Salient_Features);
 
@@ -193,7 +190,7 @@
                                             <div class="price-discount" style="display: none">
                                                 <span>Giảm 44%</span>
                                             </div>
-                                            <span>{{ @number_format($info_pd->Price) }} ₫</span>
+                                            <span>{{ @number_format($value->Price) }} ₫</span>
                                         </div>
                                         <div class="promo-leasing" style="display: none">
                                             <div class="product-promo promo">
@@ -206,7 +203,7 @@
                                     <div class="custom-button has-text-centered">
                                         <div class="actions--add-to-cart">
                                             <div class="has-text-centered">
-                                                <button class="btn btn-default btn-cart" onclick="addToCart({{ $info_pd->id }})">Thêm vào giỏ hàng
+                                                <button class="btn btn-default btn-cart" onclick="addToCart({{ $value->id }})">Thêm vào giỏ hàng
                                                 </button>
 
 
