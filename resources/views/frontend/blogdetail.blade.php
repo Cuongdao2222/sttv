@@ -1,197 +1,130 @@
 
 
-    @extends('frontend.layouts.apps')
+@extends('frontend.layouts.apps')
 
-    @section('content') 
+@section('content') 
 
+@push('style')
 
-    <link rel="stylesheet" type="text/css" href="{{asset('css/dienmay.css')}}?ver=4"> 
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}?">
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}?v=8881288.8883.159">
-    <link rel="stylesheet" href="{{ asset('css/customs.css') }}?v=245754.75.52928">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&subset=vietnamese" rel="stylesheet">
-    
-    
-    <!-- end header -->
-    <!-- begin main -->
+ <link href="{{ asset('css/clientlib-base.min.css')}}" rel="stylesheet">
+<link href="{{ asset('css/page-standard-pd.min.css') }}" rel="stylesheet">
+<link href="{{ asset('css/style.css')}}" rel="stylesheet">
+<link href="{{ asset('assets/35deb2b4/css/bootstrap.css')}}" rel="stylesheet">
+<link href="{{ asset('bulma/css/bulma.min.css')}}" rel="stylesheet">
+<link href="{{ asset('bulma/css/all.min.css')}}" rel="stylesheet">
+<link href="{{ asset('swiper@8.4.2/swiper-bundle.min.css')}}" rel="stylesheet">
+<link href="{{ asset('css/owl.carousel.min.css')}}" rel="stylesheet">
+<link href="{{ asset('css/owl.theme.default.min.css')}}" rel="stylesheet">
+<link href="{{ asset('css/icofont.min.css')}}" rel="stylesheet">
+<link href="{{ asset('css/slick.css')}}" rel="stylesheet">
+<link href="{{ asset('css/slick-theme.css')}}" rel="stylesheet">
+<link href="{{ asset('css/site.css')}}" rel="stylesheet">
+<link href="{{ asset('assets/75a5fa0c/css/progressive-media.min.css')}}" rel="stylesheet">
 
-     <style type="text/css">
-        .header__top-mobile{
-            height: 133px;
-        }
-    </style>
-    <main class="bg-fff">
-        <!-- Begin menu blog -->
-        <div class="menu_blog">
-            <ul class="dm_container">
-                <li>
-                    <a href="/tu-van-tivi/">
-                    <img src="{{ asset('images/template/logo/tivi.png') }}" alt="">
-                    <span>Tư vấn
-                    <br> tivi</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/tu-van-tu-lanh/">
-                    <img src="{{ asset('images/template/logo/tu-lanh.png') }}" alt="">
-                    <span>Tư vấn
-                    <br> tủ lạnh</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/tu-van-may-giat/">
-                    <img src="{{ asset('images/template/logo/may-giat.png') }}" alt="">
-                    <span> Tư vấn
-                    <br> máy giặt</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/tu-van-dieu-hoa/">
-                    <img src="{{ asset('images/template/logo/dieu-hoa.png') }}" alt="">
-                    <span>Tư vấn
-                    <br> điều hòa</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/tu-van-gia-dung/">
-                    <img src="{{ asset('images/template/logo/gia-dung.png') }}" alt="">
-                    <span>Tư vấn
-                    <br> gia dụng</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/tu-van-mua-sam/">
-                    <img src="{{ asset('images/template/logo/mua-sam.png') }}" alt="">
-                    <span>Tư vấn
-                    <br> mua sắm</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/meo-vat-gia-dinh/">
-                    <img src="{{ asset('images/template/logo/meo-vat.png') }}" alt="">
-                    <span>Mẹo vặt
-                    <br> gia đình</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/tin-khuyen-mai/">
-                    <img src="{{ asset('images/template/logo/khuyen-mai.png') }}" alt="">
-                    <span>Tin
-                    <br> Khuyến Mại</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <img src="{{ asset('images/template/logo/video.png') }}" alt="">
-                    <span>Video
-                    <br>clip</span>
-                    </a>
-                </li>
-            </ul>
+@endpush
+<div class="product-view">
+    <div class="pd-g-header-navigation aem-GridColumn aem-GridColumn--default--12">
+        <div class="pd-header-navigation-keep header-keep">
+            <div class="pd-header-navigation bg-black" id="anchorContainer" style="">
+                <div class="pd-header-navigation__header pd-header-navigation__menu--close">
+                    <h1 class="pd-header-navigation__headline">
+                        <strong class="pd-header-navigation__headline-text has-text-white">{{  @strip_tags($data->title)  }}</strong>
+                    </h1>
+                    
+                </div>
+                
+            </div>
+            <div class="pd-header-navigation__dummy">
+                <div class="pd-header-navigation__dummy-headline" style="height: 120px;"></div>
+                <div class="pd-header-navigation__dummy-menu"></div>
+            </div>
         </div>
-
-
-        <!-- End menu blog -->
-        <div class="blog-list dm_container">
-            <div class="row">
-                <div class="col-lg-2">
-                    <div class="sidebar-left">
-                        <figure>
-                            <img src="" alt="">
-                        </figure>
-                        <ul class="ulcatemenu">
-                            <li class="active"><a>{{  $data->category==5?'':$name_cate}}</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="main-blog-list">
-                        <div style="width:100%; height: 50px;">
-                            <h1 class="title">{{  $data->category==5?'':$name_cate}}</h1>
-                        </div>
-                        
-                        <div class="blog-detail">
-                            <div class="detail-head">
-                                <h1>{{ $data->title }}</h1>
-                                <time>{{ $data->created_at->format('d-m-Y, H:i') }}</time>
-                                <div id="fb-root" class=" fb_reset">
-                                    <div style="position: absolute; top: -10000px; width: 0px; height: 0px;">
-                                        <div></div>
-                                    </div>
-                                </div>
-                              
-                               
-                            </div>
-                            <div class="emtry_content Description nd">
-                                <?php 
-
-                                    $content = preg_replace("/<a(.*?)>/", "<a$1 target=\"_blank\">",  $data->content);
-                                ?>
-                            
-                                {!!   $content  !!}
-                            </div>
-                            <div class="blog-related">
-                                <h3>Tin tức liên quan</h3>
-                                <ul>
-                                    @if(isset($related_news))
-                                    @foreach($related_news as $news)
-                                    @if($news->id != $data->id)
-                                    <li><a href="{{ route('details', $news->link) }}">{{ $news->title }}</a></li>
-                                    @endif
-                                    @endforeach
-                                    @endif
-                                </ul>
-                            </div>
-                        </div>
-
-                       <!--  <div class="bloglist-page">
-                            <table cellpadding="0" cellspacing="0">
-                                <tr>
-                                    <td class="pagingIntact"><a>Xem trang</a></td>
-                                    <td class="pagingSpace"></td>
-                                    <td class="pagingViewed">1</td>
-                                    <td class="pagingSpace"></td>
-                                    <td class="pagingIntact"><a href="/tu-van-mua-sam/?page=2">2</a></td>
-                                    <td class="pagingSpace"></td>
-                                    <td class="pagingIntact"><a href="/tu-van-mua-sam/?page=3">3</a></td>
-                                    <td class="pagingSpace"></td>
-                                    <td class="pagingIntact"><a href="/tu-van-mua-sam/?page=4">4</a></td>
-                                    <td class="pagingSpace"></td>
-                                    <td class="pagingIntact"><a href="/tu-van-mua-sam/?page=5">5</a></td>
-                                    <td class="pagingSpace"></td>
-                                    <td class="pagingIntact"><a href="/tu-van-mua-sam/?page=6">6</a></td>
-                                    <td class="pagingSpace"></td>
-                                    <td class="pagingIntact"><a href="/tu-van-mua-sam/?page=7">7</a></td>
-                                    <td class="pagingSpace"></td>
-                                    <td class="pagingFarSide" align="center">...</td>
-                                    <td class="pagingIntact"><a href="/tu-van-mua-sam/?page=2">Tiếp theo</a></td>
-                                </tr>
-                            </table>
-                        </div> -->
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="banner-blog">
-                    </div>
+    </div>
+    <div class="container">
+        <div>
+            <h1>{{ @strip_tags($data->title) }}</h1>
+        </div>
+        <div class="content" id="contents-scroll">
+            <?php 
+                $content = preg_replace("/(<img\\s)[^>]*(src=\\S+)[^>]*(\\/?>)/i", "$1$2$3", $data->content);
+            ?>
+                 {!! html_entity_decode($content)   !!}
+            </div>    
+        <style>
+            .feature-benefit-full-bleed__figure {
+            background-color: #000;
+            }
+            .feature-benefit-tab-list, .feature-benefit-tab-list__anchor{
+            display: inline-block!important;
+            }
+        </style>
+        <div class="product-view" xmlns="http://www.w3.org/1999/html">
+            
+        </div>
+    </div>
+</div>
+<div class="cart-notification">
+    <div class="modal fade" id="addToCartNotification" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img src="../../images/checked.svg">
+                    <p>Sản phẩm đã được thêm vào giỏ hàng.</p>
+                    <a href="{{ route('cart-sttv') }}" class="btn btn-default btn-block mini-cart-checkout-button">
+                    THANH TOÁN
+                    </a>
+                    <a href="#" data-dismiss="modal" class="btn btn-link addtocart-continue-shopping">
+                    Tiếp tục mua hàng</a>
                 </div>
             </div>
         </div>
-    </main>
-    <!-- end main -->
-    <!--<hr>-->
-    <!-- begin footer -->
-    @push('script')
-     <script type="text/javascript">
-        $('img').closest('p').css('text-align', 'center');
-        
-    </script>
+    </div>
+</div>
+@push('js')
+
+ <script src="{{ asset('assets/4f253995/jquery.js')}}"></script>
+<script src="{{ asset('assets/f8532ac8/yii.js')}}"></script>
+<script src="{{ asset('assets/35deb2b4/js/bootstrap.bundle.js')}}"></script>
+<script src="{{ asset('swiper@8.4.2/swiper-bundle.min.js')}}"></script>
+<script src="{{ asset('js/owl.carousel.min.js')}}"></script>
+<script src="{{ asset('js/slick.min.js')}}"></script>
+<script src="{{ asset('js/main.js')}}"></script>
+<script src="{{ asset('assets/75a5fa0c/js/progressive-media.min.js')}}"></script>
+
+<script type="text/javascript">
+    
+ function addToCart(id) {
+    
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $.ajax({
+        type: 'POST',
+        url: "{{ route('cart') }}",
+        data: {
+            product_id: id,
+            gift_check:$('#gift_checked').val()
+               
+        },
+        beforeSend: function() {
+           
+            $('.loader').show();
+
+        },
+        success: function(result){
+
+           window.location.href = result; 
+
+        }
+    });
+}    
+
+</script>
 
 
-    @endpush
-   
-    @endsection
+@endpush
 
-
-
-
-   
+@endsection  

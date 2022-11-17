@@ -12,12 +12,10 @@ class blogController extends Controller
     public function index()
     {
         
-        $data = Cache::remember('data_blog',1000,function(){
+       
+            $data = post::select('title','content', 'id','category','image', 'link')->orderBy('id','desc')->paginate(10);
 
-            $data = post::select('title','content', 'id','category','image', 'link')->orderBy('date_post','desc')->paginate(10);
-
-            return $data;
-        });
+            
         
       
         return view('frontend.blog',compact('data'));

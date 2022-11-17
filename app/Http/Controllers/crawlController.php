@@ -31,6 +31,57 @@ use \Carbon\Carbon;
 
 class crawlController extends Controller
 {
+
+
+    public function updateMetas($value='')
+    {
+
+        $data = post::get();
+
+        foreach ($data as $key => $value) {
+
+            $urls = 'https://sieuthitivi.com'.$value->link;
+            $html = file_get_html(trim($urls));
+
+            if(!empty(htmlspecialchars($html->find("meta[name=keywords]",0))) ){
+                 $keyword = htmlspecialchars($html->find("meta[name=keywords]",0)->getAttribute('content'));
+                $content = $html->find("meta[name=description]",0)->getAttribute('content');
+                $title   = $html-> find("title",0)->plaintext;
+                $metas   =  metaSeo::find($value->Meta_id);
+                $metas->meta_title =$title; 
+                $metas->meta_content =$content; 
+                $metas->meta_key_words = strip_tags($keyword); 
+                $metas->meta_og_title =$title; 
+                $metas->meta_og_content =$content; 
+
+                $metas->save();
+            }
+           
+           
+        }
+        echo "thanh cong";
+        
+    }
+    public function updateMeta()
+    {
+        $blog = post::get();
+
+        $keys = 7140;
+
+        foreach ($blog as $key => $value) {
+
+            $keys--;
+            
+            $data = post::find($value->id);
+
+            $data->Meta_id = $keys;
+
+            $data->save();
+
+        }
+
+        echo "thanh cong";
+    }
     public function addNames()
     {
         $product = product::where('id_group_product', NULL)->get()->pluck('id')->toArray();

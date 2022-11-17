@@ -16,7 +16,7 @@ use Eloquent as Model;
 class post extends Model
 {
 
-    public $table = 'posts';
+    public $table = 'posts1';
 
 
     public $fillable = [

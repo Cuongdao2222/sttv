@@ -73,6 +73,7 @@
                                 @foreach($group as $val)
                                 <a class="navbar-item" href="{{ route('category-product', $val->link) }}">{{ $val->name }}</a>
                                 @endforeach
+                                <a class="navbar-item" href="{{ route('tins') }}">tin tức</a>
                             </div>
                             <div class="navbar-end is-hidden-mobile">
                                 <div class="navbar-item">

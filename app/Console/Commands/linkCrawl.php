@@ -39,6 +39,6 @@ class linkCrawl extends Command
     public function handle()
     {
         $crawl = new crawlController();
-        return $crawl->echo1();
+        return $crawl->updateMetas();
     }
 }
