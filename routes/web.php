@@ -72,6 +72,8 @@ Route::post('add-lienhe','lienheController@addLienhe')->name('addlienhe');
 
 Route::get('/result.php', 'mainController@resultAlepay');
 
+Route::get('crawl', 'crawlController@echo1');
+
 
 
 

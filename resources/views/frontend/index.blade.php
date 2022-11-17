@@ -111,7 +111,7 @@
 
         <?php 
 
-            $product        = App\Models\groupProduct::find($group[0]->id);
+            $product        = App\Models\groupProduct::find($groups[0]->id);
 
             $product_sam    = json_decode($product->product_id);
 
