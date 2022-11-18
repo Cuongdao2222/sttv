@@ -65,7 +65,7 @@
 
                         <?php 
 
-                            $group = App\Models\groupProduct::where('parent_id', 5)->get()->take(10);
+                            $group = App\Models\groupProduct::where('group_product_id', 5)->get()->take(10);
 
                              $cart = Gloudemans\Shoppingcart\Facades\Cart::content();
 
