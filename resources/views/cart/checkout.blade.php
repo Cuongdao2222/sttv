@@ -36,14 +36,14 @@
                     </div>
                     <div class="column">
                         <div class="cart-logo text-center">
-                            <a href="#">
+                            <a href="/">
                             <img alt="" src="../images/global-samsung-logo.svg"></a>
                         </div>
                     </div>
                     <div class="column">
-                        <div class="anhduy-logo text-right">
-                            <a href="../index-1.htm">
-                            <img height="40" src="../images/LOGO-ADG.png">
+                        <div class="text-right">
+                            <a href="/">
+                            <img height="40" src="{{ asset('images/logo.jpg')  }}">
                             </a>
                         </div>
                     </div>
