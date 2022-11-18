@@ -62,7 +62,7 @@
 </li>
 @if(Auth::user()->permision>1)
 
-<li class="nav-item" style="display: flex; height:44px;"  >
+<!-- <li class="nav-item" style="display: flex; height:44px;"  >
 
    
 
@@ -83,7 +83,7 @@
     
     
 </li>
-
+ -->
 
 <ul style="width: 68%;">
     @if(count($listGroup)>0)
