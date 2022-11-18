@@ -36,7 +36,7 @@
                     </div>
                     <div class="column">
                         <div class="cart-logo text-center">
-                            <a href="../index.htm">
+                            <a href="#">
                             <img alt="" src="../images/global-samsung-logo.svg"></a>
                         </div>
                     </div>
