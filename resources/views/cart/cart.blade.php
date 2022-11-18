@@ -40,13 +40,13 @@
                     <div class="column">
                         <div class="cart-logo text-center">
                             <a href="/">
-                            <img alt="" src="{{ asset('../images/global-samsung-logo.svg')}}"></a>
+                            <img alt="" src="{{ asset('images/logo.jpg')  }}"></a>
                         </div>
                     </div>
                     <div class="column">
-                        <div class="anhduy-logo text-right">
+                        <div class="text-right">
                             <a href="/">
-                            <img height="40" src="{{ asset('../images/LOGO-ADG.png') }}">
+                            <img height="40" src="{{ asset('images/logo.jpg')  }}">
                             </a>
                         </div>
                     </div>
