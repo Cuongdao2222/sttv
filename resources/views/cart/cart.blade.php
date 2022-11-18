@@ -455,22 +455,22 @@
                                 <div class="footer-category__list-wrap">
                                     <ul class="footer-category__list">
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="../page/5-gioi-thieu-lich-su-cong-ty.html" title="">Giới thiệu
-                                            AnhDuy Group
+                                            <a class="footer-category__link" href="#" title="">Giới thiệu
+                                           
                                             </a>
                                         </li>
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="../page/3-chinh-sach-bao-hanh.html" title="">
+                                            <a class="footer-category__link" href="#" title="">
                                             Chính sách bảo hành
                                             </a>
                                         </li>
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="../page/2-chinh-sach-van-chuyen-giao-nhan.html" title="">
+                                            <a class="footer-category__link" href="#" title="">
                                             Chính sách vận chuyển & giao nhận
                                             </a>
                                         </li>
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="../page/1-quy-dinh-hinh-thuc-thanh-toan.html" title="">
+                                            <a class="footer-category__link" href="#" title="">
                                             Quy định hình thức thanh toán
                                             </a>
                                         </li>
