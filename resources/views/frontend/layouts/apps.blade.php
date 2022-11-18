@@ -168,10 +168,10 @@
                                 <div class="footer-category__list-wrap">
                                     <ul class="footer-category__list">
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="lien-he.html" aria-label="Liên Hệ" title="">Liên Hệ</a>
+                                            <a class="footer-category__link" href="#" aria-label="Liên Hệ" title="">Liên Hệ</a>
                                         </li>
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="danh-muc-tin-tuc/ho-tro-ky-thuat.html" title="">Hỗ Trợ Kỹ
+                                            <a class="footer-category__link" href="#" title="">Hỗ Trợ Kỹ
                                             thuật</a>
                                         </li>
                                     </ul>
