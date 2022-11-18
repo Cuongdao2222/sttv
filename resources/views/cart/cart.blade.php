@@ -505,13 +505,8 @@
                 <div class="footer-bottom container">
                     <div class="footer-copyright-wrap">
                         <div class="footer-copyright-align">
-                            <p class="footer-copyright">©2021 AnhDuy Group. </p>
-                            <div class="footer-legal">Công ty TNHH Quốc Tế Anh Duy<br>GPDKKD: 0304157122, do sở KH & DT TP.HCM
-                                cấp ngày 06/01/2006
-                                <br>Địa chỉ 170 Ung Văn Khiêm, P.25, Q.Bình Thạnh, TP. Hồ Chí
-                                Minh<br>Điện
-                                thoại: (028) 38983424
-                            </div>
+                            <p class="footer-copyright">©2022Siêu thị tivi. </p>
+                           
                         </div>
                         <div class="footer-local-logo">
                             <div class="footer-local-logo--wrap">
