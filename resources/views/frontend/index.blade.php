@@ -173,14 +173,8 @@
                                         <div class="merchandising-box text-center">
                                             <div class="merchandising-text">
 
-                                                <?php 
-
-                                                    $Salient_Features = str_replace('tbody', 'ul', $value->Salient_Features);
-
-                                                    $Salient_Features = str_replace('tr', 'li', $Salient_Features);
-
-                                                ?>
-                                                {!! @$Salient_Features !!}
+                                               
+                                                {!! @ $value->Salient_Features !!}
                                             </div>
                                         </div>
                                     </div>
