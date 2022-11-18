@@ -323,7 +323,7 @@
                                             <div class="col-xs-12">
                                                 <div class="free-delivery-text free-delivery-text-margin">
                                                     <img src="../images/Voucher-96-cart.png" alt="">
-                                                    <span class="summary-text">Tặng voucher 300K khi mua Loa không dây - Soundbar tại anhduy.vn</span>
+                                                    <span class="summary-text"></span>
                                                 </div>
                                             </div>
                                         </div>
