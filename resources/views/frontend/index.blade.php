@@ -16,6 +16,11 @@
         <link href="{{ asset('css/slick.css')}}" rel="stylesheet">
         <link href="{{ asset('css/slick-theme.css')}}" rel="stylesheet">
         <link href="{{ asset('css/site.css')}}" rel="stylesheet">
+        <style type="text/css">
+            .btns{
+                background: #F8F8F8;
+            }    
+        </style>
 
 @endpush
 

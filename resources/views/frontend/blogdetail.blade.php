@@ -47,6 +47,10 @@
         <div class="content" id="contents-scroll">
             <?php 
                 $content = preg_replace("/(<img\\s)[^>]*(src=\\S+)[^>]*(\\/?>)/i", "$1$2$3", $data->content);
+
+                $content = str_replace('https://sieuthitivi.com', '', $content)
+
+                
             ?>
                  {!! html_entity_decode($content)   !!}
             </div>    

@@ -23,6 +23,10 @@
         .btn-cart{
             width: 100%;
         }
+        .page-int .pagination{
+            justify-content: normal;
+            border: 0 !important;
+        } 
 
     </style>
     @endpush
@@ -1680,10 +1684,19 @@
                             </div>
                         
                     </div> -->
-                     @if(count($data))
-                    <ul class="column is-10 product-listing product-grid plp-content">
+
+
+                     @if(count($data)>0)
+
+                    <ul class="column is-12 product-listing product-grid plp-content">
 
                         @foreach($data as $val)
+
+                         <?php 
+
+                            $image = str_replace('https://sieuthitivi.com/', '', $val->image);  
+
+                        ?>
                         
                         <li class="product-item three-cols-tile">
                             <h1 class="sr-only">{{ @strip_tags($val->title) }}</h1>
@@ -1691,11 +1704,14 @@
                             <div class="">
                                     <div class="item-img has-text-centered">
                                         <a href="{{ route('details', $val->link) }}">
-                                            <div class="progressive-media progressive-media-image progressive-media-unloaded" data-img-src="{{ asset($val->image) }}">
+                                            <div class="progressive-media progressive-media-image progressive-media-unloaded" data-img-src="{{ asset($image) }}">
+
+                                               
                                                 <div class="progressive-media-aspect" style="padding-bottom: 80%;">
                                                     <div class="progressive-media-aspect-inner">
-                                                        <img class="progressive-media-image-placeholder progressive-media-content progressive-media-blur" src="{{ asset($val->image) }}" crossorigin="anonymous"><img class="progressive-media-image-placeholder progressive-media-image-placeholder-edge progressive-media-content" src="{{ asset($val->image) }}" crossorigin="anonymous">
-                                                        <noscript><img class="progressive-media-image-original progressive-media-content" src="{{ asset($val->image) }}"></noscript>
+                                                        <img class="progressive-media-image-placeholder progressive-media-content progressive-media-blur" src="{{ asset($image) }}" crossorigin="anonymous"><img class="progressive-media-image-placeholder progressive-media-image-placeholder-edge progressive-media-content" src="{{ asset($image) }}" crossorigin="anonymous">
+                                                        <noscript>
+                                                            <img class="progressive-media-image-original progressive-media-content" src="{{ asset($image) }}"></noscript>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1724,10 +1740,20 @@
                         
                         
                     </ul>
-                    {{  $data->links()  }}
+                    <div class="clearfix"></div>
 
+                    
+                    
                     @endif
                 </div>
+                @if(count($data)>0)
+                <div class="page-int">
+                    {{  $data->links()  }}
+                </div>
+                @endif
+                
+
+                    
             </div>
         </div>
     </div>
