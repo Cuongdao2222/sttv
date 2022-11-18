@@ -155,7 +155,7 @@
 @if(Auth::user()->permision>1)
 
 <li class="nav-item">
-    <a href="{{ route('products.index') }}"
+    <a href="https://sieuthitivi.com/admins/category/1"
        class="nav-link {{ Request::is('products*') ? 'active' : '' }}">
         <p>Sản phẩm</p>
     </a>
