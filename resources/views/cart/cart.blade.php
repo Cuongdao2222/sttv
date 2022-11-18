@@ -40,13 +40,13 @@
                     <div class="column">
                         <div class="cart-logo text-center">
                             <a href="/">
-                            <img alt="" src="{{ asset('images/logo.jpg')  }}"></a>
+                            <img alt="" src="{{ asset('images/global-samsung-logo.svg')}}"></a>
                         </div>
                     </div>
                     <div class="column">
-                        <div class="anhduy-logo text-right">
+                        <div class="text-right">
                             <a href="/">
-                            <img height="40" src="{{ asset('../images/LOGO-ADG.png') }}">
+                            <img height="40" src="{{ asset('images/logo.jpg')  }}">
                             </a>
                         </div>
                     </div>
@@ -302,7 +302,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="text-block fz-12">
-                                            <p>Mọi thắc mắc vui lòng liên hệ nhân viên theo Hotline: 0932 190 170 để được hỗ trợ
+                                            <p>Mọi thắc mắc vui lòng liên hệ nhân viên theo Hotline: 0912 326 577 để được hỗ trợ
                                                 24/7 
                                             </p>
                                         </div>
