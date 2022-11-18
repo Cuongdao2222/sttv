@@ -36,9 +36,9 @@
             @foreach($banners as $value)
 
             <div class="swiper-slide">
-                <a href="samsung/tvs/the-premiere.html">
-                <img class="is-hidden-mobile" src="https://dienmaynguoiviet.vn/{{ $value->image }}">
-                <img class="is-hidden-tablet" src="https://dienmaynguoiviet.vn/{{ $value->image }}">
+                <a href="{{ asset($value->link) }}">
+                <img class="is-hidden-mobile" src="{{ asset($value->image) }}">
+                <img class="is-hidden-tablet" src="{{ asset($value->image) }}">
                 </a>
             </div>
            <!--  <div class="item" data-dot="<span>{{ $value->title }}</span>">
