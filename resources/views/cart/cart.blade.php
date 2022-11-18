@@ -44,9 +44,9 @@
                         </div>
                     </div>
                     <div class="column">
-                        <div class="text-right">
+                        <div class="anhduy-logo text-right">
                             <a href="/">
-                            <img height="40" src="{{ asset('images/logo.jpg')  }}">
+                            <img height="40" src="{{ asset('../images/LOGO-ADG.png') }}">
                             </a>
                         </div>
                     </div>
