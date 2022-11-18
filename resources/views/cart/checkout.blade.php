@@ -335,17 +335,7 @@
                             <div class="footer-legal">
                             </div>
                         </div>
-                        <div class="footer-local-logo">
-                            <div class="footer-local-logo--wrap">
-                                <div class="footer-local-logo__item">
-                                    <a class="footer-mark__link" href="https://www.online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=14561" target="_blank">
-                                        <div class="image image--main-loaded">
-                                            <img class="image__main responsive-img image--loaded" alt="Đã đăng ký với Bộ Công Thương" src="../images/gov-logos-2.png" style="">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
