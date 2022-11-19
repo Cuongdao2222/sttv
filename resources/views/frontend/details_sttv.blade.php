@@ -21,6 +21,12 @@
 <link href="{{ asset('css/site.css')}}" rel="stylesheet">
 <link href="{{ asset('assets/75a5fa0c/css/progressive-media.min.css')}}" rel="stylesheet">
 
+<style type="text/css">
+    #thong-so{
+        margin: 0;
+    }
+</style>
+
 @endpush
 <div class="product-view">
     <div class="pd-g-header-navigation aem-GridColumn aem-GridColumn--default--12">
@@ -33,14 +39,9 @@
                     <div class="pd-header-navigation__menu-wrap">
                         <div class="pd-header-navigation__menu-inner">
                             <ul class="pd-header-navigation__menu" style="">
-                                <li id="anchor_pd-g-feature-benefit" class="pd-header-navigation__menu-item" style="">
-                                    <a href="#benefit" title="">Tính Năng</a>
-                                </li>
-                                <li id="anchor_pd-g-feature-gallery-carousel-pim" class="pd-header-navigation__menu-item" style="">
-                                    <a href="#gallery" title="">Hình Ảnh</a>
-                                </li>
+                              
                                 <li id="anchor_pd-g-product-specs" class="pd-header-navigation__menu-item" style="">
-                                    <a href="#specs" title="">Thông Số Kỹ Thuật </a>
+                                    <a href="#specs" title="" data-toggle="modal" data-target="#specifications">Thông Số Kỹ Thuật </a>
                                 </li>
                             </ul>
                         </div>
@@ -189,6 +190,26 @@
                     <a href="#" data-dismiss="modal" class="btn btn-link addtocart-continue-shopping">
                     Tiếp tục mua hàng</a>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ <div class="modal fade" id="specifications" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Thông số kỹ thuật</h5>
+                <button type="button" class="btn btn-secondary mobiles" data-dismiss="modal">x</button>
+            </div>
+
+            
+            <div class="modal-body" id="thong-so">
+                {!!  $data->Specifications  !!} 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
             </div>
         </div>
     </div>

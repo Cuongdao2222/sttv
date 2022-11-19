@@ -79,12 +79,12 @@
     </section>
     <div class="sh-banner-wrapper " style="background: transparent">
         <div class="sh-banner-container cinematic ">
-            <h3>Lưu ý về quà tặng:</h3>
+           <!--  <h3>Lưu ý về quà tặng:</h3>
             <ul>
                 <li>Không xóa các sản phẩm thuộc Bộ quà tặng đặt trước khỏi giỏ hàng( bao gồm: giá treo ẩn, khung viền, chân đế, loa )</li>
                 <li>Khách hàng không có nhu cầu, xóa sản phẩm khỏi giỏ hàng để nhận giá cuối</li>
                 <li>Các voucher có hạn 3 tháng kể từ ngày phát hành</li>
-            </ul>
+            </ul> -->
             <!--            <picture class="sh-banner-background-image">-->
             <!--                <img alt="tivi-qled-2021_250321_tnc_ver2.jpg"-->
             <!--                     src="--><!--/images/promotion.jpg"-->
