@@ -21,13 +21,7 @@
                 background: #F8F8F8;
             }    
 
-            nav.navbar a {
-               
-                font-size: 15px;
-            }
-            .merchandising-wrapper{
-                height: 300px;
-            }
+           
         </style>
 
 @endpush
