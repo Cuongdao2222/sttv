@@ -25,6 +25,9 @@
                
                 font-size: 15px;
             }
+            .merchandising-wrapper{
+                height: 300px;
+            }
         </style>
 
 @endpush
