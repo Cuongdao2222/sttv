@@ -65,7 +65,7 @@
                                     </button>
                                 </form>
                             </div>
-                            <a class="is-hidden-tablet navbar-item" style="margin-left: auto" href="index-1.htm"><img style="height: 40px;" src="{{ asset('images/logo.jpg')}}">
+                            <a class="is-hidden-tablet navbar-item" style="margin-left: auto" href="/"><img style="height: 40px;" src="{{ asset('images/logo.jpg')}}">
                             </a>
                         </div>
 
@@ -200,7 +200,7 @@
                             <div class="footer-legal">
                             </div>
                         </div>
-                        <div class="footer-local-logo">
+                      <!--   <div class="footer-local-logo">
                             <div class="footer-local-logo--wrap">
                                 <div class="footer-local-logo__item">
                                     <a class="footer-mark__link" href="https://www.online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=14561" target="_blank">
@@ -208,7 +208,7 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

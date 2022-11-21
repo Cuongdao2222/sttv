@@ -1841,9 +1841,9 @@
                                 <li class="product-item three-cols-tile">
                                     <h1 class="sr-only">Smart TV 8K Neo QLED 65 inch QN700B 2022</h1>
                                     <div class="merchandising-flag text-center wishlist" style="height: 30px;min-height: 30px;">
-                                        <div class="badge">
+                                        <!-- <div class="badge">
                                             <span>MIỄN PHÍ CÔNG LẮP ĐẶT TRONG 7 NGÀY</span>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="product-img-wrapper">
                                         <div class="thumb">
