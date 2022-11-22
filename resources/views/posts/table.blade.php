@@ -84,7 +84,7 @@
             @if($post->category!=5)
             <tr>
                 <td><img src="{{ url($post->image) }}" style="width:200px"></td>
-            <td>{{ $post->title }}</td>
+            <td>{!! $post->title !!}</td>
             <td>{{ @$new_category[$post->category] }}</td>
 
      
