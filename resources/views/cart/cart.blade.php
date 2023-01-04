@@ -65,26 +65,20 @@
                             </div>
                             <div class="tokoleftcontent-components">
                             </div>
-                            <form id="w0" action="/cart/index" method="post">
+                            <form id="w0" action="{{ route('order') }}" method="post">
                                 <input type="hidden" name="_csrf" value="5xMnz8SXEnvrGL_Xkk68eeuL8H-DVoAdJDlAmTBetGTefkKZsPpnObpM56bEPNVLnL-KGfks7FtKUynrciniDw==">                    
                                 <ul class="cart-product-list">
 
                                     <?php
 
-
-
                                         $arrPrice = [];
                                         $key = 0;
-                                        
    
                                         $cart = Gloudemans\Shoppingcart\Facades\Cart::content();
-
                                         
-
                                         $number_cart = count($cart);
 
 
-                                       
                                      ?>  
 
                                     @if($number_cart>0)
