@@ -1,4 +1,10 @@
 
+
+<?php 
+
+    dd(1);
+?>
+
 @extends('frontend.layouts.apps')
 
 @section('content') 
