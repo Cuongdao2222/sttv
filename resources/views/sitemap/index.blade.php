@@ -13,7 +13,4 @@
     <loc>https://sieuthitivi.com/sitemap_article.xml</loc>
     </sitemap>
 
-    <sitemap>
-    <loc>https://sieuthitivi.com/sitemap_page.xml </loc>
-    </sitemap>
 </sitemapindex>
