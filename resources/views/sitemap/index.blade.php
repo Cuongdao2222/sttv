@@ -14,6 +14,6 @@
     </sitemap>
 
     <sitemap>
-    <loc>https://sieuthitivi.com/sitemap_page.xml</loc>
+    <loc>https://sieuthitivi.com/sitemap_page.xml </loc>
     </sitemap>
 </sitemapindex>
