@@ -13,9 +13,7 @@ class sitemapController extends Controller
    public function index()
    {
     
-        return response()->view('sitemap.index', [
-            'arr_number' => $arr_number,
-        ])->header('Content-Type', 'text/xml');
+        return response()->view('sitemap.index')->header('Content-Type', 'text/xml');
 
    }
 
