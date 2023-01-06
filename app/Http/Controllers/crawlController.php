@@ -44,10 +44,10 @@ class crawlController extends Controller
 
             $file = 'https://dienmaynguoiviet.vn'.$value->image;
 
-            $file_headers = @get_headers($file);
+            $file_headers = @get_headers('https://icdn.dantri.com.vn/zoom/1032_688/2023/01/04/indonesia-1672804030289.jpg');
 
            
-            dd($file);
+            dd($file_headers);
 
             if($file_headers[0] == 'HTTP/1.0 200 OK'){
 
