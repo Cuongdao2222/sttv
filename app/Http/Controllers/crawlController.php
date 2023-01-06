@@ -47,8 +47,8 @@ class crawlController extends Controller
             $file_headers = @get_headers($file);
 
            
-            dd($file);
-            
+            dd($file_headers[0]);
+
             if($file_headers[0] == 'HTTP/1.0 200 OK'){
 
                 file_put_contents(public_path().$value->image, file_get_contents($file));
