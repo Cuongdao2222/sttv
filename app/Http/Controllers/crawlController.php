@@ -33,6 +33,36 @@ class crawlController extends Controller
 {
 
 
+    public function cralwimageDmnv()
+    {
+        $data = groupProduct::find(1);
+        $data = json_decode($data->product_id);
+
+        $images =  image::select('image')->whereIn('product_id', $data)->get();
+
+        foreach ($images as $key => $value) {
+
+            $file = 'https://dienmaynguoiviet.vn'.$value->image;
+
+            $file_headers = @get_headers($file);
+
+           
+
+            if($file_headers[0] == 'HTTP/1.0 200 OK'){
+
+                file_put_contents(public_path().$value->image, file_get_contents($file));
+
+            }
+            else{
+                echo "<pre>";
+                  print_r($value->image);
+               echo "</pre>";
+            }
+        
+        }
+    
+    }
+
     public function updateMetas($value='')
     {
 
@@ -1626,7 +1656,6 @@ class crawlController extends Controller
                 $url = $link->Link;
 
                 $urls = 'http://dienmaynguoiviet.com/'.$url.'/';
-
         
                 $html = file_get_html(trim($urls));
 
