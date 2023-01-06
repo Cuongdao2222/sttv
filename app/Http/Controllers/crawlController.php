@@ -44,7 +44,7 @@ class crawlController extends Controller
 
             $file = 'https://dienmaynguoiviet.vn'.$value->image;
 
-            $file_headers = @get_headers('https://icdn.dantri.com.vn/zoom/1032_688/2023/01/04/indonesia-1672804030289.jpg');
+            $file_headers = @get_headers('https://dienmaynguoiviet.vn/uploads/product/1672192007_1672022918_fv1409s4w-km1111.jpg');
 
            
             dd($file_headers);
