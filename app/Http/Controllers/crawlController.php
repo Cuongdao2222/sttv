@@ -59,6 +59,8 @@ class crawlController extends Controller
                   print_r($value->image);
                echo "</pre>";
             }
+
+            echo "thanh cong";
         
         }
     
