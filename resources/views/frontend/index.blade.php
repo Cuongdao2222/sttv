@@ -38,6 +38,11 @@
 
             @foreach($banners as $value)
 
+            <?php 
+
+                dd($value->image);
+            ?>
+
             <div class="swiper-slide">
                 <a href="{{ asset($value->link) }}">
                 <img class="is-hidden-mobile" src="{{ asset($value->image) }}">
