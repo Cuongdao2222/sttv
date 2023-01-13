@@ -44,10 +44,8 @@ class crawlController extends Controller
 
             $file = 'https://dienmaynguoiviet.vn'.$value->image;
 
-            $file_headers = @get_headers('https://dienmaynguoiviet.vn/uploads/product/1672192007_1672022918_fv1409s4w-km1111.jpg');
+            $file_headers = @get_headers($file);
 
-           
-            dd($file_headers);
 
             if($file_headers[0] == 'HTTP/1.0 200 OK'){
 
@@ -59,10 +57,9 @@ class crawlController extends Controller
                   print_r($value->image);
                echo "</pre>";
             }
-
-            echo "thanh cong";
         
         }
+        echo "thành công";
     
     }
 

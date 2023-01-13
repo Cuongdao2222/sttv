@@ -98,6 +98,8 @@
 
                         @if( basename($image->image) != basename($data->Image) )
 
+                        
+
                          <div class="image-item">
                             <img alt="" src="{{ asset($image->image) }}">
                         </div>
