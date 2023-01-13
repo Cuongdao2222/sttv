@@ -227,20 +227,19 @@
 
         @stack('js')
 
-        <!--Start of Tawk.to Script (0.7.2)-->
-        <script id="tawk-script" type="text/javascript">
-        var Tawk_API = Tawk_API || {};
-        var Tawk_LoadStart=new Date();
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         (function(){
-            var s1 = document.createElement( 'script' ),s0=document.getElementsByTagName( 'script' )[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/6010479ac31c9117cb72acf0/1esvpfdes';
-            s1.charset = 'UTF-8';
-            s1.setAttribute( 'crossorigin','*' );
-            s0.parentNode.insertBefore( s1, s0 );
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/63c0d9fac2f1ac1e202d2f3b/1gmkl6uta';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
         })();
         </script>
-        <!--End of Tawk.to Script (0.7.2)-->
+        <!--End of Tawk.to Script-->
 
         
     </body>
