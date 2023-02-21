@@ -55,7 +55,7 @@
                             <span aria-hidden="true"></span>
                             </a>
                             <a class="navbar-item" href="/">
-                            <img src="{{ asset('images/logo.jpg')  }}" width="112" height="28">
+                            <img src="{{ asset('images/logo1.jpg')  }}" width="112" height="28">
                             </a>
                             <div class="is-hidden-tablet search-mobile">
                                 <form action="{{ route('search-product-frontend') }}" method="get">
