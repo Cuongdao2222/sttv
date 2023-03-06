@@ -76,7 +76,7 @@
 
                             $group = App\Models\groupProduct::where('group_product_id', 5)->get()->take(10);
 
-                             $cart = Gloudemans\Shoppingcart\Facades\Cart::content();
+                            $cart = Gloudemans\Shoppingcart\Facades\Cart::content();
 
                             $number_cart = count($cart);
 
@@ -85,13 +85,13 @@
                         <div id="navbarBasicExample" class="navbar-menu">
                             <div class="navbar-start">
                                 @foreach($group as $val)
-                                <a class="navbar-item" href="{{ route('category-product', $val->link) }}">{{ $val->name }}</a>
+                                <a class="navbar-item" href="javascript:void(0)" role="button" id="dropdownMenuLink_{{ $val->id  }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $val->name }}</a>
 
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_{{ $val->id }}">
                                     <a class="dropdown-item" href="#">Action</a>
                                     <a class="dropdown-item" href="#">Another action</a>
                                     <a class="dropdown-item" href="#">Something else here</a>
-                              </div>
+                                </div>
 
                                 @endforeach
                                 <a class="navbar-item" href="{{ route('tins') }}">tin tức</a>
