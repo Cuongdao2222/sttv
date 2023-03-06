@@ -55,7 +55,7 @@
                             <span aria-hidden="true"></span>
                             </a>
                             <a class="navbar-item" href="/">
-                            <img src="{{ asset('images/logo1.jpg')  }}" width="112" height="28">
+                                <img src="{{ asset('images/logo1.jpg')  }}" width="112" height="28">
                             </a>
                             <div class="is-hidden-tablet search-mobile">
                                 <form action="{{ route('search-product-frontend') }}" method="get">
@@ -86,6 +86,13 @@
                             <div class="navbar-start">
                                 @foreach($group as $val)
                                 <a class="navbar-item" href="{{ route('category-product', $val->link) }}">{{ $val->name }}</a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                              </div>
+
                                 @endforeach
                                 <a class="navbar-item" href="{{ route('tins') }}">tin tức</a>
                             </div>
