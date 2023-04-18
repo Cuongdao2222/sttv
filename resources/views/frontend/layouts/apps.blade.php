@@ -273,7 +273,14 @@
 
                 $('.dropdown-menu').hide();
 
-                $('.'+id).show();
+                if($('.'+id).is(':visible')){
+
+                    $('.'+id).hide();
+
+                }
+                else{
+                    $('.'+id).show();
+                }
 
             })
         </script>
