@@ -103,7 +103,7 @@
                                    
                                     <div class="dropdown-menu item-menu-{{ $val->id }}" aria-labelledby="dropdownMenuLink_{{ $val->id }}">
                                          @foreach($child_menu as $value)
-                                        <a class="dropdown-item" href="#">{{ $value->name }}</a>
+                                        <a class="dropdown-item" href="{{ route('details', $value->link) }}">{{ $value->name }}</a>
                                          @endforeach
                                         
                                     </div>
@@ -271,16 +271,16 @@
             $('.item-menu').click(function() {
                 const id = $(this).attr('id');
 
-                $('.dropdown-menu').hide();
+                if($('.'+id).is(':hidden')){
+                    $('.dropdown-menu').hide();
 
-                if($('.'+id).is(':visible')){
-
-                    $('.'+id).hide();
+                    $('.'+id).show();
 
                 }
                 else{
-                    $('.'+id).show();
+                    $('.'+id).hide();
                 }
+
 
             })
         </script>

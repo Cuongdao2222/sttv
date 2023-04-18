@@ -205,7 +205,7 @@
                                     <div class="custom-button has-text-centered">
                                         <div class="actions--add-to-cart">
                                             <div class="has-text-centered">
-                                                <button class="btn btn-default btn-cart" onclick="addToCart({{ $value->id }})">Thêm vào giỏ hàng
+                                                <button class="btn btn-default " onclick="addCartFast({{ $value->id }})">Thêm vào giỏ hàng
                                                 </button>
 
 
@@ -345,6 +345,31 @@
     
               window.location.href = result; 
                 
+            }
+        });
+        
+    }
+
+    function addCartFast(id) {
+    
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    
+        $.ajax({
+            type: 'POST',
+            url: "{{ route('addcartfast') }}",
+            data: {
+                product_id: id,
+                   
+            },
+            success: function(result){
+    
+                $('.badge-cart').text(result);
+                alert('Thêm sản phẩm vào giỏ hàng thành công !');
+
             }
         });
         
