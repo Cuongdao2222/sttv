@@ -253,9 +253,10 @@
             $('.item-menu').click(function() {
                 const id = $(this).attr('id');
 
+                $('.dropdown-menu').hide();
+
                 $('.'+id).show();
 
-                alert('vào đây');
             })
         </script>
 
