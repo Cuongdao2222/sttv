@@ -85,9 +85,9 @@
                         <div id="navbarBasicExample" class="navbar-menu">
                             <div class="navbar-start">
                                 @foreach($group as $val)
-                                <a class="navbar-item" href="javascript:void(0)" role="button"  aria-expanded="false">{{ $val->name }}</a>
+                                <a class="navbar-item item-menu" id="item-menu-{{ $val->id }}" href="javascript:void(0)" role="button"  aria-expanded="false">{{ $val->name }}</a>
 
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_{{ $val->id }}">
+                                <div class="dropdown-menu item-menu-{{ $val->id }}" aria-labelledby="dropdownMenuLink_{{ $val->id }}">
                                     <a class="dropdown-item" href="#">Action</a>
                                     <a class="dropdown-item" href="#">Another action</a>
                                     <a class="dropdown-item" href="#">Something else here</a>
@@ -247,6 +247,17 @@
         })();
         </script>
         <!--End of Tawk.to Script-->
+
+        <script type="text/javascript">
+            
+            $('.item-menu').click(function() {
+                const id = $(this).attr('id');
+
+                $('.'id).show();
+
+                alert('vào đây');
+            })
+        </script>
 
         
     </body>
