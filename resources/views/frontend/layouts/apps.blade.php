@@ -95,14 +95,16 @@
                                     <a class="navbar-item item-menu" id="item-menu-{{ $val->id }}" href="javascript:void(0)" role="button"  aria-expanded="false">{{ $val->name }}</a>
 
                                     <?php 
-                                        $child_menu =  App\Models\groupProduct::where('parent_id', $val->id)->OrderBy('id', 'desc')->get()->take(1);
+                                        $child_menu =  App\Models\groupProduct::where('parent_id', 12)->OrderBy('id', 'desc')->get()->take(4);
 
 
                                     ?>
                                     @if($child_menu->count()>0)
                                     @foreach($child_menu as $value)
-                                    <div class="dropdown-menu item-menu-{{ $value->id }}" aria-labelledby="dropdownMenuLink_{{ $value->id }}">
-                                        <a class="dropdown-item" href="{{ route('details', $value->link) }}">{{ $value->name }}</a>
+                                    <div class="dropdown-menu item-menu-{{ $val->id }}" aria-labelledby="dropdownMenuLink_{{ $val->id }}">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
                                         
                                     </div>
                                     @endforeach
