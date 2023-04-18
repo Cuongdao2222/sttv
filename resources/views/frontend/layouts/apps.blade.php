@@ -253,7 +253,7 @@
             $('.item-menu').click(function() {
                 const id = $(this).attr('id');
 
-                $('.'id).show();
+                $('.'+id).show();
 
                 alert('vào đây');
             })
