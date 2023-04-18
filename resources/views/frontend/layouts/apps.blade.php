@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{{ asset('images/logo1.jpg') }}" rel="shortcut icon" type="image/x-icon">
-        @if(isset($meta))
-        <title>{{ $meta->meta_title }}</title>
+        @if(isset($meta) && !empty($meta->meta_title))
+        <title>{{ @$meta->meta_title }}</title>
         <meta property="og:description" content="{{ $meta->meta_content }}" /> 
         <meta name = "google-site-verify" content = "Oe5VRMXXNpVeNUbjHjfsjRfwAWzTXrHOR-UMF1iKIf4" />
      
@@ -103,7 +103,7 @@
                                    
                                     <div class="dropdown-menu item-menu-{{ $val->id }}" aria-labelledby="dropdownMenuLink_{{ $val->id }}">
                                          @foreach($child_menu as $value)
-                                        <a class="dropdown-item" href="{{ route('details', $value->link) }}">{{ $value->name }}</a>
+                                        <a class="dropdown-item" href="{{ route('category-product', $value->link) }}">{{ $value->name }}</a>
                                          @endforeach
                                         
                                     </div>
