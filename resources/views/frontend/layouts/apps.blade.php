@@ -96,6 +96,8 @@
 
                                     <?php 
                                         $child_menu =  App\Models\groupProduct::where('parent_id', 12)->OrderBy('id', 'desc')->get()->take(4);
+
+                                        dd($child_menu);
                                     ?>
                                     @if($child_menu->count()>0)
                                     @foreach($child_menu as $value)
