@@ -100,14 +100,15 @@
 
                                     ?>
                                     @if($child_menu->count()>0)
-                                    @foreach($child_menu as $value)
                                     <div class="dropdown-menu item-menu-{{ $val->id }}" aria-labelledby="dropdownMenuLink_{{ $val->id }}">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    @foreach($child_menu as $value)
+                                    
+                                        <a class="dropdown-item" href="#">{{ $value->name }}</a>
                                         
-                                    </div>
+                                        
+                                    
                                     @endforeach
+                                    <div class="dropdown-menu item-menu-{{ $val->id }}" aria-labelledby="dropdownMenuLink_{{ $val->id }}">
                                     @endif
                                 </div>    
 
