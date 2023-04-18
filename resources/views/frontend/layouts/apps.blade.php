@@ -35,6 +35,9 @@
             .merchandising-wrapper{
                 height: 300px;
             }
+            .div-menu{
+                position: relative;
+            }
         </style>
         
     </head>
