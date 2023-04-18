@@ -95,7 +95,7 @@
                                     <a class="navbar-item item-menu" id="item-menu-{{ $val->id }}" href="javascript:void(0)" role="button"  aria-expanded="false">{{ $val->name }}</a>
 
                                     <?php 
-                                        $child_menu =  App\Models\groupProduct::where('parent_id', $val->id)->OrderBy('id', 'desc')->get()->take(4);
+                                        $child_menu =  App\Models\groupProduct::where('parent_id', $val->id)->OrderBy('id', 'desc')->get()->take(1);
 
 
                                     ?>
