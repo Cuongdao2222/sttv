@@ -88,9 +88,9 @@
                                 <a class="navbar-item" href="javascript:void(0)" role="button" id="dropdownMenuLink_{{ $val->id  }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $val->name }}</a>
 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_{{ $val->id }}">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="#">{{ $val->id }}</a>
+                                    <a class="dropdown-item" href="#">{{ $val->id }}</a>
+                                    <a class="dropdown-item" href="#">{{ $val->id }}</a>
                                 </div>
 
                                 @endforeach
