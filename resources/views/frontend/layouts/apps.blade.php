@@ -39,7 +39,7 @@
                 position: relative;
             }
             .item-menu{
-                line-height: 48px;
+                line-height: 48px !important;
             }
         </style>
         
