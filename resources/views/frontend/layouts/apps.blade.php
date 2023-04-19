@@ -285,6 +285,34 @@
             })
         </script>
 
+        <script type="text/javascript">
+            
+             function addCartFast(id) {
+    
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+            
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ route('addcartfast') }}",
+                    data: {
+                        product_id: id,
+                           
+                    },
+                    success: function(result){
+            
+                        $('.badge-cart').text(result);
+                        alert('Thêm sản phẩm vào giỏ hàng thành công !');
+
+                    }
+                });
+                
+            }
+        </script>
+
         
     </body>
 </html>

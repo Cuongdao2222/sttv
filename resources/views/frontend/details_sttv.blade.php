@@ -25,6 +25,12 @@
     #thong-so{
         margin: 0;
     }
+    @media only screen and (max-width: 768px) {
+        .js-buy-now{
+
+            margin-bottom: 15px;
+        }    
+    }
 </style>
 
 @endpush
@@ -76,13 +82,17 @@
 
                          <?php 
 
-                            $images_products = Cache::remember('image_product_'.$data->id, 100, function() use ($data) {
+                            // $images_products = Cache::remember('image_product_'.$data->id, 100, function() use ($data) {
 
-                                $images = App\Models\image::where('product_id', $data->id)->select('image')->get()??'';
+                            //     $images = App\Models\image::where('product_id', $data->id)->select('image')->get()??'';
 
-                                return $images;
+                            //     return $images;
                             
-                            });
+                            // });
+
+                            $images_products = App\Models\image::where('product_id', $data->id)->select('image')->get()??'';
+
+                           
 
                         ?>
 
@@ -148,7 +158,13 @@
                                     <span class="cost-box__cta">
 
                                     @if(@number_format($data->Price)>0)    
+
+                                    <button class="btn cta cta--contained cta--emphasis add-special-tagging js-buy-now tg-pre-order" href="javascript:;" onclick="addCartFast({{ $data->id }})" style="margin-right: 20px;">Thêm vào giỏ hàng</button> 
+
+                                    &nbsp; &nbsp;
                                     <button class="btn cta cta--contained cta--emphasis add-special-tagging js-buy-now tg-pre-order btn-cart" href="javascript:;" onclick="addToCart({{ $data->id }})">MUA NGAY</button>
+
+
                                     @endif
                                     </span>
                                 </div>
