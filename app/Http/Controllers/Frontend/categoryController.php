@@ -39,7 +39,9 @@ class categoryController extends Controller
 
         $product = groupProduct::find($id);
 
-        $product_sam = collect(json_decode($product->product_id))->take(3);
+        $product_sam = collect(json_decode($product->product_id))->sortBy('id')->take(16);
+
+        // dd($product_sam);
 
         return view('frontend.ajax.ajax_category_home', compact('product_sam'));
 
