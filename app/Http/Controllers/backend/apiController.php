@@ -102,10 +102,10 @@ class apiController extends Controller
         dd($collection);
     }
 
-     public function updateProductAll(Request $request)
+    public function updateProductAll(Request $request)
     {
 
-        $dataproduct = json_decode($request->data);
+        $dataproduct = json_decode($request->getContent());
 
         $updated = [];
 
