@@ -92,7 +92,7 @@
                             <div class="navbar-start">
                                 @foreach($group as $val)
                                 <div class="div-menu">
-                                    <a class="navbar-item item-menu" id="item-menu-{{ $val->id }}" href="javascript:void(0)" role="button"  aria-expanded="false">{{ $val->name }}</a>
+                                    <a class="navbar-item item-menu" id="item-menu-{{ $val->id }}" href="{{ route('details', $val->link) }}" role="button"  aria-expanded="false">{{ $val->name }}</a>
 
                                     <?php 
                                         $child_menu =  App\Models\groupProduct::where('parent_id', $val->id)->OrderBy('id', 'desc')->get()->take(4);
@@ -268,10 +268,28 @@
 
         <script type="text/javascript">
             
-            $('.item-menu').click(function() {
-                const id = $(this).attr('id');
+            // $('.item-menu').click(function() {
+            //     const id = $(this).attr('id');
 
-                if($('.'+id).is(':hidden')){
+            //     if($('.'+id).is(':hidden')){
+            //         $('.dropdown-menu').hide();
+
+            //         $('.'+id).show();
+
+            //     }
+            //     else{
+            //         $('.'+id).hide();
+            //     }
+
+
+            // })
+
+            // hover show child menu
+
+            $(".item-menu").mouseover(function(){
+
+                const id = $(this).attr('id');
+                 if($('.'+id).is(':hidden')){
                     $('.dropdown-menu').hide();
 
                     $('.'+id).show();
@@ -281,8 +299,13 @@
                     $('.'+id).hide();
                 }
 
+            });
 
-            })
+            $(".dropdown-menu").mouseleave(function(){
+
+                $('.dropdown-menu').hide();
+
+            });
         </script>
 
         <script type="text/javascript">

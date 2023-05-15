@@ -24,6 +24,14 @@
             width: 100%;
         }
 
+        .product-item-size-list .active{
+            display: none;
+        }
+
+        .product-item-size-list{
+            height: 50px;
+        }
+
     </style>
     @endpush
 
@@ -39,12 +47,8 @@
                                     <li property="itemListElement" typeof="ListItem">
                                         <a href="/"><u>Trang chủ</u></a>
                                     </li>
-                                    <li property="itemListElement" typeof="ListItem">
-                                        <a href="{{ route('category-product', $data->link) }}"><u>Sảnphẩm</u></a>
-                                    </li>
-                                    <li class="active" property="itemListElement" typeof="ListItem">
-                                        {{ @$data->name }}
-                                    </li>
+
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -82,6 +86,8 @@
                                                     </a>
                                                 </h3>
 
+                                               
+
                                                 <div class="pf-finder-v2__filters-list-item-wrap" style="">
                                                     <ul class="pf-finder-v2__filters-list-list-item">
 
@@ -94,7 +100,7 @@
                                                             <div class="checkbox-radio">
                                                                 <input type="checkbox" name="category" class="checkbox-pop" value="{{ $val->id }}" id="checkbox-{{ $key }}">
                                                                 <label class="checkbox-radio__label" for="checkbox-{{ $key }}">
-                                                                <span class="checkbox-radio__label-text">{{ $val->name }}</span>
+                                                                <span class="checkbox-radio__label-text">{{ @$val->name }}</span>
                                                                 </label>
                                                             </div>
                                                         </li>
@@ -102,6 +108,8 @@
                                                        
                                                     </ul>
                                                 </div>
+
+
                                             </div>
                                            <!--  <div class="pf-finder-v2__filters-list-list-area pf-finder-v2__filters-list-list--active" style="display:block">
                                                 <h3 class="pf-finder-v2__filters-list-list-headline">
@@ -207,13 +215,16 @@
                             </div>
                         
                     </div>
-                     @if(count($product))
+
+
+                     @if(count($product)>0)
                     <ul class="column is-10 product-listing product-grid plp-content">
 
                         @foreach($product as $val)
+
                         
                         <li class="product-item three-cols-tile">
-                            <h1 class="sr-only">{{ @$val->Name }}</h1>
+                            <h1 class="sr-only">{{ @$val->Name??'' }}</h1>
                            <!--  <div class="merchandising-flag text-center wishlist" style="height: 30px;min-height: 30px;">
                                 <div class="badge">
                                     <span>MIỄN PHÍ CÔNG LẮP ĐẶT TRONG 7 NGÀY</span>
@@ -307,8 +318,7 @@
                         </li>
                       
                         @endforeach
-                        
-                        {{  $product->links()  }}
+                       
                     </ul>
 
 

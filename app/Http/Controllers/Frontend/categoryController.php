@@ -208,11 +208,19 @@ class categoryController extends Controller
 
         }
         else{
+
             $data = $this->getDataOfCate($slug);
 
+            $product = $data['data'];
+
+            $data  ='';
+
+            $meta = '';
 
 
-            return view('frontend.category', with($data));
+            return  view('frontend.cate', compact('product', 'data', 'meta'));
+
+            // return view('frontend.category', with($data));
         }
        
     }
