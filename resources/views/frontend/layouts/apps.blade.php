@@ -215,7 +215,7 @@
                         <div class="footer-column__item column is-one-quarter">
                             <div class="footer-category">
                                 <h3 class="footer-category__title">Hotline</h3>
-                                <p>092.4700.737 </p>
+                                <p>091.301.1888 </p>
                             </div>
                         </div>
                     </div>
@@ -244,7 +244,7 @@
         <img class="fab__icon" alt="" src="{{ asset('images/arrow-up-circle-outline.svg') }}">
         </a>
 
-        <a href="https://zalo.me/0924700737" target="_blank">
+        <a href="https://zalo.me/0913011888" target="_blank">
             <div style="position: fixed; bottom: 52px; left: 52px; transform: translate(0px, 0px) !important; z-index: 2147483644; border: none; visibility: visible; right: 0px; width: 60px; height: 60px;" class="zalo-chat-widget"data-welcome-message="Điện Máy Người Việt rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="" data-height="">
                 <img src="https://page.widget.zalo.me/static/images/2.0/Logo.svg">
             </div>
