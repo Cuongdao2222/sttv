@@ -220,6 +220,8 @@
                         </div>
                     </div>
                 </div>
+
+                
                 <div class="footer-bottom container">
                     <div class="footer-copyright-wrap">
                         <div class="footer-copyright-align">
