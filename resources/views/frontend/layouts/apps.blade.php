@@ -97,14 +97,13 @@
                                     <?php 
                                         $child_menu =  App\Models\groupProduct::where('parent_id', $val->id)->OrderBy('id', 'desc')->get()->take(4);
 
-
                                     ?>
                                     @if($child_menu->count()>0)
                                    
                                     <div class="dropdown-menu item-menu-{{ $val->id }}" aria-labelledby="dropdownMenuLink_{{ $val->id }}">
-                                         @foreach($child_menu as $value)
+                                        @foreach($child_menu as $value)
                                         <a class="dropdown-item" href="{{ route('category-product', $value->link) }}">{{ $value->name }}</a>
-                                         @endforeach
+                                        @endforeach
                                         
                                     </div>
                                    

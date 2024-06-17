@@ -101,7 +101,7 @@
                                                                 <input type="checkbox" name="category" class="checkbox-pop" value="{{ $val->id }}" id="checkbox-{{ $key }}">
                                                                 <label class="checkbox-radio__label" for="checkbox-{{ $key }}">
                                                                 <span class="checkbox-radio__label-text">{{ @$val->name }}</span>
-                                                                </label>
+                                                                </lab el>
                                                             </div>
                                                         </li>
                                                         @endforeach
