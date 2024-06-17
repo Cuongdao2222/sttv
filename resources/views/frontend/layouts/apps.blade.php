@@ -223,7 +223,7 @@
                 <div class="footer-bottom container">
                     <div class="footer-copyright-wrap">
                         <div class="footer-copyright-align">
-                            <p class="footer-copyright">©2022Siêu thị tivi </p>
+                            <p class="footer-copyright">©2024Siêu thị tivi </p>
                             <div class="footer-legal">
                             </div>
                         </div>
