@@ -123,7 +123,7 @@
                                             </svg>
                                         </button>
                                     </form>
-                                    <a href="/"><img src="{{ asset('images/logo.jpg') }}"></a>
+                                    <!-- <a href="/"><img src="{{ asset('images/logo.jpg') }}"></a> -->
                                     <a class="position-relative" href="{{ route('cart-sttv') }}">
                                     <img src="{{ asset('images/cart-outline.png') }}">
                                     <span class="badge badge-danger badge-cart">{{ $number_cart }}</span>
