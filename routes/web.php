@@ -28,6 +28,8 @@ Route::post('/check-unique-cate', 'productController@filterProduct')->name('chec
 
 Route::post('filter-checkbox', 'Frontend\categoryController@filterBycheckbox')->name('filter-checkbox');
 
+Route::get('crawl-site-tinh-te', 'crawlController@crawPostTinhTe');
+
 
 Route::post('ajax-call-cate-home', 'Frontend\categoryController@getProductToCatte')->name('ajax-home-call-pd');
 
@@ -142,7 +144,7 @@ Route::get('tim', 'productController@FindbyNameOrModelOfFrontend')->name('search
 
 Auth::routes(['verify' => true]);
 
- Route::post('count-click-banner', 'Frontend\indexController@addClick')->name('click-banner');
+Route::post('count-click-banner', 'Frontend\indexController@addClick')->name('click-banner');
 
 // Route::get('/home', 'HomeController@index');
 
@@ -181,9 +183,6 @@ Route::post('get-search-input-compare', 'AjaxController@getProductSeachValueInpu
 Route::post('suggest', 'AjaxController@getProductActive')->middleware('throttle:60')->name('sugest-click');
 
 Route::post('filter-price-product', 'AjaxController@filterByValue')->name('filter-option');
-
-
-
 
 Route::post('filter-price-product-by-page', 'AjaxController@filterByPageFilter')->name('filter-option-by-page');
 

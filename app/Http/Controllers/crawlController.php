@@ -941,6 +941,21 @@ class crawlController extends Controller
         echo "thanh cong";
            
     }
+
+    public function crawPostTinhTe()
+    {
+        $link = 'https://tinhte.vn/thread/tren-tay-bo-dieu-khien-dieu-hoa-thong-minh-made-in-vietnam.3668219/';
+
+
+        $html = file_get_html($link);
+
+        $title = strip_tags($html->find('.thread-title', 0));
+
+        $content = html_entity_decode($html->find('.content', 0));
+
+        print_r($content);
+
+    }
     public function removeSpaceProductsku()
     {
         $product = product::select('ProductSku', 'id')->get();
