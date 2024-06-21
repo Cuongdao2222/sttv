@@ -243,7 +243,7 @@
 
 <script type="text/javascript">
     
- function addToCart(id) {
+function addToCart(id) {
     
     $.ajaxSetup({
         headers: {

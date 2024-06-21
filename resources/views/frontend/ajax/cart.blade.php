@@ -84,15 +84,7 @@
               
                // numberCart = result.find("#number-product-cart").text();
 
-               $('#tbl_list_cartss').html('');
-
-                $('#tbl_list_cartss').append(result);
-
-                const numberCart = $('#number-product-cart').text();
-
-                $('.number-cart').text(numberCart);
-
-                $('#exampleModal').modal('show'); 
+                window.location.href = '{{ route('show-cart') }}'; 
                 
             }
         });
