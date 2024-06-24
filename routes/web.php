@@ -190,6 +190,7 @@ Route::post('filter-price-product-by-page', 'AjaxController@filterByPageFilter')
 
 Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
 
+    Route::post('check-active-image', 'imageController@checkActiveProduct')->name('check-active-image');
 
     Route::get('forget-cache-home', 'backend\indexController@index')->name('test');
 

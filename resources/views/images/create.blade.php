@@ -153,8 +153,12 @@
                     <td><img src="{{ asset($image->image) }}" height="150px" width="150px"></td>
 
                 
-                <td>{{ $image->product_id }}</td>
-                <td><input type="checkbox"  name="check" value="{{ $image->image }}"  {{ $image->image==$imageProduct?'checked':'' }}></td>
+                    <td>{{ $image->product_id }}</td>
+                    <td><input type="checkbox"  name="check" value="{{ $image->image }}"  {{ $image->image==$imageProduct?'checked':'' }}></td>
+
+                    <td>  <input type="checkbox" class="active-image" id="active-image-{{ $image->id }}" data-id="{{ $image->id }}"  name="check" value="{{ $image->image }}"  {{ $image->active===1?'checked':'' }}> </td>
+
+
                     <td width="120">
                         {!! Form::open(['route' => ['images.destroy', $image->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
@@ -180,6 +184,41 @@
     @endif
 
     <script type="text/javascript">
+
+        $('.active-image').on('change', function() {
+
+            id = $(this).attr('data-id');
+
+
+
+            if($('#active-image-' + id).is(":checked")){
+
+               active = 1;
+                
+            }
+            else{
+                active = 0;
+            }
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: 'post',
+                url: "{{ route('check-active-image') }}",
+                data: {
+                    id: id,
+                    active:active
+                },
+                success: function(result){
+                     location.reload();
+                }
+            });
+
+        });    
 
          
         $('input[type="checkbox"]').on('change', function() {

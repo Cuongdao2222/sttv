@@ -105,6 +105,21 @@ class imageController extends AppBaseController
         return view('images.show')->with('image', $image);
     }
 
+    public function checkActiveProduct(Request $request)
+    {
+       
+        $id     = $request->id;
+        $active = $request->active;
+
+        $image = image::findOrFail($id);
+
+        $image->active = $active;
+
+        $image->save();
+
+    }
+
+
     /**
      * Show the form for editing the specified image.
      *
