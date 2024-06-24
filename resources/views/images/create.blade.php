@@ -1,19 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <style type="text/css">
-        .btn-show{
-            width: 100%;
-        }
-        .fixed{
-            position: fixed;
-            top:58px;
-            z-index: 999;
-            background: green;
-        }
-    </style>
-
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -23,6 +10,7 @@
             </div>
         </div>
     </section>
+
     
     <?php  
         $start = stripos($_SERVER['REQUEST_URI'],'?');
@@ -91,17 +79,16 @@
 
 
     ?>
-    <div class="btn-show">
-        <div class="btn btn-warning" ><a href="{{ route('products.edit', $product_id) }}">Cơ bản</a></div>
 
-        <div class="btn btn-warning" ><a href="{{ route('group-product-selected', $product_id) }}">Danh mục</a></div>
-         <div class="btn btn-warning btn-info seo-click"><a href="{{ route('products.edit', $product_id) }}?seo=$product_id">SEO</a></div>
+    <div class="btn btn-warning" ><a href="{{ route('products.edit', $product_id) }}">Cơ bản</a></div>
 
-        <div class="btn btn-warning"><a href="{{ route('products.edit', $product_id) }}?mota={{ $product_id }}">Mô tả</a></div>
-        <div class="btn btn-warning" ><a href="{{ route('filter-property') }}?group-product={{ get_Group_Product($product_id)[0]??'' }}&productId={{ $product_id }}">Thông số</a></div>
-        <div class="btn btn-warning activess"><a href="{{ route('images.create') }}?{{ $product_id }}">Ảnh</a></div>
-        <div class="btn btn-warning" ><a href="{{ route('details',  $product_info->Link) }}" target="_blank">Xem tại web</a></div>
-    </div>   
+    <div class="btn btn-warning" ><a href="{{ route('group-product-selected', $product_id) }}">Danh mục</a></div>
+     <div class="btn btn-warning btn-info seo-click"><a href="{{ route('products.edit', $product_id) }}?seo=$product_id">SEO</a></div>
+
+    <div class="btn btn-warning"><a href="{{ route('products.edit', $product_id) }}?mota={{ $product_id }}">Mô tả</a></div>
+    <div class="btn btn-warning" ><a href="{{ route('filter-property') }}?group-product={{ get_Group_Product($product_id)[0]??'' }}&productId={{ $product_id }}">Thông số</a></div>
+    <div class="btn btn-warning activess"><a href="{{ route('images.create') }}?{{ $product_id }}">Ảnh</a></div>
+    <div class="btn btn-warning" ><a href="{{ route('details',  $product_info->Link) }}" target="_blank">Xem tại web</a></div>
    
     <div class="content px-3">
 
@@ -157,7 +144,6 @@
                 <th>Image</th>
                 <th>Product Id</th>
                 <th>Chọn ảnh đại diện</th>
-                <th>Active</th>
                 <th colspan="3">Action</th>
             </tr>
             </thead>
@@ -168,11 +154,7 @@
 
                 
                 <td>{{ $image->product_id }}</td>
-                <td>
-                    <input type="checkbox" class="show-image-product"  name="check" value="{{ $image->image }}"  {{ $image->image==$imageProduct?'checked':'' }}>
-                </td>
-                <td>  <input type="checkbox" class="active-image" id="active-image-{{ $image->id }}" data-id="{{ $image->id }}"  name="check" value="{{ $image->image }}"  {{ $image->active===1?'checked':'' }}> </td>
-
+                <td><input type="checkbox"  name="check" value="{{ $image->image }}"  {{ $image->image==$imageProduct?'checked':'' }}></td>
                     <td width="120">
                         {!! Form::open(['route' => ['images.destroy', $image->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
@@ -197,15 +179,13 @@
     <div><a href="{{ route('products.index') }}">Quay về trang sản phẩm</a></div>
     @endif
 
-    @push('page_scripts')
-
     <script type="text/javascript">
 
          
-        $('.show-image-product').on('change', function() {
-           $('.show-image-product').not(this).prop('checked', false);
+        $('input[type="checkbox"]').on('change', function() {
+           $('input[type="checkbox"]').not(this).prop('checked', false);
 
-            $.ajax({
+           $.ajax({
                 type: 'GET',
                 url: "{{ route('image-ajax-product') }}",
                 data: {
@@ -213,63 +193,10 @@
                     image:$(this).val()
                 },
                 success: function(result){
-
                      location.reload();
                 }
             });
            
         });
-
-        $('.active-image').on('change', function() {
-
-            id = $(this).attr('data-id');
-
-
-
-            if($('#active-image-' + id).is(":checked")){
-
-               active = 1;
-                
-            }
-            else{
-                active = 0;
-            }
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            $.ajax({
-                type: 'post',
-                url: "{{ route('check-active-image') }}",
-                data: {
-                    id: id,
-                    active:active
-                },
-                success: function(result){
-                     location.reload();
-                }
-            });
-
-        });    
-
-        height_check = $('.btn-show').offset().top;
-
-        $(window).scroll(function (){
-
-            if($(window).scrollTop() > height_check){
-
-                $('.btn-show').addClass('fixed');
-            }
-            else{
-                $('.btn-show').removeClass('fixed');
-            }
-
-        });    
-
     </script>
-
-    @endpush
 @endsection
