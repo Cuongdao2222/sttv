@@ -99,12 +99,12 @@
         </style>
         @endif
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed sidebar-collapse">
  
 
 <div class="wrapper">
     <!-- Main Header -->
-    <nav class="sidebar-mini layout-fixed sidebar-collapse">
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light position">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
