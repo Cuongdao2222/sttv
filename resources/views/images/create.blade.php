@@ -154,7 +154,7 @@
                     <td><img src="{{ asset($image->image) }}" height="150px" width="150px"></td>
 
                 
-                    <td>{{ $image->product_id }}</td>
+                    <td>{{ $image->active }}</td>
                     <td><input type="checkbox"  name="check" value="{{ $image->image }}"  {{ $image->image==$imageProduct?'checked':'' }}></td>
 
                     <td>  <input type="checkbox" class="active-image" id="active-image-{{ $image->id }}" data-id="{{ $image->id }}"  name="check" value="{{ $image->image }}"  {{ $image->active===1?'checked':'' }}> </td>
