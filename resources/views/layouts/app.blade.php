@@ -104,7 +104,7 @@
 
 <div class="wrapper">
     <!-- Main Header -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <nav class="sidebar-mini layout-fixed sidebar-collapse">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
