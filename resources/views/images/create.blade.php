@@ -144,6 +144,7 @@
                 <th>Image</th>
                 <th>Product Id</th>
                 <th>Chọn ảnh đại diện</th>
+                <th>Active</th>
                 <th colspan="3">Action</th>
             </tr>
             </thead>
