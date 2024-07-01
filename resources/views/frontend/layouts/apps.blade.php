@@ -22,6 +22,8 @@
         <meta name="csrf-param" content="_csrf">
        <meta name="csrf-token" content="{{ csrf_token() }}">
 
+       <meta name="google-site-verification" content="5aXrCE97zt-vl-Y7jl0Y44tfi9iTwtDRikEkt8vU2UQ" />
+
         @stack('style')
         <style type="text/css">
             .btns{
