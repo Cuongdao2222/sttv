@@ -43,6 +43,13 @@
             .item-menu{
                 line-height: 48px !important;
             }
+
+            .fas-phones{
+                .phones-hotline {
+                    width: auto !important;
+                    padding: 7px 0;
+                }
+            }
         </style>
         
     </head>
@@ -115,6 +122,12 @@
                                 @endforeach
                                 <a class="navbar-item" href="{{ route('tins') }}">tin tức</a>
                             </div>
+
+                            <div class="fas-phones phones-hotline">          
+                                <a href="tel: 0913011888" class="header__history tin-km">Hotline:0913.011.888</a>
+                               
+                            </div>
+
                             <div class="navbar-end is-hidden-mobile">
                                 <div class="navbar-item">
                                     <form action="{{ route('search-product-frontend') }}" method="get">
@@ -243,6 +256,27 @@
                 </div>
             </div>
         </footer>
+
+
+        <style type="text/css">
+            .fab__icon {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 20px;
+                margin: auto auto;
+                width: 48px;
+                height: 48px;
+                fill: #fff;
+            }
+        </style>
+
+        <a class="fab show" title="Phone" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+        <img class="fab__icons" alt="" src="{{ asset('images/arrow-up-circle-outline.svg') }}">
+        </a>
+
+
         <a class="fab show" title="Go to Top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
         <img class="fab__icon" alt="" src="{{ asset('images/arrow-up-circle-outline.svg') }}">
         </a>
