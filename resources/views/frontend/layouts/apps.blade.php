@@ -279,7 +279,7 @@
                 top: 0;
                 left: 0;
                 right: 0;
-                bottom: 30px;
+                bottom: 70px;
                 margin: auto auto;
                 width: 48px;
                 height: 48px;
@@ -288,7 +288,7 @@
         </style>
 
         <a class="fab show" title="Phone" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-        <img class="fab__icons" alt="" src="{{ asset('images/arrow-up-circle-outline.svg') }}">
+        <img class="fab__icons" alt="" src="{{ asset('images/template/tongdai02473036336.png') }}">
         </a>
 
 
