@@ -50,6 +50,10 @@
                     padding: 7px 0;
                 }
             }
+
+            .phones-hotline{
+                line-height: 64px;
+            }
         </style>
         
     </head>
@@ -264,7 +268,18 @@
                 top: 0;
                 left: 0;
                 right: 0;
-                bottom: 20px;
+                bottom: 0px;
+                margin: auto auto;
+                width: 48px;
+                height: 48px;
+                fill: #fff;
+            }
+            .fab__icons{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 30px;
                 margin: auto auto;
                 width: 48px;
                 height: 48px;
