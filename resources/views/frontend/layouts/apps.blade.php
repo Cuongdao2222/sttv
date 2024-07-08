@@ -281,8 +281,8 @@
                 right: 0;
                 bottom: 70px;
                 margin: auto auto;
-                width: 48px;
-                height: 48px;
+               /* width: 48px;
+                height: 48px;*/
                 fill: #fff;
             }
 
