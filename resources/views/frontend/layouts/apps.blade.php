@@ -276,7 +276,7 @@
             }
             .fab__icons{
                 position: absolute;
-                top: 0;
+/*                top: 0;*/
                 left: 0;
                 right: 0;
                 bottom: 70px;
@@ -285,9 +285,13 @@
                 height: 48px;
                 fill: #fff;
             }
+
+            .show-call{
+                width: 200px;
+            }
         </style>
 
-        <a class="fab show" title="Phone" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+        <a class="fab show show-call" title="Phone" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
         <img class="fab__icons" alt="" src="{{ asset('images/template/tongdai02473036336.png') }}">
         </a>
 
