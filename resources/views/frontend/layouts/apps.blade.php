@@ -24,6 +24,19 @@
 
        <meta name="google-site-verification" content="5aXrCE97zt-vl-Y7jl0Y44tfi9iTwtDRikEkt8vU2UQ" />
 
+       <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NGB6J3GD');</script>
+        <!-- End Google Tag Manager -->
+        2. Paste this code immediately after the opening <body> tag:
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGB6J3GD"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
         @stack('style')
         <style type="text/css">
             .btns{
