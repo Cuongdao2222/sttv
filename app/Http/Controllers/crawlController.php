@@ -1307,6 +1307,26 @@ class crawlController extends Controller
 
     }
 
+    public function addMetades()
+    {
+
+        $title ="Mua Smart Tivi QLED Samsung QA55Q70C 55 inch 4K chính hãng giá rẻ quà ngon, trả góp 0%, miễn phí giao hàng và công lắp đặt, hư gì đổi nấy 24 tháng (miễn phí tháng đầu), giao hàng trong 4h.";
+        for ($i=0; $i < 155; $i++) { 
+
+            $meta   =  new metaSeo();
+            $meta->meta_title =$title; 
+            $meta->meta_content =$title; 
+            $meta->meta_key_words = $title; 
+            $meta->meta_og_title =$title; 
+            $meta->meta_og_content =$title; 
+
+            $meta->save();
+            
+        }
+
+        
+    }
+
     public function getMetaToFails()
     {
         $link = metaSeo::where('meta_content', 'Đường link cần xem không có trên website hoặc đã bị xóa')->get();
