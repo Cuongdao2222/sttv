@@ -97,7 +97,7 @@ class groupProductController extends AppBaseController
 
         Flash::success('Group Product saved successfully.');
 
-        return redirect(route('groupProducts.index'));
+        return redirect()->back();
     }
 
     /**
@@ -176,7 +176,7 @@ class groupProductController extends AppBaseController
 
         Flash::success('Group Product updated successfully.');
 
-        return redirect(route('groupProducts.index'));
+        return redirect()->back();
     }
 
     /**
@@ -202,7 +202,7 @@ class groupProductController extends AppBaseController
 
         Flash::success('Group Product deleted successfully.');
 
-        return redirect(route('groupProducts.index'));
+        return redirect()->back();
     }
 
     public function showProductIdToUrl($id)
@@ -272,7 +272,7 @@ class groupProductController extends AppBaseController
 
         Flash::success('Group Product saved successfully.');
 
-        return redirect(route('groupProducts.index'));
+        return redirect()->back();
     }
 
     public function removeGrPD(Request $request)
