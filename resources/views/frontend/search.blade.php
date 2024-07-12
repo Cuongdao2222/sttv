@@ -320,6 +320,11 @@
                                         </div>
                                     </div>
 
+                                    <?php 
+
+                                        dd($val);
+                                    ?>
+
                                     @if(!empty($val->Salient_Features))
                                     <div class="variable-height-wrapper-s2">
                                         <div class="merchandising-wrapper">
