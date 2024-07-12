@@ -319,6 +319,8 @@
                                             <span class="product-sku">{{ @$val->productSku  }}</span>
                                         </div>
                                     </div>
+
+                                    @if(!empty($val->Salient_Features))
                                     <div class="variable-height-wrapper-s2">
                                         <div class="merchandising-wrapper">
                                             <div class="merchandising-box">
@@ -328,6 +330,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
                                 <div class="item-flex-bottom">
                                     <div class="product-item-size">
