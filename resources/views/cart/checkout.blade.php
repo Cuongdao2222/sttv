@@ -171,9 +171,9 @@
                                                         <div class="progressive-media progressive-media-image progressive-media-loaded" data-img-src="/media/product/SP-LSP9TKAXXV/1618157397vn-the-premiere-lsp9t-sp-lsp9tkaxxv-414047979.jpg">
                                                             <div class="progressive-media-aspect" style="padding-bottom: 80%;">
                                                                 <div class="progressive-media-aspect-inner">
-                                                                    <img class="progressive-media-image-placeholder progressive-media-content progressive-media-blur" src="{{ asset($value->Image) }}" crossorigin="anonymous"><img class="progressive-media-image-placeholder progressive-media-image-placeholder-edge progressive-media-content" src="{{ asset($value->Image) }}" crossorigin="anonymous">
-                                                                    <noscript><img class="progressive-media-image-original progressive-media-content" src="{{ asset($value->Image) }}"></noscript>
-                                                                    <img src="{{ asset($value->Image) }}" class="progressive-media-image-original progressive-media-content">
+                                                                    <img class="progressive-media-image-placeholder progressive-media-content progressive-media-blur" src="{{ asset($infoProducts->Image) }}" crossorigin="anonymous"><img class="progressive-media-image-placeholder progressive-media-image-placeholder-edge progressive-media-content" src="{{ asset($infoProducts->Image) }}" crossorigin="anonymous">
+                                                                    <noscript><img class="progressive-media-image-original progressive-media-content" src="{{ asset($infoProducts->Image) }}"></noscript>
+                                                                    <img src="{{ asset($infoProducts->Image) }}" class="progressive-media-image-original progressive-media-content">
                                                                 </div>
                                                             </div>
                                                         </div>
