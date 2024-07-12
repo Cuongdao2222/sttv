@@ -20,6 +20,13 @@
     <link href="{{ asset('assets/75a5fa0c/css/progressive-media.min.css')}}" rel="stylesheet">
     @endpush
 
+    <style type="text/css">
+        
+        .product-listing.product-grid .three-cols-tile:last-child, .product-listing.product-grid .three-cols-tile:nth-last-child(2), .product-listing.product-grid .three-cols-tile:nth-last-child(3){
+            height: 1056px;
+        }
+    </style>
+
     <div class="category">
         <div class="pageType-CategoryPage">
             
@@ -320,7 +327,7 @@
                                         </div>
                                     </div>
 
-                                    
+
 
                                     @if(!empty($val->Salient_Features))
                                     <div class="variable-height-wrapper-s2">
