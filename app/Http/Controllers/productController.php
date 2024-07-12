@@ -497,7 +497,7 @@ class productController extends AppBaseController
 
             if(!Cache::has('product_search')){
 
-                $productss = product::select('Link', 'Name', 'Image', 'Price', 'id', 'ProductSku')->where('active', 1)->get();
+                $productss = product::select('Link', 'Name', 'Image', 'Price', 'id', 'ProductSku','Salient_Features')->where('active', 1)->get();
 
                 Cache::forever('product_search',$productss);
 
@@ -550,7 +550,7 @@ class productController extends AppBaseController
 
                         if($product->count()==0){
                             // search bằng thư viện FullTextSearch
-                            $product = product::FullTextSearch('Name', $search)->select('id', 'Name', 'Price', 'Link', 'Image')->get();
+                            $product = product::FullTextSearch('Name', $search)->select('id', 'Name', 'Price', 'Link', 'Image', 'Salient_Features')->get();
                             
                             if($product->count()==0){
                                 $product = product::where('Name', 'like', '%'.$search.'%')->get();
