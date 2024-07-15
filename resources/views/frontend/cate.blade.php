@@ -32,6 +32,10 @@
             height: 50px;
         }
 
+        .product-item-size{
+            display: none;
+        }
+
        /* .three-cols-tile{
             height: 0;
         }*/
