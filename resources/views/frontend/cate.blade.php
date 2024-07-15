@@ -32,9 +32,9 @@
             height: 50px;
         }
 
-        .three-cols-tile{
+       /* .three-cols-tile{
             height: 0;
-        }
+        }*/
         .merchandising-wrapper{
             display: none;
         }
