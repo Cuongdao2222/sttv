@@ -32,6 +32,13 @@
             height: 50px;
         }
 
+        .three-cols-tile{
+            height: 0;
+        }
+        .merchandising-wrapper{
+            display: none;
+        }
+
     </style>
     @endpush
 
@@ -255,7 +262,7 @@
                                             <span class="product-sku">{{ @$val->productSku  }}</span>
                                         </div>
                                     </div>
-                                    <div class="variable-height-wrapper-s2">
+                                    <!-- <div class="variable-height-wrapper-s2">
                                         <div class="merchandising-wrapper">
                                             <div class="merchandising-box">
                                                 <div class="merchandising-text text-center">
@@ -263,7 +270,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="item-flex-bottom">
                                     <div class="product-item-size">
