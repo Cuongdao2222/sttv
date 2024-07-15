@@ -31,7 +31,7 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-NGB6J3GD');</script>
         <!-- End Google Tag Manager -->
-        2. Paste this code immediately after the opening <body> tag:
+        <!-- 2. Paste this code immediately after the opening <body> tag: -->
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGB6J3GD"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
