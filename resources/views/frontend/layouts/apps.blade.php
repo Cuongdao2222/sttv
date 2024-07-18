@@ -257,7 +257,11 @@
                     <div class="footer-copyright-wrap">
                         <div class="footer-copyright-align">
                             <p class="footer-copyright">©2024Siêu thị tivi </p>
+
+
                             <div class="footer-legal">
+                                Địa chỉ 370 Minh Khai, Hai Bà Trưng, Hà Nội
+                                Điện thoại: 098.659.5873
                             </div>
                         </div>
                       <!--   <div class="footer-local-logo">
