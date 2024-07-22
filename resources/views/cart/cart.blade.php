@@ -296,7 +296,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="text-block fz-12">
-                                            <p>Mọi thắc mắc vui lòng liên hệ nhân viên theo Hotline: 0912 326 577 để được hỗ trợ
+                                            <p>Mọi thắc mắc vui lòng liên hệ nhân viên theo Hotline: 098.659.5873 để được hỗ trợ
                                                 24/7 
                                             </p>
                                         </div>
