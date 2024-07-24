@@ -9,6 +9,7 @@
         <title>{{ @$meta->meta_title }}</title>
         <meta property="og:description" content="{{ $meta->meta_content }}" /> 
         <meta name = "google-site-verify" content = "Oe5VRMXXNpVeNUbjHjfsjRfwAWzTXrHOR-UMF1iKIf4" />
+         <meta name="description" content="{{ $meta->meta_content }}"/>
      
         <meta name="keywords" content="{{ $meta->meta_key_words??'Siêu Thị Tivi - Mua Sắm Tivi Chính Hãng Giá Rẻ Tại Kho' }}"/>
 
