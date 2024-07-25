@@ -491,7 +491,7 @@
                         <div class="footer-column__item column is-one-quarter">
                             <div class="footer-category">
                                 <h3 class="footer-category__title">Hotline</h3>
-                                <p>0912 326 577</p>
+                                <p>098 659 5873</p>
                             </div>
                         </div>
                     </div>
