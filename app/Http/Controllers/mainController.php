@@ -10,6 +10,8 @@ use App\Models\css;
 
 use Illuminate\Support\Facades\Storage;
 
+use View;
+
 
 class mainController extends Controller
 {
