@@ -38,6 +38,10 @@ class mainController extends Controller
 
         $page_no_jquery = 1;
 
+        dd($page_no_jquery);
+
+        
+
 
         if($exists){
 
