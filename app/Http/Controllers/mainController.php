@@ -36,6 +36,8 @@ class mainController extends Controller
 
         $exists = Storage::disk('view')->exists($page[$id]);
 
+        dd($exists);
+
         $page_no_jquery = 1;
 
 
