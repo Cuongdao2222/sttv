@@ -67,9 +67,13 @@ class crawlController extends Controller
     {
         $pd =  product::select('Name', 'ProductSku')->OrderBy('active', 'desc')->get();
 
+        $dem = 0;
+
         foreach ($pd as $key => $pds) {
+
+            $dem++;
             
-            echo $pds->Name.' - '.$pds->ProductSku.'<br>' ;
+            echo $dem.','.$pds->Name.' - '.$pds->ProductSku.'<br>' ;
         }
     }
 
