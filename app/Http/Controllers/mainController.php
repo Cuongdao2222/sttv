@@ -32,7 +32,7 @@ class mainController extends Controller
     public function readFileCss($id)
     {
 
-        $page = ['homecs.css', 'categorycs.css', 'detailscs.css'];
+        $page = ['site.css', 'categorycs.css', 'detailscs.css'];
 
         $exists = Storage::disk('public')->exists('css/'.$page[$id]);
 
