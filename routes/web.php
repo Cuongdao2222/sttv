@@ -49,7 +49,7 @@ Route::get('/cache', 'Frontend\indexController@cache')->name('cache');
 Route::get('/ckfinder.html', 'mainController@ckfinder')->middleware('auth');
 
 
-Route::get('test-data', 'crawlController@cralwimageDmnv');
+Route::get('test-data', 'crawlController@getdataPD');
 
 
 

@@ -63,6 +63,16 @@ class crawlController extends Controller
     
     }
 
+    public function getdataPD()
+    {
+        $pd =  product::select('Name', 'ProductSku')->OrderBy('active', 'desc')->get();
+
+        foreach ($pd as $key => $pds) {
+            
+            echo $pds->Name.' - '.$pds->ProductSku.'<br>' ;
+        }
+    }
+
     public function updateMetas($value='')
     {
 
