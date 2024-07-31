@@ -144,7 +144,7 @@ class mainController extends Controller
         $css->content =  $content;
         $css->save();
 
-        Storage::disk('view')->put('css/'.$file, $content);
+        // Storage::disk('view')->put('css/'.$file, $content);
 
         return redirect()->back();
     }
