@@ -16,10 +16,6 @@
 
 @endpush
 
-<?php
-
-    dd(1);
-?>
 
 @section('content')
     <?php 
