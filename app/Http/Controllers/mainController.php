@@ -43,6 +43,8 @@ class mainController extends Controller
 
             $contents = view('frontend.layout.apps.blade.php');
 
+            dd($contents);
+
             return view('css.fileCss', compact('contents','id', 'page_no_jquery'));
 
            
