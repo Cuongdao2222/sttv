@@ -65,7 +65,12 @@ class crawlController extends Controller
 
     public function getdataPD()
     {
-        $pd =  product::select('Name', 'ProductSku')->OrderBy('active', 'desc')->get();
+
+        $Group_products = groupProduct::find(1);
+
+        $id_product =  json_decode($Group_products->product_id);
+
+        $pd =  product::select('Name', 'ProductSku')->whereIn('id', $id_produc)->OrderBy('active', 'desc')->get();
 
         $dem = 0;
 
