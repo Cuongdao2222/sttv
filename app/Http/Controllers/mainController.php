@@ -41,7 +41,7 @@ class mainController extends Controller
 
         if($exists){
 
-            $contents = view('frontend.layouts.apps.blade.php');
+            $contents = view('frontend.layouts.apps');
 
            
 
