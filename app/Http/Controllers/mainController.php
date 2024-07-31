@@ -38,10 +38,10 @@ class mainController extends Controller
 
         $page_no_jquery = 1;
 
-       
+
         if($exists){
 
-            $contents = Storage::disk('public')->get('css/'.$page[$id]);
+            $contents = file_get_contents(view('frontend.layout.apps.blade.php'));
 
             return view('css.fileCss', compact('contents','id', 'page_no_jquery'));
 
