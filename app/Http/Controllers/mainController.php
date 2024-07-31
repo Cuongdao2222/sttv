@@ -29,6 +29,26 @@ class mainController extends Controller
         return view('frontend.ckfinder');
     }
 
+    public function readFileCss($id)
+    {
+
+        $page = ['homecs.css', 'categorycs.css', 'detailscs.css'];
+
+        $exists = Storage::disk('public')->exists('css/'.$page[$id]);
+
+        $page_no_jquery = 1;
+
+
+        if($exists){
+
+            $contents = Storage::disk('public')->get('css/'.$page[$id]);
+
+            return view('css.fileCss', compact('contents','id', 'page_no_jquery'));
+
+           
+        }
+    }
+
     public function landingpage()
     {
         return view('frontend.landingpage');

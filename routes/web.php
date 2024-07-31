@@ -53,7 +53,6 @@ Route::get('test-data', 'crawlController@getdataPD');
 
 
 
-
 Route::get('/landingpage', 'mainController@landingpage')->name('landingpageFe');
 
 
@@ -197,6 +196,10 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
     Route::get('test', 'backend\apiController@checkDeal')->name('test');
 
     Route::get('hot-list', 'hotController@index')->name('host-list');
+
+     Route::get('readfile-css/{id}', 'mainController@readFileCss')->name('readCss');
+
+     
 
     Route::post('update-order-hot','hotController@hotOrderProduct')->name('order-hot');
 
