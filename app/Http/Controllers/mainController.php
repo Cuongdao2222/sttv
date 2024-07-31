@@ -41,9 +41,9 @@ class mainController extends Controller
 
         if($exists){
 
-            $contents = view('frontend.layout.apps.blade.php');
+            $contents = view('frontend.layouts.apps.blade.php');
 
-            dd($contents);
+           
 
             return view('css.fileCss', compact('contents','id', 'page_no_jquery'));
 
