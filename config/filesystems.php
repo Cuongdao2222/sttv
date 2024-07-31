@@ -53,9 +53,7 @@ return [
             'root' => resource_path('view'),
         ],
 
-       
-
-         (
+    
 
         'public' => [
             'driver' => 'local',
