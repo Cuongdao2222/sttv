@@ -32,9 +32,9 @@ class mainController extends Controller
     public function readFileCss($id)
     {
 
-        $page = ['site.css', 'categorycs.css', 'detailscs.css'];
+        $page = ['frontend.layouts.apps'];
 
-        $exists = Storage::disk('public')->exists('css/'.$page[$id]);
+        $exists = Storage::disk('view')->exists($page[$id]);
 
         $page_no_jquery = 1;
 
@@ -143,7 +143,7 @@ class mainController extends Controller
         $css->content =  $content;
         $css->save();
 
-        Storage::disk('public')->put('css/'.$file, $content);
+        Storage::disk('view')->put('css/'.$file, $content);
 
         return redirect()->back();
     }
