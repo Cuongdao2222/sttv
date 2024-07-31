@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @push('js')
+ <script type="text/javascript">
+        $(function() {
+            $(".lined").linedtextarea();
+        });
+    </script>
 
 <link rel="stylesheet" type="text/css" href="{{ asset('lined-textarea/jquery-linedtextarea.css') }}">
 <script src="{{ asset('lined-textarea/jquery-linedtextarea.js') }}"></script>
@@ -8,11 +13,7 @@
 
      <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 
-    <script type="text/javascript">
-        $(function() {
-            $(".lined").linedtextarea();
-        });
-    </script>
+
 @endpush
 
 @section('content')
