@@ -32,9 +32,9 @@ class mainController extends Controller
     public function readFileCss($id)
     {
 
-        $page = ['frontend/layouts/apps.blade.php'];
+        $page = ['frontend.layouts.apps'];
 
-        $exists = Storage::disk('view')->exists($page[$id]);
+        $exists = View::exists($page[$id]);
 
        
         $page_no_jquery = 1;
@@ -43,8 +43,6 @@ class mainController extends Controller
         if($exists){
 
             $contents = view('frontend.layouts.apps');
-
-           
 
             return view('css.fileCss', compact('contents','id', 'page_no_jquery'));
 
