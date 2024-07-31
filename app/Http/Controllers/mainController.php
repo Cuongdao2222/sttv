@@ -116,23 +116,23 @@ class mainController extends Controller
        
         return view('css.index');
     }
-    public function readFileCss($id)
-    {
+    // public function readFileCss($id)
+    // {
 
-        $page = ['homecs.css', 'categorycs.css', 'detailscs.css'];
+    //     $page = ['homecs.css', 'categorycs.css', 'detailscs.css'];
 
-        $exists = Storage::disk('public')->exists('css/'.$page[$id]);
+    //     $exists = Storage::disk('public')->exists('css/'.$page[$id]);
 
 
-        if($exists){
+    //     if($exists){
 
-            $contents = Storage::disk('public')->get('css/'.$page[$id]);
+    //         $contents = Storage::disk('public')->get('css/'.$page[$id]);
 
-            return view('css.fileCss', compact('contents','id'));
+    //         return view('css.fileCss', compact('contents','id'));
 
            
-        }
-    }
+    //     }
+    // }
 
     public function saveCss(Request $request)
     {
