@@ -16,6 +16,11 @@
 
 @endpush
 
+<?php
+
+    dd(1);
+?>
+
 @section('content')
     <?php 
         $page = ['homecs.css', 'categorycs.css', 'detailscs.css'];
