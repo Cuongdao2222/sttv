@@ -178,7 +178,11 @@
         </div>
 
         <div class="content" id="contents-scroll">
-                 {!! html_entity_decode($data->Detail)   !!}
+
+                 <?php 
+                    
+                 ?>   
+                 {!!   str_replace('https://dienmaynguoiviet.vn', 'https://sieuthitivi.com', str html_entity_decode($data->Detail) )  !!}
             </div>    
         <style>
             .feature-benefit-full-bleed__figure {
