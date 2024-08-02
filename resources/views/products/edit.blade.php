@@ -152,6 +152,8 @@
 
                     $product->Detail = $content1;
                     $product->Detail = str_replace(['http://dienmaynguoiviet.net', 'https://dienmaynguoiviet.net'], 'https://dienmaynguoiviet.vn', $product->Detail);
+
+                    $product->Detail = str_replace('https://dienmaynguoiviet.vn', 'https://sieuthitivi.com', $product->Detail);
                     
                   
                 }
