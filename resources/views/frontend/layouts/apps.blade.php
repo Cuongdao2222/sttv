@@ -261,7 +261,7 @@
 
 
                             <div class="footer-legal">
-                                <p>Địa chỉ: 370 Minh Khai, Hai Bà Trưng, Hà Nội</p>
+                                <p>Địa chỉ: 375 Minh Khai, Hai Bà Trưng, Hà Nội</p>
                                 <p>Điện thoại: 098.659.5873</p>
                             </div>
                         </div>
