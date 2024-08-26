@@ -104,6 +104,10 @@ Route::get('update-order-flash-deal', 'flashdealController@dealOrder')->name('or
 
 Route::get('sitemap_article.xml', 'sitemapController@sitemapChildBlog');
 
+Route::get('sitemap_category.xml', 'sitemapController@sitemapCategory');
+
+
+
 Route::get('cart/checkout', 'Frontend\categoryController@checkoutCart')->name('checkoutCart');
 
 // Route::get('inCrawl', 'crawlController@allproduct');
