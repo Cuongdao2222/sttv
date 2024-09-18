@@ -23,7 +23,7 @@
 <?php  
 
     $user  = App\User::orderBy('id','asc')->get()->toArray();
-    $posts  = App\Models\post::where('category', 5)->get();
+    $posts  = DB::table('posts')->where('category', 5)->get();
 
 ?>
 
