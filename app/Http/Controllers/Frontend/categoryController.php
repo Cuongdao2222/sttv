@@ -425,9 +425,9 @@ class categoryController extends Controller
     {
         $link = trim($slug);
 
-        $data = post::where('link', '/'.$link.'/')->first();
+        $data = post::where('link', trim($link))->first();
 
-        dd($data);
+       
 
         
         if(empty($data)){
