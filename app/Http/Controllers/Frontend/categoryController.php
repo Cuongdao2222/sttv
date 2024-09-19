@@ -427,6 +427,8 @@ class categoryController extends Controller
 
         $data = post::where('link', '/'.$link.'/')->first();
 
+        dd($data);
+
         
         if(empty($data)){
             return $this->categoriesBlog($slug);
