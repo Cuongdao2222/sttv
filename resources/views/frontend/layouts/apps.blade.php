@@ -224,6 +224,11 @@
                                             Quy định hình thức thanh toán
                                             </a>
                                         </li>
+                                        <li class="footer-category__item">
+                                            <a class="footer-category__link" href="/chinh-sach-doi-tra-hang" title="">
+                                            Chính sách đổi trả
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
