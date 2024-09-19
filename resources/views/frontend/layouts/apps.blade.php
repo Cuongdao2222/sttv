@@ -204,23 +204,23 @@
                                 <div class="footer-category__list-wrap">
                                     <ul class="footer-category__list">
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="#" title="">
+                                            <a class="footer-category__link" href="/gioi-thieu" title="">
                                                 Giới thiệu
                                             
                                             </a>
                                         </li>
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="#" title="">
+                                            <a class="footer-category__link" href="/chinh-sach-bao-hanh" title="">
                                             Chính sách bảo hành
                                             </a>
                                         </li>
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="#" title="">
+                                            <a class="footer-category__link" href="/chinh-sach-van-chuyen" title="">
                                             Chính sách vận chuyển & giao nhận
                                             </a>
                                         </li>
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="#" title="">
+                                            <a class="footer-category__link" href="/cach-thuc-thanh-toan" title="">
                                             Quy định hình thức thanh toán
                                             </a>
                                         </li>
