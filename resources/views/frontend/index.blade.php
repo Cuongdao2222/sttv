@@ -38,12 +38,12 @@
 
             @foreach($banners as $value)
 
-            <div class="swiper-slide">
+           <!--  <div class="swiper-slide">
                 <a href="{{ asset($value->link) }}">
                 <img class="is-hidden-mobile" src="{{ asset($value->image) }}">
                 <img class="is-hidden-tablet" src="{{ asset($value->image) }}">
                 </a>
-            </div>
+            </div> -->
            <!--  <div class="item" data-dot="<span>{{ $value->title }}</span>">
                 <a aria-label="slide" data-cate="0" data-place="1535" href="{{ $value->link }}" ><img  data-src="{{ asset($value->image) }}" alt="{{ $value->title }}" class="lazyload"></a>
             </div> -->
