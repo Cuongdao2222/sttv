@@ -2,6 +2,18 @@
 @section('content')
 
 @push('style')
+         <link href="{{ asset('assets/75a5fa0c/css/progressive-media.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/35deb2b4/css/bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ asset('bulma/css/bulma.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('bulma/css/all.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('swiper@8.4.2/swiper-bundle.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/owl.theme.default.min.css')}}  " rel="stylesheet">
+        <link href="{{ asset('css/icofont.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/slick.css')}}" rel="stylesheet">
+        <link href="{{ asset('css/slick-theme.css')}}" rel="stylesheet">
+        <link href="{{ asset('css/site.css')}}" rel="stylesheet">
+       
         <link rel="stylesheet" type="text/css" href="{{ asset('css/category.css') }}"> 
 
         <link rel="stylesheet" type="text/css" href="{{ asset('css/categories.css') }}"> 
