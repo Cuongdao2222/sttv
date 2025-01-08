@@ -190,7 +190,7 @@
                                         ?>
                                         @foreach($groups as $key => $val)
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="{{ route('category-product', $val->link) }}" title="">{{ $val->name }}</a>
+                                            <a class="footer-category__link" href="{{ route('details', $val->link) }}" title="">{{ $val->name }}</a>
                                         </li>
                                         @endforeach
                                        
