@@ -239,10 +239,10 @@
                                 <div class="footer-category__list-wrap">
                                     <ul class="footer-category__list">
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="#" aria-label="Liên Hệ" title="">Liên Hệ</a>
+                                            <a class="footer-category__link" href="lien-he" aria-label="Liên Hệ" title="">Liên Hệ</a>
                                         </li>
                                         <li class="footer-category__item">
-                                            <a class="footer-category__link" href="#" title="">Hỗ Trợ Kỹ
+                                            <a class="footer-category__link" href="tel:0986595873" title="">Hỗ Trợ Kỹ
                                             thuật</a>
                                         </li>
                                     </ul>
