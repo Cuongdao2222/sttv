@@ -72,14 +72,14 @@
     </div>
        
        
-    <section class="section">
+    <!-- <section class="section">
         <div class="columns">
             <div class="column">
                 <img class="is-hidden-mobile" src="{{ asset('images/epp-tivi-170321-herofix.jpg')  }}">
                 <img class="is-hidden-tablet" src="{{ asset('images/epp-tivi-170321-herofix-MB.webp') }}">
             </div>
         </div>
-    </section>
+    </section> -->
     <div class="sh-banner-wrapper " style="background: transparent">
         <div class="sh-banner-container cinematic ">
            <!--  <h3>Lưu ý về quà tặng:</h3>
