@@ -23,7 +23,7 @@
  @endpush  
 
     
-<div class="container page-content">
+<div class="">
     <h1>Liên Hệ</h1>
 </div>
 
