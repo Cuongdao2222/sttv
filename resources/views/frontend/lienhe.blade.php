@@ -23,7 +23,7 @@
  @endpush  
 
     
-<div class="">
+<div class="category">
     <h1>Liên Hệ</h1>
 </div>
 
