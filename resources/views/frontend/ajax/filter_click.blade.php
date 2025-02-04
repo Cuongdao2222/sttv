@@ -1,6 +1,8 @@
 
     @if(count($product))
     @foreach($product as $val)
+
+    @if( intval($val->Price)>0)
     
     <li class="product-item three-cols-tile">
         <h1 class="sr-only">{{ @$val->Name }}</h1>
@@ -92,6 +94,8 @@
             </div>
         </div>
     </li>
+
+    @endif
   
     @endforeach
     
