@@ -550,11 +550,7 @@
                                 </li>
                                 <li class="product-item three-cols-tile">
                                     <h1 class="sr-only">Smart TV 8K Neo QLED 75 inch QN900B 2022</h1>
-                                    <div class="merchandising-flag text-center wishlist" style="height: 30px;min-height: 30px;">
-                                        <div class="badge">
-                                            <span>MIỄN PHÍ CÔNG LẮP ĐẶT TRONG 7 NGÀY</span>
-                                        </div>
-                                    </div>
+                                   
                                     <div class="product-img-wrapper">
                                         <div class="thumb">
                                             <div class="list-item-img">
@@ -646,11 +642,8 @@
                                 </li>
                                 <li class="product-item three-cols-tile">
                                     <h1 class="sr-only">Smart TV 8K Neo QLED 85 inch QN900B 2022</h1>
-                                    <div class="merchandising-flag text-center wishlist" style="height: 30px;min-height: 30px;">
-                                        <div class="badge">
-                                            <span>MIỄN PHÍ CÔNG LẮP ĐẶT TRONG 7 NGÀY</span>
-                                        </div>
-                                    </div>
+                                   
+                                   
                                     <div class="product-img-wrapper">
                                         <div class="thumb">
                                             <div class="list-item-img">
