@@ -728,23 +728,32 @@ class categoryController extends Controller
 
         if(count($data)>0){
 
+            $dem =0;
+
             foreach ($data as $key => $value) {
+
+
 
                 $products = groupProduct::find($value);
 
                 if(!empty($products) && !empty($products->product_id)){
 
-                    $ar_pd =  json_decode($products->product_id);
+                    $dem++;
 
-                    if(count($ar_pd)){
+                    if($dem < 12){
 
-                        foreach ($ar_pd as  $value) {
+                        $ar_pd =  json_decode($products->product_id);
 
-                            array_push($data_pd, $value);
+                        if(count($ar_pd)){
+
+                            foreach ($ar_pd as  $value) {
+
+                                array_push($data_pd, $value);
+
+                            }
 
                         }
-
-                    }
+                    }    
                    
                 }
 
