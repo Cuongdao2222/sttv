@@ -78,7 +78,7 @@
                                         
                                         $number_cart = count($cart);
 
-                                        dd($cart);
+                                       
 
 
                                      ?>  
