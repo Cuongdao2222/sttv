@@ -184,6 +184,11 @@
 
                                      @endforeach
                                     @endif
+
+                                    <?php 
+
+                                        die;
+                                    ?>
                                 </ul>
                                 <!-- <div class="cart-vouchers-wrapper toggle-wrap">
                                     <div class="remove-promo-voucher">
