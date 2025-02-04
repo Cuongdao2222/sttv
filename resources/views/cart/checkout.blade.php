@@ -164,7 +164,7 @@
 
                                             ?> 
 
-
+                                            @if(!empty($infoProducts))
                                             <div class="cart-summary-order-item columns is-mobile">
                                                 <div class="column is-2">
                                                     <div class="order-image">
@@ -206,7 +206,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            @endif
                                             @endforeach
                                             @endif
 
