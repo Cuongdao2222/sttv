@@ -4,11 +4,7 @@
     
     <li class="product-item three-cols-tile">
         <h1 class="sr-only">{{ @$val->Name }}</h1>
-        <div class="merchandising-flag text-center wishlist" style="height: 30px;min-height: 30px;">
-            <div class="badge">
-                <span>MIỄN PHÍ CÔNG LẮP ĐẶT TRONG 7 NGÀY</span>
-            </div>
-        </div>
+        
         <div class="">
                 <div class="item-img has-text-centered">
                     <a href="{{ route('details', $val->Link) }}">
