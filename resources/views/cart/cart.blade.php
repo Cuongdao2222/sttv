@@ -95,6 +95,8 @@
                                         $infoProducts = App\Models\product::find($datass->id);
 
                                     ?> 
+
+                                    @if(!empty($infoProducts))
                                     <li class="divide cart-row row ">
                                         <div class="col-xs-12">
                                             <div class="cart-item-thumb">
@@ -175,10 +177,7 @@
                                     </li>
                                     <li class="divide hidden-xs"></li>
 
-                                    <?php 
-
-                                        die;
-                                    ?>
+                                    @endif
                                     @endforeach
                                     @endif
 
