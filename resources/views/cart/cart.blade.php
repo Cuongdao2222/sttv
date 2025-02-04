@@ -84,15 +84,15 @@
                                      ?>  
 
                                     @if($number_cart>0)
-                                    @foreach($cart as $key => $data)
+                                    @foreach($cart as $key => $datass)
 
                                     <?php 
 
-                                        $price = (int)$data->price*(int)$data->qty;
+                                        $price = (int)$datass->price*(int)$datass->qty;
                                         $key++;
                                         array_push($arrPrice, $price);
 
-                                        $infoProducts = App\Models\product::find($data->id);
+                                        $infoProducts = App\Models\product::find($datass->id);
 
                                     ?> 
                                     <li class="divide cart-row row ">
@@ -132,13 +132,13 @@
                                                                 <div class="form-group field-order-quantity_{{ $key }}">
                                                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                                                         <span class="input-group-btn input-group-prepend">
-                                                                            <button class="btn btn-decrease bootstrap-touchspin-down" type="button" onclick="tru('{{ $key  }}', '{{ $data->rowId }}')">
+                                                                            <button class="btn btn-decrease bootstrap-touchspin-down" type="button" onclick="tru('{{ $key  }}', '{{ $datass->rowId }}')">
                                                                                 <i class="fa fa-minus" aria-hidden="true"></i>
                                                                             </button>
                                                                         </span>
-                                                                        <input type="text" id="order-quantity_{{ $key }}" class="form-control" name="Order[total_quantity]" data-krajee-touchspin="TouchSpin_1b49ee50" value="{{ $data->qty??1 }}" readonly>
+                                                                        <input type="text" id="order-quantity_{{ $key }}" class="form-control" name="Order[total_quantity]" data-krajee-touchspin="TouchSpin_1b49ee50" value="{{ $datass->qty??1 }}" readonly>
                                                                         <span class="input-group-btn input-group-append">
-                                                                            <button class="btn btn-increase bootstrap-touchspin-up" type="button" onclick="cong('{{ $key }}', '{{ $data->rowId }}')">
+                                                                            <button class="btn btn-increase bootstrap-touchspin-up" type="button" onclick="cong('{{ $key }}', '{{ $datass->rowId }}')">
                                                                                 <i class="fa fa-plus" aria-hidden="true"></i>
                                                                             </button>
                                                                         </span>
@@ -153,7 +153,7 @@
                                                                 <div class="item-price text-right column">
 
                                                                     <?php 
-                                                                        $prices = $data->price*$data->qty;
+                                                                        $prices = $datass->price*$datass->qty;
                                                                     ?>
 
                                                                      {{ @number_format($prices) }}đ
@@ -161,7 +161,7 @@
 
 
                                                                 <div class="column is-2">
-                                                                    <a href="{{ route('removeCart') }}?id={{ $data->rowId }}"><span class="text-right remove-item remove-entry-button pull-right">XÓA</span></a>
+                                                                    <a href="{{ route('removeCart') }}?id={{ $datass->rowId }}"><span class="text-right remove-item remove-entry-button pull-right">XÓA</span></a>
                                                                 </div>
                                                             </div>
                                                         </div>
