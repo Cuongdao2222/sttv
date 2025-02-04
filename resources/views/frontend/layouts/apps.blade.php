@@ -129,7 +129,7 @@
                                    
                                     <div class="dropdown-menu item-menu-{{ $val->id }}" aria-labelledby="dropdownMenuLink_{{ $val->id }}">
                                         @foreach($child_menu as $value)
-                                        <a class="dropdown-item" href="{{ route('category-product', $value->link) }}">{{ $value->name }}</a>
+                                        <a class="dropdown-item" href="{{ route('details', $value->link) }}">{{ $value->name }}</a>
                                         @endforeach
                                         
                                     </div>
