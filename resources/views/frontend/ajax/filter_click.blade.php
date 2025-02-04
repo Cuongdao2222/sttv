@@ -1,8 +1,18 @@
 
     @if(count($product))
+
+    <?php 
+        $dem =0
+    ?>
     @foreach($product as $val)
 
-    @if( intval($val->Price)>0)
+    <?php 
+
+        $dem++;
+
+    ?>
+
+    @if( intval($val->Price)>0 && $dem <15)
     
     <li class="product-item three-cols-tile">
         <h1 class="sr-only">{{ @$val->Name }}</h1>

@@ -728,7 +728,7 @@ class categoryController extends Controller
 
         if(count($data)>0){
 
-            $dem =0;
+           
 
             foreach ($data as $key => $value) {
 
@@ -738,22 +738,18 @@ class categoryController extends Controller
 
                 if(!empty($products) && !empty($products->product_id)){
 
-                    $dem++;
+                    $ar_pd =  json_decode($products->product_id);
 
-                    if($dem < 12){
+                    if(count($ar_pd)){
 
-                        $ar_pd =  json_decode($products->product_id);
+                        foreach ($ar_pd as  $value) {
 
-                        if(count($ar_pd)){
-
-                            foreach ($ar_pd as  $value) {
-
-                                array_push($data_pd, $value);
-
-                            }
+                            array_push($data_pd, $value);
 
                         }
-                    }    
+
+                    }
+                    
                    
                 }
 
