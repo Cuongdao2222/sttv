@@ -244,7 +244,7 @@
                         </thead>
                         <tbody>
 
-                        	@if(count($data_product)>0)
+                        	@if(count($data_product)>0 && !empty($data->link))
                         	@foreach($data_product as $data)
                             <tr>
                                 <td>
